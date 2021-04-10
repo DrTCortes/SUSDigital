@@ -11,7 +11,7 @@ function HomeScreen({ navigation }) {
       backgroundColor="#606060"/>
 
       
-          {/* HEADER INICIAL COM BARRA DE BUSCA */}
+          {/* HEADER INICIAL COM BARRA DE BUSCA
        
           <View style={styles.header}>
         <View style={{flexDirection: 'row'}}>
@@ -19,7 +19,7 @@ function HomeScreen({ navigation }) {
           <Button color={'#415A80'} title={'Entrar'} />
           <Button color={'#415A80'} title={'Cadastre-se'} />
         </View>
-      </View>
+      </View> */}
 
       <View style={styles.body}>
         <Espec name={'Titulo Especialidade'} description={'Descrição da Especialidade'}/> 
