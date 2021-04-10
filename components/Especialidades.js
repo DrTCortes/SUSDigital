@@ -44,9 +44,3 @@ export default props => {
     
         },
     })
-
-// Paleta de Cores:
-// #415A80
-// #A5D4DC
-// #D7E2E9
-// #F2F4F8
