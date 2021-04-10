@@ -1,15 +1,14 @@
 import React from 'react'
 import {View, StyleSheet, Text} from 'react-native'
 
-import params from './params'
 
 export default props => {
-    const {name, description, nearMines, exploded, qtdVagas} = props
+    const {name, description, qtdVagas} = props
         
         return(
             <View style={styles.field}>
                 <Text style={styles.name}>
-                    {description}
+                    {name}
                 </Text>
                 <Text style={styles.desc}>
                     {description}
@@ -31,7 +30,6 @@ export default props => {
         name: {
             fontWeight: 'bold',
             fontSize: 15,
-            // backgroundColor: 'red',
             paddingHorizontal: 15,
     
         },
