@@ -1,11 +1,17 @@
-
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, FlatList } from 'react-native';
 
-function ListFuncionarios({}) {
+import dataFunc from './data'
+import Espec from '../Especialidades'
+
+export default props => {
   return(
     <View>
-        <Text>Lista de Funcionários</Text>
+     <FlatList
+      keyExtractor={dataFunc => dataFunc.id.toString()}
+      data={dataFunc}
+     />
+
     </View>
   )
 }
@@ -19,5 +25,5 @@ const styles = StyleSheet.create({
     },
   });
 
-  export default ListFuncionarios
+  
   

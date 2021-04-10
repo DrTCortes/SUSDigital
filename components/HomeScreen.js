@@ -10,22 +10,21 @@ function HomeScreen({ navigation }) {
       animated={true}
       backgroundColor="#606060"/>
 
-      <View style={styles.header}>
+      {/* <View style={styles.header}>
         <View style={{flexDirection: 'row'}}>
           <TextInput style={styles.input}/>
-          <Button color={'#0169B2'} title={'Entrar'} />
-          <Button color={'#0169B2'} title={'Cadastre-se'} />
+          <Button color={'#415A80'} title={'Entrar'} />
+          <Button color={'#415A80'} title={'Cadastre-se'} />
         </View>
-
-      </View>
+      </View> */}
 
       <View style={styles.body}>
         <Espec name={'Titulo Especialidade'} description={'Descrição da Especialidade'}/> 
-        <Espec name={'Titulo Especialidade'}/> 
-        <Espec name={'Titulo Especialidade'}/> 
-        <Espec name={'Titulo Especialidade'}/> 
-        <Espec name={'Titulo Especialidade'}/> 
-        <Espec name={'Titulo Especialidade'}/> 
+        <Espec name={'Titulo Especialidade'} description={'Descrição da Especialidade'}/> 
+        <Espec name={'Titulo Especialidade'} description={'Descrição da Especialidade'}/> 
+        <Espec name={'Titulo Especialidade'} description={'Descrição da Especialidade'}/> 
+        <Espec name={'Titulo Especialidade'} description={'Descrição da Especialidade'}/> 
+        <Espec name={'Titulo Especialidade'} description={'Descrição da Especialidade'}/> 
       </View>
 
     </SafeAreaView>
@@ -39,7 +38,7 @@ function HomeScreen({ navigation }) {
       backgroundColor: '#fff'
     },
     header: {
-      backgroundColor: '#0169B2',
+      backgroundColor: '#415A80',
       justifyContent: 'flex-start',
     },
     body: {
@@ -48,10 +47,15 @@ function HomeScreen({ navigation }) {
       flexDirection: 'row',
     },
     input:{
-      backgroundColor: '#fff',
+      backgroundColor: '#F2F4F8',
       width: 200,
       margin: 10,
       borderRadius: 5,
     },
   })    
   export default HomeScreen
+// Paleta de Cores:
+// #415A80
+// #A5D4DC
+// #D7E2E9
+// #F2F4F8

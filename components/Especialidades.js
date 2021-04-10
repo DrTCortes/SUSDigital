@@ -1,5 +1,5 @@
 import React from 'react'
-import {View, StyleSheet, Text} from 'react-native'
+import {View, StyleSheet, Text, Button} from 'react-native'
 
 
 export default props => {
@@ -13,6 +13,10 @@ export default props => {
                 <Text style={styles.desc}>
                     {description}
                 </Text>
+                <View style={{flexDirection:'row', }}>
+                    <Button title={"Editar"}/>
+                    <Button title={"Excluir"}/>
+                </View>
             </View>
         )
     }
@@ -24,18 +28,25 @@ export default props => {
             borderTopWidth: 4,
             borderRadius: 20,
             marginTop: 20,
-            backgroundColor: '#f0f0f0',
-            borderTopColor: '#606060',
+            backgroundColor: '#F2F4F8',
+            borderTopColor: '#415A80',
+            padding: 10,
+            alignContent: 'space-between'
         },
         name: {
             fontWeight: 'bold',
             fontSize: 15,
-            paddingHorizontal: 15,
     
         },
         desc: {
-            fontSize: 12,
-            paddingHorizontal: 15,
+            fontSize: 13,
+            marginTop: 5,
     
         },
     })
+
+// Paleta de Cores:
+// #415A80
+// #A5D4DC
+// #D7E2E9
+// #F2F4F8
