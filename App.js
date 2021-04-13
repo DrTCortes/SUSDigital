@@ -1,11 +1,14 @@
 import * as React from 'react';
-import { View, Text, SafeAreaView, StatusBar, StyleSheet, TouchableOpacity } from 'react-native';
+import { View, Text, SafeAreaView, StatusBar, TouchableOpacity } from 'react-native';
+
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { createStackNavigator } from '@react-navigation/stack'
 import { NavigationContainer } from '@react-navigation/native';
-import ListFuncionarios from './components/Funcionarios/ListFuncionarios'
+
 import HomeScreen from './components/HomeScreen'
+import ListFuncionarios from './components/Funcionarios/ListFuncionarios'
 import ListPacientes from './components/Pacientes/ListPacientes'
+
 import { Button, Icon } from 'react-native-elements';
 
 
@@ -24,12 +27,10 @@ export default function App() {
           options={({navigation}) => {
             return{
                 title: "Modelo de Tela",
-              headerRight: () => (
+                headerRight: () => (
                   <Button type='clear' 
                   onPress={() => navigation.navigate("Funcionarios")}
-                  icon={
-                    <Icon name="add" size={25} color="#F2F4F8"/>}
-                    />)
+                  icon={ <Icon name="add" size={25} color="#F2F4F8"/> } />)
                 }
               }}
               />
