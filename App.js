@@ -7,6 +7,7 @@ import { NavigationContainer } from '@react-navigation/native';
 
 import HomeScreen from './components/HomeScreen'
 import ListFuncionarios from './components/Funcionarios/ListFuncionarios'
+import FormFunc from './components/Funcionarios/FormFunc'
 import ListPacientes from './components/Pacientes/ListPacientes'
 
 import { Button, Icon } from 'react-native-elements';
@@ -37,6 +38,20 @@ export default function App() {
             <Stack.Screen  
               name="Funcionarios"
               component={ListFuncionarios}
+                options={({navigation}) => {
+                  return{
+                      title: "Funcionários",
+                      headerRight: () => (
+                        <Button type='clear' 
+                        onPress={() => navigation.navigate("FormFunc")}
+                        icon={ <Icon name="add" size={25} color="#F2F4F8"/> } />)
+                      }
+                    }}
+              />
+            
+            <Stack.Screen  
+              name="FormFunc"
+              component={FormFunc}
               />
     
             <Stack.Screen  

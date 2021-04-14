@@ -1,22 +1,45 @@
 import * as React from 'react';
-import { View, TextInput, Button, SafeAreaView, StatusBar, FlatList } from 'react-native';
+import { View, TextInput, SafeAreaView, StatusBar, FlatList, Alert } from 'react-native';
 
-import styles from '../styles'
 import dataFunc from './data'
-import { ListItem, Avatar} from 'react-native-elements';
+import { ListItem, Avatar, Button, Icon} from 'react-native-elements';
   
 export default props => {
+
+  function confirmFuncDeletion(func){
+    Alert.alert('Excluir funcionário?', 'Deseja excluir o funcionário?',[
+      {text: 'Sim', onPress(){console.warn('Delete' + func.id)}},
+      {text: 'Não'}
+    ])
+  }
     
+  function getAction(func){
+    return(
+      <>
+        <Button
+          onPress={() => props.navigation.navigate('FormFunc', func)}
+          type='clear'
+          icon={<Icon name='edit' size={25} color='orange'/>}
+        />
+        <Button
+          onPress={() => confirmFuncDeletion(func)}
+          type='clear'
+          icon={<Icon name='delete' size={25} color='red'/>}
+        />
+      </>
+    )
+  }
+
   function getFuncItem({item: func}){
     return(
 
-    <ListItem  key={func.id} onPress={()=> props.navigation.navigate("Home")} bottomDivider>
+    <ListItem   key={func.id} onPress={()=> props.navigation.navigate("FormFunc", func)} bottomDivider>
       <Avatar tittle={func.name} rounded source={func.avatarUrl && { uri: func.avatarUrl }}/>
       <ListItem.Content>
           <ListItem.Title>{func.name}</ListItem.Title>
           <ListItem.Subtitle>{func.email}</ListItem.Subtitle>
-          </ListItem.Content>
-          <ListItem.Chevron />
+        </ListItem.Content>
+          <View style={{flexDirection:'row'}}>{getAction(func)}</View>
     </ListItem>
 )}
 
