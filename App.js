@@ -4,14 +4,22 @@ import { createStackNavigator } from '@react-navigation/stack'
 import { NavigationContainer } from '@react-navigation/native';
 
 import HomeScreen from './components/HomeScreen'
+
 import ListFuncionarios from './components/Funcionarios/ListFuncionarios'
 import FormFunc from './components/Funcionarios/FormFunc'
+
 import ListMedicos from './components/Medicos/ListaMedicos'
 import FormMedicos from './components/Medicos/FormMedicos'
+
 import ListEspecialidades from './components/Especialidades/ListEspecialidades'
 import FormEspecialidades from './components/Especialidades/FormEspecialidades'
+
 import ListPostos from './components/Postos/ListPostos'
 import FormPostos from './components/Postos/FormPostos'
+
+import ListPacientes from './components/Pacientes/ListPacientes'
+import fromPacientes from './components/Pacientes/FormPacientes'
+
 import DevArea from './components/Dev/DevArea'
 
 import { Button, Icon } from 'react-native-elements';
@@ -74,6 +82,13 @@ export default function App() {
                         icon={ <Icon name="add" size={25} color="#F2F4F8"/> } />)}}}/> 
 
             <Stack.Screen name="FormPostos" component={FormPostos}/> 
+
+            <Stack.Screen name="Pacientes" component={ListPacientes}
+                options={({navigation}) => { return{ title: "Pacientes", headerRight: () => (
+                        <Button type='clear' onPress={() => navigation.navigate("FormPacientes")}
+                        icon={ <Icon name="add" size={25} color="#F2F4F8"/> } />)}}}/> 
+
+            <Stack.Screen name="FormPacientes" component={FormPostos}/> 
 
     
           </Stack.Navigator>
