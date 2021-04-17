@@ -61,7 +61,13 @@ return (
            placeholder='Informe o especialidade'
            value={medicos.especialidade} 
            style={Styles.input}          
-        />       
+        />  
+        <Button
+            title= "Salvar"
+            onPress={() => {
+                navigation.goBack()
+            }}
+        />     
        
     </View>
 )

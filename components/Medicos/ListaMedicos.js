@@ -3,10 +3,11 @@ import { View, FlatList, Alert } from 'react-native';
 
 import dataMedico from './data'
 import { ListItem, Avatar, Button, Icon} from 'react-native-elements';
+import MedContext from './MedContext';
   
 export default props => {
 
-  
+  useContext(MedContext)
   function confirmMedicoDeletion(medicos){
     Alert.alert('Excluir Médico?', 'Deseja excluir o Médicos?',[
         { 
