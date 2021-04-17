@@ -16,11 +16,15 @@ export default StyleSheet.create({
         flexWrap: 'wrap',
         flexDirection: 'row',
       },
+      form :{
+        padding: 10,
+      },
       input:{
-        backgroundColor: '#F2F4F8',
-        width: 200,
-        margin: 10,
+        backgroundColor: '#fff',
+        height: 40,
+        marginBottom: 10,
         borderRadius: 5,
+        paddingHorizontal: 10,
       },
       field: {
         width: 150,
