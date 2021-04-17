@@ -37,7 +37,7 @@ export default props => {
       <Avatar tittle={func.name} rounded source={func.avatarUrl && { uri: func.avatarUrl }}/>
       <ListItem.Content>
           <ListItem.Title>{func.name}</ListItem.Title>
-          <ListItem.Subtitle>{func.email}</ListItem.Subtitle>
+          <ListItem.Subtitle>{func.descricao}</ListItem.Subtitle>
         </ListItem.Content>
           <View style={{flexDirection:'row'}}>{getAction(func)}</View>
     </ListItem>
