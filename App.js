@@ -84,7 +84,7 @@ export default function App() {
                         <Button type='clear' onPress={() => navigation.navigate("FormPacientes")}
                         icon={ <Icon name="add" size={25} color="#F2F4F8"/> } />)}}}/> 
 
-            <Stack.Screen name="FormPacientes" component={FormPostos}/> 
+            <Stack.Screen name="FormPacientes" component={FormPacientes}/> 
 
     
           </Stack.Navigator>
