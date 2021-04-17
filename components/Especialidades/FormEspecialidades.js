@@ -13,14 +13,14 @@ export default ({route, navigation}) => {
           value={func.name}
           style={Styles.input}
         />
-        <Text>E-mail</Text>
+        <Text>Descrição</Text>
         <TextInput 
-          onChangeText={email => setFunc({...func, email})}
-          placeholder="Informe o e-mail"
-          value={func.email}
+          onChangeText={descricao => setFunc({...func, descricao})}
+          placeholder="Informe a descrição da especialidade"
+          value={func.descricao}
           style={Styles.input}
         />
-        <Text>Url do Avatar</Text>
+        <Text>Url do Avdatar</Text>
         <TextInput 
           onChangeText={avatarUrl => setFunc({...func, avatarUrl})}
           placeholder="Informe a Url do avatar"

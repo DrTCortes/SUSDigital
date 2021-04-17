@@ -1,28 +1,28 @@
 import React, {useContext} from 'react';
 import { View, FlatList, Alert } from 'react-native';
 
-import dataFunc from './data'
+import dataEspec from './data'
 import { ListItem, Avatar, Button, Icon} from 'react-native-elements';
   
 export default props => {
 
   
-  function confirmFuncDeletion(func){
-    Alert.alert('Excluir funcionário?', 'Deseja excluir o funcionário?',[
+  function confirmEspecDeletion(Espec){
+    Alert.alert('Excluir Especialidade?', 'Deseja excluir a Especialidade?',[
       { text: 'Sim'}, { text: 'Não' }
     ])
   }
     
-  function getAction(func){
+  function getAction(Espec){
     return(
       <>
         <Button
-          onPress={() => props.navigation.navigate('FormFunc', func)}
+          onPress={() => props.navigation.navigate('FormEspecialidades', Espec)}
           type='clear'
           icon={<Icon name='edit' size={25} color='orange'/>}
         />
         <Button
-          onPress={() => confirmFuncDeletion(func)}
+          onPress={() => confirmEspecDeletion(Espec)}
           type='clear'
           icon={<Icon name='delete' size={25} color='red'/>}
         />
@@ -30,25 +30,25 @@ export default props => {
     )
   }
 
-  function getFuncItem({item: func}){
+  function getEspecItem({item: Espec}){
     return(
 
-    <ListItem   key={func.id} onPress={()=> props.navigation.navigate("FormFunc", func)} bottomDivider>
-      <Avatar tittle={func.name} rounded source={func.avatarUrl && { uri: func.avatarUrl }}/>
+    <ListItem   key={Espec.id} onPress={()=> props.navigation.navigate("FormEspecialidades", Espec)} bottomDivider>
+      <Avatar tittle={Espec.name} rounded source={Espec.avatarUrl && { uri: Espec.avatarUrl }}/>
       <ListItem.Content>
-          <ListItem.Title>{func.name}</ListItem.Title>
-          <ListItem.Subtitle>{func.descricao}</ListItem.Subtitle>
+          <ListItem.Title>{Espec.name}</ListItem.Title>
+          <ListItem.Subtitle>{Espec.descricao}</ListItem.Subtitle>
         </ListItem.Content>
-          <View style={{flexDirection:'row'}}>{getAction(func)}</View>
+          <View style={{flexDirection:'row'}}>{getAction(Espec)}</View>
     </ListItem>
 )}
 
 return(
   <View>
      <FlatList
-      keyExtractor={func => func.id.toString()}
-      data={dataFunc}
-      renderItem={getFuncItem}
+      keyExtractor={Espec => Espec.id.toString()}
+      data={dataEspec}
+      renderItem={getEspecItem}
       />
     </View>
   )}
