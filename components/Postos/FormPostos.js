@@ -13,7 +13,7 @@ export default ({route, navigation}) => {
           value={func.name}
           style={Styles.input}
         />
-        <Text>E-mail</Text>
+        <Text>Endereço</Text>
         <TextInput 
           onChangeText={email => setFunc({...func, email})}
           placeholder="Informe o e-mail"
