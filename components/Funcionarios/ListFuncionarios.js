@@ -1,15 +1,16 @@
-import * as React from 'react';
-import { View, TextInput, SafeAreaView, StatusBar, FlatList, Alert } from 'react-native';
+import React, {useContext} from 'react';
+import { View, FlatList, Alert } from 'react-native';
 
 import dataFunc from './data'
 import { ListItem, Avatar, Button, Icon} from 'react-native-elements';
+import FuncsContext from './FuncContext';
   
 export default props => {
 
+  
   function confirmFuncDeletion(func){
     Alert.alert('Excluir funcionário?', 'Deseja excluir o funcionário?',[
-      {text: 'Sim', onPress(){console.warn('Delete' + func.id)}},
-      {text: 'Não'}
+      { text: 'Sim'}, { text: 'Não' }
     ])
   }
     
