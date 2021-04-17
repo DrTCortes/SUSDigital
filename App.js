@@ -32,7 +32,7 @@ export default function App() {
                   headerRight: () => (
                     <Button type='clear' 
                     title={"Area do Dev"}
-                    onPress={() => navigation.navigate("DevArea")}
+                    onPress={() => navigation.navigate("Medicos")}
                     />)}}} />
               
             <Stack.Screen name="DevArea" component={DevArea} /> 
