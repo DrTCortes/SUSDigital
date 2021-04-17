@@ -1,10 +1,13 @@
-import React from 'react'
-import { View, Text, FlatList, Alert, Button } from 'react-native'
+import React, {useContext} from 'react';
+import { View, FlatList, Alert } from 'react-native';
 
+import { ListItem, Avatar, Button, Icon} from 'react-native-elements';
+  
 export default props => {
-
-    <View >
-        <Button title={"Botão"} onPress={()=> {props.navigation.navigate("FormFunc", func)}}/>
+return(
+  <View>
+    <Button title={"Funcionarios"} onPress={()=>{ props.navigation.navigate("Funcionarios")}}/>
+    <Button title={"Médicos"} onPress={()=>{ props.navigation.navigate("Medicos")}}/>
+    <Button title={"Especialidades"} onPress={()=>{ props.navigation.navigate("Especialidades")}}/>
     </View>
-
-}
+  )}

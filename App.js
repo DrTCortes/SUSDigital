@@ -34,13 +34,13 @@ export default function App() {
                   headerRight: () => (
                     <Button type='clear' 
                     title={"Area do Dev"}
-                    onPress={() => navigation.navigate("Especialidades")}
+                    onPress={() => navigation.navigate("DevArea")}
                     />)}}} />
               
             <Stack.Screen name="DevArea" component={DevArea} 
               options={({navigation}) => { return{ title: "DevArea", headerRight: () => (
               <Button type='clear' onPress={() => navigation.navigate("Funcionarios")}
-              icon={ <Icon name="edite" size={25} color="#F2F4F8"/> } />)}}}
+              icon={ <Icon name="add" size={25} color="#F2F4F8"/> } />)}}}
             /> 
 
 
