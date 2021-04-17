@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { createStackNavigator } from '@react-navigation/stack'
+import { createStackNavigator, HeaderTitle } from '@react-navigation/stack'
 import { NavigationContainer } from '@react-navigation/native';
 
 import HomeScreen from './components/HomeScreen'
@@ -48,7 +48,7 @@ export default function App() {
                     />)}}} />
               
             <Stack.Screen name="DevArea" component={DevArea} 
-              options={({navigation}) => { return{ title: "DevArea", headerRight: () => (
+              options={({navigation}) => { return{ title: "Área do Desenvolvedor", headerRight: () => (
               <Button type='clear' onPress={() => navigation.navigate("Funcionarios")}
               icon={ <Icon name="add" size={25} color="#F2F4F8"/> } />)}}}
             /> 
@@ -58,29 +58,25 @@ export default function App() {
                 options={({navigation}) => { return{ title: "Funcionários", headerRight: () => (
                         <Button type='clear' onPress={() => navigation.navigate("FormFunc")}
                         icon={ <Icon name="add" size={25} color="#F2F4F8"/> } />)}}}/> 
-            
             <Stack.Screen name="FormFunc" component={FormFunc}/> 
 
 
             <Stack.Screen name="Medicos" component={ListMedicos}
                 options={({navigation}) => { return{ title: "Médicos", headerRight: () => (
-                        <Button type='clear' onPress={() => navigation.navigate("FormMedicos")}
+                        <Button type='clear' onPress={() => navigation.navigate("FormMedicos")}                        
                         icon={ <Icon name="add" size={25} color="#F2F4F8"/> } />)}}}/> 
-            
             <Stack.Screen name="FormMedicos" component={FormMedicos}/> 
             
             <Stack.Screen name="Especialidades" component={ListEspecialidades}
                 options={({navigation}) => { return{ title: "Especialidades", headerRight: () => (
                         <Button type='clear' onPress={() => navigation.navigate("FormEspecialidades")}
                         icon={ <Icon name="add" size={25} color="#F2F4F8"/> } />)}}}/> 
-            
             <Stack.Screen name="FormEspecialidades" component={FormEspecialidades}/> 
 
             <Stack.Screen name="Postos" component={ListPostos}
                 options={({navigation}) => { return{ title: "Postos", headerRight: () => (
                         <Button type='clear' onPress={() => navigation.navigate("FormPostos")}
                         icon={ <Icon name="add" size={25} color="#F2F4F8"/> } />)}}}/> 
-
             <Stack.Screen name="FormPostos" component={FormPostos}/> 
 
             <Stack.Screen name="Pacientes" component={ListPacientes}
@@ -101,6 +97,7 @@ export default function App() {
   headerStyle: { backgroundColor: '#415A80'},
   headerTintColor: '#fff',
   headerTitleStyle: { fontWeight: 'bold'} }
+
 
 
 // const opt = {
