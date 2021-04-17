@@ -8,6 +8,8 @@ import ListFuncionarios from './components/Funcionarios/ListFuncionarios'
 import FormFunc from './components/Funcionarios/FormFunc'
 import ListMedicos from './components/Medicos/ListaMedicos'
 import FormMedicos from './components/Medicos/FormMedicos'
+import ListEspecialidades from './components/Especialidades/ListEspecialidades'
+import FormEspecialidades from './components/Especialidades/FormEspecialidades'
 import DevArea from './components/Dev/DevArea'
 
 import { Button, Icon } from 'react-native-elements';
@@ -32,7 +34,7 @@ export default function App() {
                   headerRight: () => (
                     <Button type='clear' 
                     title={"Area do Dev"}
-                    onPress={() => navigation.navigate("Medicos")}
+                    onPress={() => navigation.navigate("Especialidades")}
                     />)}}} />
               
             <Stack.Screen name="DevArea" component={DevArea} /> 
@@ -52,7 +54,16 @@ export default function App() {
                         icon={ <Icon name="add" size={25} color="#F2F4F8"/> } />)}}}/> 
             
             <Stack.Screen name="FormMedicos" component={FormMedicos}/> 
-    
+            
+            <Stack.Screen name="Especialidades" component={ListEspecialidades}
+                options={({navigation}) => { return{ title: "Especialidades", headerRight: () => (
+                        <Button type='clear' onPress={() => navigation.navigate("FormEspecialidades")}
+                        icon={ <Icon name="add" size={25} color="#F2F4F8"/> } />)}}}/> 
+            
+            <Stack.Screen name="FormEspecialidades" component={FormEspecialidades}/> 
+
+
+
     
           </Stack.Navigator>
         </NavigationContainer>
