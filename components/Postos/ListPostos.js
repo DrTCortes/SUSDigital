@@ -1,8 +1,8 @@
-import React, {useContext} from 'react';
-import { View, FlatList, Alert } from 'react-native';
-
-import dataFunc from './data'
-import { ListItem, Avatar, Button, Icon} from 'react-native-elements';
+  import React, {useContext} from 'react';
+  import { View, FlatList, Alert } from 'react-native';
+  
+  import dataFunc from './data'
+  import { ListItem, Avatar, Button, Icon} from 'react-native-elements';
     
   export default props => {
   
@@ -37,7 +37,7 @@ import { ListItem, Avatar, Button, Icon} from 'react-native-elements';
         <Avatar tittle={func.name} rounded source={func.avatarUrl && { uri: func.avatarUrl }}/>
         <ListItem.Content>
             <ListItem.Title>{func.name}</ListItem.Title>
-            <ListItem.Subtitle>{func.email}</ListItem.Subtitle>
+            <ListItem.Subtitle>{func.endereco}</ListItem.Subtitle>
           </ListItem.Content>
             <View style={{flexDirection:'row'}}>{getAction(func)}</View>
       </ListItem>
