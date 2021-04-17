@@ -19,8 +19,9 @@ export default [
     },
     {
         id: 4,
-        name: 'Fernando dos Santos',
+        name: 'Fernando dos Santoooos',
         email: 'dossantosfer@gmail.com',
         avatarUrl: 'https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_1280.png',
+
     },
 ]
