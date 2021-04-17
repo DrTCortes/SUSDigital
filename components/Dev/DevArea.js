@@ -9,5 +9,6 @@ return(
     <Button title={"Funcionarios"} onPress={()=>{ props.navigation.navigate("Funcionarios")}}/>
     <Button title={"Médicos"} onPress={()=>{ props.navigation.navigate("Medicos")}}/>
     <Button title={"Especialidades"} onPress={()=>{ props.navigation.navigate("Especialidades")}}/>
+    <Button title={"Postos"} onPress={()=>{ props.navigation.navigate("Postos")}}/>
     </View>
   )}
