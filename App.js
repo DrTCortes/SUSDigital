@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { createStackNavigator } from '@react-navigation/stack'
+import { createStackNavigator, HeaderTitle } from '@react-navigation/stack'
 import { NavigationContainer } from '@react-navigation/native';
 
 import HomeScreen from './components/HomeScreen'
@@ -56,7 +56,7 @@ export default function App() {
 
             <Stack.Screen name="Medicos" component={ListMedicos}
                 options={({navigation}) => { return{ title: "Médicos", headerRight: () => (
-                        <Button type='clear' onPress={() => navigation.navigate("FormMedicos")}
+                        <Button type='clear' onPress={() => navigation.navigate("FormMedicos")}                        
                         icon={ <Icon name="add" size={25} color="#F2F4F8"/> } />)}}}/> 
             
             <Stack.Screen name="FormMedicos" component={FormMedicos}/> 
@@ -86,6 +86,7 @@ export default function App() {
   headerStyle: { backgroundColor: '#415A80'},
   headerTintColor: '#fff',
   headerTitleStyle: { fontWeight: 'bold'} }
+
 
 
 // const opt = {
