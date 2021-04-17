@@ -11,17 +11,6 @@ function HomeScreen({ navigation }) {
       animated={true}
       backgroundColor="#606060"/>
 
-      
-          {/* HEADER INICIAL COM BARRA DE BUSCA */}
-       
-          <View style={styles.header}>
-        <View style={{flexDirection: 'row'}}>
-          <TextInput style={styles.input}/>
-          <Button color={'#415A80'} title={'Entrar'} />
-          <Button color={'#415A80'} title={'Cadastre-se'} />
-        </View>
-      </View>
-
       <View style={styles.body}>
 
       </View>
