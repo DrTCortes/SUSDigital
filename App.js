@@ -1,5 +1,4 @@
-import * as React from 'react';
-import { View, Text, SafeAreaView, StatusBar, TouchableOpacity } from 'react-native';
+import React from 'react';
 
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { createStackNavigator } from '@react-navigation/stack'
@@ -8,9 +7,9 @@ import { NavigationContainer } from '@react-navigation/native';
 import HomeScreen from './components/HomeScreen'
 import ListFuncionarios from './components/Funcionarios/ListFuncionarios'
 import FormFunc from './components/Funcionarios/FormFunc'
-import ListPacientes from './components/Pacientes/ListPacientes'
 
 import { Button, Icon } from 'react-native-elements';
+import FuncsProvider from './components/Funcionarios/FuncContext';
 
 
 const Stack = createStackNavigator();
@@ -18,6 +17,7 @@ const Stack = createStackNavigator();
 export default function App() {
   
     return (  
+      <FuncsProvider.Provider>
         <NavigationContainer>
           <Stack.Navigator 
             initialRouteName="Home"
@@ -27,11 +27,12 @@ export default function App() {
           component={HomeScreen}
           options={({navigation}) => {
             return{
-                title: "Modelo de Tela",
+                title: "SUS Digital",
                 headerRight: () => (
                   <Button type='clear' 
+                  title={"Area do Dev"}
                   onPress={() => navigation.navigate("Funcionarios")}
-                  icon={ <Icon name="add" size={25} color="#F2F4F8"/> } />)
+                   />)
                 }
               }}
               />
@@ -47,20 +48,17 @@ export default function App() {
                         icon={ <Icon name="add" size={25} color="#F2F4F8"/> } />)
                       }
                     }}
-              />
+              /> 
             
             <Stack.Screen  
               name="FormFunc"
               component={FormFunc}
-              />
+              /> 
     
-            <Stack.Screen  
-              name="Pacientes" 
-              component={ListPacientes} 
-              />
     
           </Stack.Navigator>
         </NavigationContainer>
+      </FuncsProvider.Provider>
     
       );
     }
