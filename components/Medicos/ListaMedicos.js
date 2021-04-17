@@ -15,7 +15,7 @@ export default props => {
         return(
             <>
                 <Button
-                    onPress={() => props.navigation.navigate('FormMedico',medicos)}
+                    onPress={() => props.navigation.navigate('FormMedicos',medicos)}
                     type="clear"
                     icon={<Icon name="edit" size={25} color="orange" />}
                 />
@@ -35,7 +35,7 @@ export default props => {
                 tittle={medicos.name}                
                 source={{ uri: medicos.avatarUrl }}                
                 Subtitle={medicos.email}                             
-                onPress={() => props.navigation.navigate('UserForm',medicos)}                 
+                onPress={() => props.navigation.navigate('FormMedicos',medicos)}                 
                 rounded                
                 />                                
                 <ListItem.Content>                    
@@ -44,7 +44,7 @@ export default props => {
                 </ListItem.Content>
                 <Button
                     onPress={() => {
-                        props.navigation.navigate('UserForm', medicos);
+                        props.navigation.navigate('FormMedicos', medicos);
                     }}
                     type="clear"
                     icon={<Icon name="edit" size={15} color="orange" />}

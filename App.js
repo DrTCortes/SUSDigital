@@ -87,6 +87,7 @@ export default function App() {
   headerTintColor: '#fff',
   headerTitleStyle: { fontWeight: 'bold'} }
 
+
 // const opt = {
 //   headerLeft: () => (
 //     <TouchableOpacity onPress={navigation.openDrawer}>
@@ -98,7 +99,7 @@ export default function App() {
 
 //   export default function App() {
     
-// Teste
+
 
 //         return(
 //           <NavigationContainer>
