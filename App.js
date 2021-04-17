@@ -1,16 +1,17 @@
-import * as React from 'react';
-import { View, Text, SafeAreaView, StatusBar, TouchableOpacity } from 'react-native';
+import React from 'react';
 
-import { createDrawerNavigator } from '@react-navigation/drawer';
 import { createStackNavigator } from '@react-navigation/stack'
 import { NavigationContainer } from '@react-navigation/native';
 
 import HomeScreen from './components/HomeScreen'
 import ListFuncionarios from './components/Funcionarios/ListFuncionarios'
 import FormFunc from './components/Funcionarios/FormFunc'
-import ListPacientes from './components/Pacientes/ListPacientes'
+import ListMedicos from './components/Medicos/ListaMedicos'
+import FormMedicos from './components/Medicos/FormMedicos'
+import DevArea from './components/Dev/DevArea'
 
 import { Button, Icon } from 'react-native-elements';
+import FuncsProvider from './components/Funcionarios/FuncContext';
 
 
 const Stack = createStackNavigator();
@@ -18,65 +19,51 @@ const Stack = createStackNavigator();
 export default function App() {
   
     return (  
+      <FuncsProvider.Provider>
         <NavigationContainer>
-          <Stack.Navigator 
-            initialRouteName="Home"
-        screenOptions={screenOptions}>
-        <Stack.Screen  
-          name="Home" 
-          component={HomeScreen}
-          options={({navigation}) => {
-            return{
-                title: "Modelo de Tela",
-                headerRight: () => (
-                  <Button type='clear' 
-                  onPress={() => navigation.navigate("Funcionarios")}
-                  icon={ <Icon name="add" size={25} color="#F2F4F8"/> } />)
-                }
-              }}
-              />
-            <Stack.Screen  
-              name="Funcionarios"
-              component={ListFuncionarios}
-                options={({navigation}) => {
-                  return{
-                      title: "Funcionários",
-                      headerRight: () => (
-                        <Button type='clear' 
-                        onPress={() => navigation.navigate("FormFunc")}
-                        icon={ <Icon name="add" size={25} color="#F2F4F8"/> } />)
-                      }
-                    }}
-              />
+          <Stack.Navigator initialRouteName="Home" screenOptions={screenOptions}>
+          
+          <Stack.Screen  
+            name="Home" 
+            component={HomeScreen}
+            options={({navigation}) => {
+              return{
+                  title: "SUS Digital",
+                  headerRight: () => (
+                    <Button type='clear' 
+                    title={"Area do Dev"}
+                    onPress={() => navigation.navigate("DevArea")}
+                    />)}}} />
+              
+            <Stack.Screen name="DevArea" component={DevArea} /> 
+
+
+            <Stack.Screen name="Funcionarios" component={ListFuncionarios}
+                options={({navigation}) => { return{ title: "Funcionários", headerRight: () => (
+                        <Button type='clear' onPress={() => navigation.navigate("FormFunc")}
+                        icon={ <Icon name="add" size={25} color="#F2F4F8"/> } />)}}}/> 
             
-            <Stack.Screen  
-              name="FormFunc"
-              component={FormFunc}
-              />
+            <Stack.Screen name="FormFunc" component={FormFunc}/> 
+
+
+            <Stack.Screen name="Medicos" component={ListMedicos}
+                options={({navigation}) => { return{ title: "Médicos", headerRight: () => (
+                        <Button type='clear' onPress={() => navigation.navigate("FormMedicos")}
+                        icon={ <Icon name="add" size={25} color="#F2F4F8"/> } />)}}}/> 
+            
+            <Stack.Screen name="FormMedicos" component={FormMedicos}/> 
     
-            <Stack.Screen  
-              name="Pacientes" 
-              component={ListPacientes} 
-              />
     
           </Stack.Navigator>
         </NavigationContainer>
-    
+      </FuncsProvider.Provider>
       );
     }
     
-    const screenOptions = {
-      headerStyle: {
-    backgroundColor: '#415A80',
-  },
+  const screenOptions = {
+  headerStyle: { backgroundColor: '#415A80'},
   headerTintColor: '#fff',
-  headerTitleStyle: {
-    fontWeight: 'bold',
-  },
-}
-
-
-
+  headerTitleStyle: { fontWeight: 'bold'} }
 
 // const opt = {
 //   headerLeft: () => (
