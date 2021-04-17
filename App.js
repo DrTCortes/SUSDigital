@@ -18,7 +18,7 @@ import ListPostos from './components/Postos/ListPostos'
 import FormPostos from './components/Postos/FormPostos'
 
 import ListPacientes from './components/Pacientes/ListPacientes'
-import fromPacientes from './components/Pacientes/FormPacientes'
+import FormPacientes from './components/Pacientes/FormPacientes'
 
 import DevArea from './components/Dev/DevArea'
 
@@ -83,7 +83,6 @@ export default function App() {
                 options={({navigation}) => { return{ title: "Pacientes", headerRight: () => (
                         <Button type='clear' onPress={() => navigation.navigate("FormPacientes")}
                         icon={ <Icon name="add" size={25} color="#F2F4F8"/> } />)}}}/> 
-
             <Stack.Screen name="FormPacientes" component={FormPacientes}/> 
 
     

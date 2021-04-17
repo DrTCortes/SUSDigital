@@ -7,19 +7,19 @@ export default [
     },
     {
         id: 2,
-        name: 'Maria Ferreira',
+        name: 'Psicologia',
         email: 'mariaferreira2019@gmail.com',
         avatarUrl: 'https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_1280.png',
     },
     {
         id: 3,
-        name: 'Alice Pacheco',
+        name: 'Pediatria',
         email: 'doremealice@gmail.com',
         avatarUrl: 'https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_1280.png',
     },
     {
         id: 4,
-        name: 'Fernando dos Santos',
+        name: 'Oftalmologia',
         email: 'dossantosfer@gmail.com',
         avatarUrl: 'https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_1280.png',
     },
