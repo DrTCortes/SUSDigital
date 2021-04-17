@@ -5,19 +5,11 @@ import medicos from './data'
 
 export default props => {
 
-    function confirUserDeletion(medicos) {
-        Alert.alert('Excluir Medico', 'Deseja excluir o Medico?',[
-          { 
-            text: 'Sim',
-            onPress() {
-                       console.warn('delete ' + medicos.id)	
-            }
-          },
-              {
-            text: 'Não'
-          }    
-        ])    
-    }
+    function confirmMedDeletion(func){
+        Alert.alert('Excluir funcionário?', 'Deseja excluir o funcionário?',[
+          { text: 'Sim'}, { text: 'Não' }
+        ])
+      }
 
     function getActions(medicos){
         return(
@@ -28,7 +20,7 @@ export default props => {
                     icon={<Icon name="edit" size={25} color="orange" />}
                 />
                 <Button
-                    onPress={() => confirmUserDeletion(medicos)}
+                    onPress={() => confirmMedDeletion(medicos)}
                     type="clear"
                     icon={<Icon name="delete" size={25} color="red" />}
                 />
@@ -58,7 +50,7 @@ export default props => {
                     icon={<Icon name="edit" size={15} color="orange" />}
                 />
                 <Button 
-                    onPress={() => {confirmUserDeletion(medicos)}}
+                    onPress={() => {confirmMedDeletion(medicos)}}
                     type="clear"
                     icon={<Icon name="delete" size={15} color="red"/>}
                 />                                                                       
