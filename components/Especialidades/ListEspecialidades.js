@@ -3,7 +3,7 @@ import { View, FlatList, Alert } from 'react-native';
 
 import dataFunc from './data'
 import { ListItem, Avatar, Button, Icon} from 'react-native-elements';
-import FuncsContext from './FuncContext';
+
   
 export default props => {
 
