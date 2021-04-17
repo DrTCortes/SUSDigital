@@ -75,7 +75,9 @@ export default function App() {
 //   const Drawer = createDrawerNavigator();
 
 //   export default function App() {
-   
+    
+// Teste
+
 //         return(
 //           <NavigationContainer>
 //           <Drawer.Navigator initialRouteName="Home">
