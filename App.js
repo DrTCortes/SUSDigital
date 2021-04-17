@@ -8,8 +8,9 @@ import ListFuncionarios from './components/Funcionarios/ListFuncionarios'
 import FormFunc from './components/Funcionarios/FormFunc'
 import ListMedicos from './components/Medicos/ListaMedicos'
 import FormMedicos from './components/Medicos/FormMedicos'
+import ListEspecialidades from './components/Especialidades/ListEspecialidades'
+import FormEspecialidades from './components/Especialidades/FormEspecialidades'
 import DevArea from './components/Dev/DevArea'
-import AreaDev from './components/Dev/AreaDev'
 
 import { Button, Icon } from 'react-native-elements';
 import FuncsProvider from './components/Funcionarios/FuncContext';
@@ -32,27 +33,15 @@ export default function App() {
                   title: "SUS Digital",
                   headerRight: () => (
                     <Button type='clear' 
-                    title={"Area do Dev"}                    
-                    onPress={() => navigation.navigate("AreaDev")}
-                    />)
-              }
-            }
-           } 
-          />
-
-        <Stack.Screen
-            name="AreaDev"
-            component={AreaDev}
-            options= {{
-                title: "Área do Desenvolvedor "
-            }}
-        />
-
-            {/* <Stack.Screen name="DevArea" component={DevArea} 
+                    title={"Area do Dev"}
+                    onPress={() => navigation.navigate("Especialidades")}
+                    />)}}} />
+              
+            <Stack.Screen name="DevArea" component={DevArea} 
               options={({navigation}) => { return{ title: "DevArea", headerRight: () => (
-              <Button type='clear' onPress={() => navigation.navigate("DevArea")}
+              <Button type='clear' onPress={() => navigation.navigate("Funcionarios")}
               icon={ <Icon name="edite" size={25} color="#F2F4F8"/> } />)}}}
-            />  */}
+            /> 
 
 
             <Stack.Screen name="Funcionarios" component={ListFuncionarios}
@@ -69,7 +58,16 @@ export default function App() {
                         icon={ <Icon name="add" size={25} color="#F2F4F8"/> } />)}}}/> 
             
             <Stack.Screen name="FormMedicos" component={FormMedicos}/> 
-    
+            
+            <Stack.Screen name="Especialidades" component={ListEspecialidades}
+                options={({navigation}) => { return{ title: "Especialidades", headerRight: () => (
+                        <Button type='clear' onPress={() => navigation.navigate("FormEspecialidades")}
+                        icon={ <Icon name="add" size={25} color="#F2F4F8"/> } />)}}}/> 
+            
+            <Stack.Screen name="FormEspecialidades" component={FormEspecialidades}/> 
+
+
+
     
           </Stack.Navigator>
         </NavigationContainer>
