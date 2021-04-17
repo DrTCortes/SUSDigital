@@ -88,29 +88,3 @@ export default function App() {
   headerStyle: { backgroundColor: '#415A80'},
   headerTintColor: '#fff',
   headerTitleStyle: { fontWeight: 'bold'} }
-
-
-
-// const opt = {
-//   headerLeft: () => (
-//     <TouchableOpacity onPress={navigation.openDrawer}>
-//       <Text style={{margin: 8}}>Esquerdo</Text>
-//     </TouchableOpacity>
-//   )
-//   };
-//   const Drawer = createDrawerNavigator();
-
-//   export default function App() {
-    
-
-
-//         return(
-//           <NavigationContainer>
-//           <Drawer.Navigator initialRouteName="Home">
-//             <Drawer.Screen options={opt} name="Home" component={HomeScreen} />
-//             <Drawer.Screen options={opt} name="Funcionarios" component={ListFuncionarios} />
-//           </Drawer.Navigator>
-//         </NavigationContainer>
- 
-//         );
-//     }

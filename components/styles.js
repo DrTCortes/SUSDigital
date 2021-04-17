@@ -14,7 +14,6 @@ export default StyleSheet.create({
       body: {
         justifyContent: 'space-around', 
         flexWrap: 'wrap',
-        flexDirection: 'row',
       },
       form :{
         padding: 10,
