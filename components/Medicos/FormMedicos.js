@@ -20,6 +20,13 @@ return (
            value={medicos.email} 
            style={Styles.input}          
         />
+        <Text>CRM</Text>
+        <TextInput            
+           onChangeText={email => setMedicos({...medicos, crm})} 
+           placeholder='Informe o CRM'
+           value={medicos.crm} 
+           style={Styles.input}          
+        />
         <Text>RG</Text>
         <TextInput            
            onChangeText={email => setMedicos({...medicos, rg})} 
