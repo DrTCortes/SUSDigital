@@ -3,7 +3,7 @@ import {StyleSheet} from 'react-native'
 export default StyleSheet.create({
     container: {
       flex: 1,
-        backgroundColor: '#fff',
+        backgroundColor: '#F2F4F8',
         alignItems: 'center',
         justifyContent: 'center',
       },
@@ -14,7 +14,6 @@ export default StyleSheet.create({
       body: {
         justifyContent: 'space-around', 
         flexWrap: 'wrap',
-        flexDirection: 'row',
       },
       form :{
         padding: 10,
@@ -25,6 +24,13 @@ export default StyleSheet.create({
         marginBottom: 10,
         borderRadius: 5,
         paddingHorizontal: 10,
+      },
+      button:{
+        margin: 4,
+        backgroundColor: '#FFF',
+        fontStyle: "none",
+        fontWeight: "bold",
+    
       },
       field: {
         width: 150,
