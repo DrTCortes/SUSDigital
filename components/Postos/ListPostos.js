@@ -7,46 +7,53 @@
   export default props => {
   
     
-    function confirmFuncDeletion(func){
-      Alert.alert('Excluir funcionário?', 'Deseja excluir o funcionário?',[
-        { text: 'Sim'}, { text: 'Não' }
-      ])
+    function confirmPostosDeletion(postos){
+      Alert.alert('Excluir Posto?', 'Deseja excluir o Posto?',[
+        { 
+          text: 'Sim',
+          onPress() {
+            console.warn('delete ' + medicos.id)	
+          }
+        },
+        {
+          text: 'Não'
+        }    
+      ]) 
     }
       
     function getAction(func){
       return(
         <>
           <Button
-            onPress={() => props.navigation.navigate('FormFunc', func)}
-            type='clear'
+            onPress={() => props.navigation.navigate('FormPostos', func)}
+            type='edit'
             icon={<Icon name='edit' size={25} color='orange'/>}
           />
           <Button
-            onPress={() => confirmFuncDeletion(func)}
-            type='clear'
+            onPress={() => confirmPostosDeletion(func)}
+            type='delete'
             icon={<Icon name='delete' size={25} color='red'/>}
           />
         </>
       )
     }
   
-    function getFuncItem({item: func}){
+    function getFuncItem({item: posto}){
       return(
-  
-      <ListItem   key={func.id} onPress={()=> props.navigation.navigate("FormFunc", func)} bottomDivider>
-        <Avatar tittle={func.name} rounded source={func.avatarUrl && { uri: func.avatarUrl }}/>
-        <ListItem.Content>
-            <ListItem.Title>{func.name}</ListItem.Title>
-            <ListItem.Subtitle>{func.endereco}</ListItem.Subtitle>
+        <ListItem key={posto.id} bottomDivider>
+          <Avatar tittle={posto.name} rounded source={posto.avatarUrl && { uri: posto.avatarUrl }}/>
+          <ListItem.Content>
+            <ListItem.Title>{posto.name}</ListItem.Title>
+            <ListItem.Subtitle>{posto.endereco}</ListItem.Subtitle>
           </ListItem.Content>
-            <View style={{flexDirection:'row'}}>{getAction(func)}</View>
-      </ListItem>
+          <View style={{flexDirection:'row'}}>{getAction(posto)}</View>
+        </ListItem>
   )}
   
   return(
     <View>
        <FlatList
-        keyExtractor={func => func.id.toString()}
+        keyExtractor={posto => posto.id.toString()}
         data={dataFunc}
         renderItem={getFuncItem}
         />
