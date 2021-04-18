@@ -36,7 +36,6 @@ export const UsersProvider = props => {
         return fn ? fn(state, action) : state
     }
 
-
     const [state, dispatch] = useReducer(reducer, initialState)
 
     return (

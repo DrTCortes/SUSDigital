@@ -32,4 +32,4 @@ export default [
         estado:'Bahia',
         cidade: 'Salvador',
     },
-]
+];

@@ -14,8 +14,8 @@ import FormMedicos from './components/Medicos/FormMedicos'
 import ListEspecialidades from './components/Especialidades/ListEspecialidades'
 import FormEspecialidades from './components/Especialidades/FormEspecialidades'
 
-import ListPostos from './components/Postos/ListPostos'
-import FormPostos from './components/Postos/FormPostos'
+import ListPostos from './components/Postos/views/ListPostos'
+import FormPostos from './components/Postos/views/FormPostos'
 
 import ListPacientes from './components/Pacientes/ListPacientes'
 import FormPacientes from './components/Pacientes/FormPacientes'
