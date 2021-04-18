@@ -28,9 +28,23 @@ export default ({route, navigation}) => {
           value={postos.especialidade}
           style={Styles.input} 
         />
+        <Text>Estado</Text>
+        <TextInput 
+          onChangeText={estado => setPostos({...postos, estado})}
+          placeholder="Informe a especialidade"
+          value={postos.estado}
+          style={Styles.input} 
+          />
+           <Text>Cidade</Text>
+        <TextInput 
+          onChangeText={cidade => setPostos({...postos, cidade})}
+          placeholder="Informe a especialidade"
+          value={postos.cidade}
+          style={Styles.input} 
+          />
         <Button
         title="Salvar"
-        onPress={() => {navigation.goBack()}} // é so jogar no data né?
+        onPress={() => {navigation.goBack()}} 
         />
     </View>
   )

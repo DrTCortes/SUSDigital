@@ -45,6 +45,7 @@
           <ListItem.Content>
             <ListItem.Title>{posto.name}</ListItem.Title>
             <ListItem.Subtitle>{posto.endereco}</ListItem.Subtitle>
+            <ListItem.Subtitle>{posto.especialidade}</ListItem.Subtitle>
           </ListItem.Content>
           <View style={{flexDirection:'row'}}>{getAction(posto)}</View>
         </ListItem>
