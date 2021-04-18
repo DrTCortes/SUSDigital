@@ -1,12 +1,12 @@
 import React, {useContext} from 'react';
 import { StyleSheet, View, FlatList, Alert } from 'react-native';
 
-import { ListItem, Avatar, Button, Icon} from 'react-native-elements';
+import { Button} from 'react-native-elements';
 import Styles from '../styles';
   
 export default props => {
 return(
-  <View style={[Styles.form, {margin: 1}]}>
+  <View style={Styles.form}>
     <Button style={Styles.button}  type='outline' title={"Funcionarios"} onPress={()=>{ props.navigation.navigate("Funcionarios")}}/>
     <Button style={Styles.button}  type='outline' title={"Médicos"} onPress={()=>{ props.navigation.navigate("Medicos")}}/>
     <Button style={Styles.button}  type='outline' title={"Especialidades"} onPress={()=>{ props.navigation.navigate("Especialidades")}}/>

@@ -28,7 +28,6 @@ export default StyleSheet.create({
       button:{
         margin: 4,
         backgroundColor: '#FFF',
-        fontStyle: "none",
         fontWeight: "bold",
     
       },
