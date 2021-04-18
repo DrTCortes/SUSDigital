@@ -17,7 +17,7 @@ export default props => {
     return(
       <>
         <Button
-          onPress={() => props.navigation.navigate('FormEspecialidades', Espec)}
+          onPress={() => props.navigation.navigate('Dados da Especialidade', Espec)}
           type='clear'
           icon={<Icon name='edit' size={25} color='orange'/>}
         />
@@ -33,7 +33,7 @@ export default props => {
   function getEspecItem({item: Espec}){
     return(
 
-    <ListItem   key={Espec.id} onPress={()=> props.navigation.navigate("FormEspecialidades", Espec)} bottomDivider>
+    <ListItem   key={Espec.id} onPress={()=> props.navigation.navigate("Dados da Especialidade", Espec)} bottomDivider>
       <Avatar tittle={Espec.name} rounded source={Espec.avatarUrl && { uri: Espec.avatarUrl }}/>
       <ListItem.Content>
           <ListItem.Title>{Espec.name}</ListItem.Title>

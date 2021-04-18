@@ -61,9 +61,9 @@ export default function App() {
             
             <Stack.Screen name="Especialidades" component={ListEspecialidades}
                 options={({navigation}) => { return{ title: "Especialidades", headerRight: () => (
-                        <Button type='clear' onPress={() => navigation.navigate("FormEspecialidades")}
+                        <Button type='clear' onPress={() => navigation.navigate("Dados da Especialidade")}
                         icon={ <Icon name="add" size={25} color="#F2F4F8"/> } />)}}}/> 
-            <Stack.Screen name="FormEspecialidades" component={FormEspecialidades}/> 
+            <Stack.Screen name="Dados da Especialidade" component={FormEspecialidades}/> 
 
             <Stack.Screen name="Postos" component={ListPostos}
                 options={({navigation}) => { return{ title: "Postos", headerRight: () => (
