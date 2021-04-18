@@ -20,7 +20,7 @@ export default ({route, navigation}) => {
           value={func.descricao}
           style={Styles.input}
         />
-        <Text>Url do Avdatar</Text>
+        <Text>Url do Avatar</Text>
         <TextInput 
           onChangeText={avatarUrl => setFunc({...func, avatarUrl})}
           placeholder="Informe a Url do avatar"
