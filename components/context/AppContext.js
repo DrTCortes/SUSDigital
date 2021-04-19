@@ -1,5 +1,5 @@
 import React, { createContext, useReducer } from 'react'
-import users from '../data/users'
+import users from '../Funcionarios/data/users'
 
 const initialState = { users }
 const UsersContext = createContext({})

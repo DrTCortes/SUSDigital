@@ -3,9 +3,9 @@ import React from 'react';
 import { createStackNavigator, HeaderTitle } from '@react-navigation/stack';
 import { NavigationContainer } from '@react-navigation/native';
 
-import HomeScreen from './components/HomeScreen';
+import HomeScreen from './components/HomeScreen/HomeScreen';
 
-import ListFuncionarios from './components/Funcionarios/views/UserList';
+import ListFuncionarios from './components/Funcionarios/views/ListFunc';
 import FormFunc from './components/Funcionarios/views/FormFunc';
 
 import ListMedicos from './components/Medicos/ListMedicos'
@@ -23,7 +23,7 @@ import FormPacientes from './components/Pacientes/FormPacientes'
 import DevArea from './components/Dev/DevArea'
 
 import { Button, Icon } from 'react-native-elements';
-import { UsersProvider } from './components/Funcionarios/context/UsersContext';
+import { UsersProvider } from './components/context/AppContext';
 
 
 const Stack = createStackNavigator();
@@ -45,13 +45,11 @@ export default props => {
 
             <Stack.Screen name="DevArea" component={DevArea}/>
 
-
             <Stack.Screen name="Funcionarios" component={ListFuncionarios}
                 options={({navigation}) => { return{ title: "Funcionários", headerRight: () => (
                         <Button type='clear' onPress={() => navigation.navigate("FormFunc")}
                         icon={ <Icon name="add" size={25} color="#F2F4F8"/> } />)}}}/>
             <Stack.Screen name="FormFunc" component={FormFunc}/>
-
 
             <Stack.Screen name="Medicos" component={ListMedicos}
                 options={({navigation}) => { return{ title: "Médicos", headerRight: () => (
@@ -76,7 +74,6 @@ export default props => {
                         <Button type='clear' onPress={() => navigation.navigate("FormPacientes")}
                         icon={ <Icon name="add" size={25} color="#F2F4F8"/> } />)}}}/> 
             <Stack.Screen name="FormPacientes" component={FormPacientes}/>
-
 
           </Stack.Navigator>
         </NavigationContainer>

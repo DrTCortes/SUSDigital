@@ -1,28 +1,25 @@
 import React, { useContext } from 'react'
 import { View, FlatList, Alert } from 'react-native'
 import { ListItem, Button, Icon, Avatar } from 'react-native-elements'
-import UsersContext from '../context/UsersContext'
+import Context from '../../context/AppContext'
 
 export default props => {
 
-    const { state, dispatch } = useContext(UsersContext)
+    const { state, dispatch } = useContext(Context)
 
     function confirmUserDeletion(user) {
         Alert.alert('Excluir Usuário', 'Deseja excluir o usuário?', [
-            {
-                text: 'Sim',
+            { text: 'Sim',
                 onPress() {
                     dispatch({
                         type: 'deleteUser',
                         payload: user,
-                    })
-                }
+                    })}
             },
             {
                 text: 'Não'
             }
-        ])
-    }
+        ])}
 
     function getActions(user) {
         return (
@@ -43,11 +40,8 @@ export default props => {
 
     function getUserItem({ item: user }) {
         return (
-            <ListItem
-                key={user.id}
-                bottomDivider
-                rightElement={getActions(user)}
-                onPress={() => props.navigation.navigate('UserForm', user)}>
+            <ListItem key={user.id} bottomDivider rightElement={getActions(user)}
+                onPress={() => props.navigation.navigate('FormFunc', user)}>
                     <Avatar tittle={user.name} rounded source={user.avatarUrl && { uri: user.avatarUrl }}/>
                     <ListItem.Content>
                         <ListItem.Title>{user.name}</ListItem.Title>
@@ -55,25 +49,14 @@ export default props => {
                     </ListItem.Content>
                         <View style={{flexDirection:'row'}}>{getActions(user)}</View>
             </ListItem>
-            // <ListItem
-            //     leftAvatar={{source: {uri: user.avatarUrl}}}
-            //     key={user.id}
-            //     title={user.name}
-            //     subtitle={user.email}
-            //     bottomDivider
-            //     rightElement={getActions(user)}
-            //     onPress={() => props.navigation.navigate('UserForm', user)}
-            // />
-        )
-    }
+        )}
 
     return (
         <View>
             <FlatList
                 keyExtractor={user => user.id.toString()}
                 data={state.users}
-                renderItem={getUserItem}
-            />
+                renderItem={ getUserItem } />
         </View>
     )
 }
