@@ -1,8 +1,9 @@
 import React, { createContext, useReducer } from 'react'
 import funcs from '../Funcionarios/data'
 import especs from '../Especialidades/data'
+import pacientes from '../Pacientes/data'
 
-const initialState = { funcs, especs }
+const initialState = { funcs, especs, pacientes }
 const UsersContext = createContext({})
 
 const actions = {
@@ -52,7 +53,29 @@ const actions = {
             ...state,
             especs: state.especs.filter(u => u.id !== espec.id)
         }
-    }
+    },
+    createPaciente(state, action) {
+        const paciente = action.payload
+        paciente.id = Math.random()
+        return {
+            ...state,
+            pacientes: [...state.pacientes, paciente],
+        }
+    },
+    updatePaciente(state, action) {
+        const updated = action.payload
+        return {
+            ...state,
+            pacientes: state.pacientes.map(u => u.id === updated.id ? updated : u)
+        }
+    },
+    deletePaciente(state, action) {
+        const paciente = action.payload
+        return {
+            ...state,
+            pacientes: state.pacientes.filter(u => u.id !== paciente.id)
+        }
+    },
     
 }
 

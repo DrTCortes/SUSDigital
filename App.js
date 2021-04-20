@@ -20,8 +20,8 @@ import FormEspecialidades from './components/Especialidades/views/FormEspecialid
 import ListPostos from './components/Postos/ListPostos'
 import FormPostos from './components/Postos/FormPostos'
 
-import ListPacientes from './components/Pacientes/ListPacientes'
-import FormPacientes from './components/Pacientes/FormPacientes'
+import ListPacientes from './components/Pacientes/views/ListPacientes'
+import FormPacientes from './components/Pacientes/views/FormPacientes'
 
 import DevArea from './components/Dev/DevArea'
 
