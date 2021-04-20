@@ -7,13 +7,13 @@ export default props => {
 
     const { state, dispatch } = useContext(Context)
 
-    function confirmFuncDeletion(func) {
+    function confirmEspecDeletion(espec) {
         Alert.alert('Excluir Usuário', 'Deseja excluir o usuário?', [
             { text: 'Sim',
                 onPress() {
                     dispatch({
-                        type: 'deleteFunc',
-                        payload: func,
+                        type: 'deleteEspec',
+                        payload: espec,
                     })}
             },
             {
@@ -21,16 +21,16 @@ export default props => {
             }
         ])}
 
-    function getActions(func) {
+    function getActions(espec) {
         return (
             <>
                 <Button
-                    onPress={() => props.navigation.navigate('FormFunc', func)}
+                    onPress={() => props.navigation.navigate('Dados da Especialidade', espec)}
                     type="clear"
                     icon={<Icon name="edit" size={25} color="orange" />}
                 />
                 <Button
-                    onPress={() => dispatch({type: 'deleteFunc', payload: func})}
+                    onPress={() => dispatch({type: 'deleteEspec', payload: espec})}
                     type="clear"
                     icon={<Icon name="delete" size={25} color="red" />}
                 />
@@ -38,25 +38,25 @@ export default props => {
         )
     }
 
-    function getFuncItem({ item: func }) {
+    function getEspecItem({ item: espec }) {
         return (
-            <ListItem key={func.id} bottomDivider rightElement={getActions(func)}
-                onPress={() => props.navigation.navigate('FormFunc', func)}>
-                    <Avatar tittle={func.name} rounded source={func.avatarUrl && { uri: func.avatarUrl }}/>
+            <ListItem key={espec.id} bottomDivider rightElement={getActions(espec)}
+                onPress={() => props.navigation.navigate('Dados da Especialidade', espec)}>
+                    <Avatar tittle={espec.name} rounded source={espec.avatarUrl && { uri: espec.avatarUrl }}/>
                     <ListItem.Content>
-                        <ListItem.Title>{func.name}</ListItem.Title>
-                        <ListItem.Subtitle>{func.email}</ListItem.Subtitle>
+                        <ListItem.Title>{espec.name}</ListItem.Title>
+                        <ListItem.Subtitle>{espec.email}</ListItem.Subtitle>
                     </ListItem.Content>
-                        <View style={{flexDirection:'row'}}>{getActions(func)}</View>
+                        <View style={{flexDirection:'row'}}>{getActions(espec)}</View>
             </ListItem>
         )}
 
     return (
         <View>
             <FlatList
-                keyExtractor={func => func.id.toString()}
-                data={state.funcs}
-                renderItem={ getFuncItem } />
+                keyExtractor={espec => espec.id.toString()}
+                data={state.especs}
+                renderItem={ getEspecItem } />
         </View>
     )
 }

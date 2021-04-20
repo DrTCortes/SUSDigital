@@ -10,21 +10,35 @@ export default props => {
   
   const { state, dispatch } = useContext(Context)
 
-  function getUserItem({ item: user }) {
+  
+  function getFuncItem({ item: func }) {
     return (
         <ListItem
-            key={user.id}
+            key={func.id}
             bottomDivider
             onPress={() => {}}>
-                <Avatar tittle={user.name} rounded source={user.avatarUrl && { uri: user.avatarUrl }}/>
+                <Avatar tittle={func.name} rounded source={func.avatarUrl && { uri: func.avatarUrl }}/>
                 <ListItem.Content>
-                    <ListItem.Title>{user.name}</ListItem.Title>
-                    <ListItem.Subtitle>{user.email}</ListItem.Subtitle>
+                    <ListItem.Title>{func.name}</ListItem.Title>
+                    <ListItem.Subtitle>{func.email}</ListItem.Subtitle>
                 </ListItem.Content>
         </ListItem>
     )
 }
-
+  function getEspecItem({ item: espec }) {
+    return (
+        <ListItem
+            key={espec.id}
+            bottomDivider
+            onPress={() => {}}>
+                <Avatar tittle={espec.name} rounded source={espec.avatarUrl && { uri: espec.avatarUrl }}/>
+                <ListItem.Content>
+                    <ListItem.Title>{espec.name}</ListItem.Title>
+                    <ListItem.Subtitle>{espec.email}</ListItem.Subtitle>
+                </ListItem.Content>
+        </ListItem>
+    )
+}
   return (
     <SafeAreaView style={Styles.container}>
       <StatusBar animated={true} backgroundColor="#606060"/>
@@ -33,9 +47,14 @@ export default props => {
       
 
       <FlatList
-                keyExtractor={user => user.id.toString()}
-                data={state.users}
-                renderItem={getUserItem}
+                keyExtractor={func => func.id.toString()}
+                data={state.funcs}
+                renderItem={getFuncItem}
+      />
+      <FlatList
+                keyExtractor={espec => espec.id.toString()}
+                data={state.especs}
+                renderItem={getEspecItem}
       />
 
       </View>

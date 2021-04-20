@@ -1,32 +1,59 @@
 import React, { createContext, useReducer } from 'react'
-import users from '../Funcionarios/data/users'
+import funcs from '../Funcionarios/data'
+import especs from '../Especialidades/data'
 
-const initialState = { users }
+const initialState = { funcs, especs }
 const UsersContext = createContext({})
 
 const actions = {
-    createUser(state, action) {
-        const user = action.payload
-        user.id = Math.random()
+    createFunc(state, action) {
+        const func = action.payload
+        func.id = Math.random()
         return {
             ...state,
-            users: [...state.users, user],
+            funcs: [...state.funcs, func],
         }
     },
-    updateUser(state, action) {
+    updateFunc(state, action) {
         const updated = action.payload
         return {
             ...state,
-            users: state.users.map(u => u.id === updated.id ? updated : u)
+            funcs: state.funcs.map(u => u.id === updated.id ? updated : u)
         }
     },
-    deleteUser(state, action) {
-        const user = action.payload
+    deleteFunc(state, action) {
+        const func = action.payload
         return {
             ...state,
-            users: state.users.filter(u => u.id !== user.id)
+            funcs: state.funcs.filter(u => u.id !== func.id)
+        }
+    },
+
+    // Espec
+
+    createEspec(state, action) {
+        const espec = action.payload
+        espec.id = Math.random()
+        return {
+            ...state,
+            especs: [...state.especs, espec],
+        }
+    },
+    updateEspec(state, action) {
+        const updated = action.payload
+        return {
+            ...state,
+            especs: state.especs.map(u => u.id === updated.id ? updated : u)
+        }
+    },
+    deleteEspec(state, action) {
+        const espec = action.payload
+        return {
+            ...state,
+            especs: state.especs.filter(u => u.id !== espec.id)
         }
     }
+    
 }
 
 export const UsersProvider = props => {

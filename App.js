@@ -14,8 +14,8 @@ import FormFunc from './components/Funcionarios/views/FormFunc';
 import ListMedicos from './components/Medicos/ListMedicos'
 import FormMedicos from './components/Medicos/FormMedicos'
 
-import ListEspecialidades from './components/Especialidades/ListEspecialidades'
-import FormEspecialidades from './components/Especialidades/FormEspecialidades'
+import ListEspecialidades from './components/Especialidades/views/ListEspecialidades'
+import FormEspecialidades from './components/Especialidades/views/FormEspecialidades'
 
 import ListPostos from './components/Postos/ListPostos'
 import FormPostos from './components/Postos/FormPostos'
