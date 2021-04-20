@@ -7,6 +7,7 @@ export default props => {
 
     const { state, dispatch } = useContext(Context)
 
+    //Função para exibir um modal de confirmação de deletar a especialidade
     function confirmEspecDeletion(espec) {
         Alert.alert('Excluir Usuário', 'Deseja excluir o usuário?', [
             { text: 'Sim',
@@ -21,14 +22,18 @@ export default props => {
             }
         ])}
 
+    //Função onde ficam os botões de editar e excluir especialidade
     function getActions(espec) {
         return (
             <>
+                {/* Botão para editar */}
                 <Button
                     onPress={() => props.navigation.navigate('Dados da Especialidade', espec)}
                     type="clear"
                     icon={<Icon name="edit" size={25} color="orange" />}
                 />
+
+                {/* Botão para excluir */}
                 <Button
                     onPress={() => dispatch({type: 'deleteEspec', payload: espec})}
                     type="clear"
