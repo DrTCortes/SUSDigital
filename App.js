@@ -5,6 +5,9 @@ import { NavigationContainer } from '@react-navigation/native';
 
 import HomeScreen from './components/HomeScreen/HomeScreen';
 
+import ListCadastro from './components/HomeScreen/ListCadastro';
+import FormCadastro from './components/HomeScreen/FormCadastro';
+
 import ListFuncionarios from './components/Funcionarios/views/ListFunc';
 import FormFunc from './components/Funcionarios/views/FormFunc';
 
@@ -44,6 +47,12 @@ export default props => {
                   }}} />
 
             <Stack.Screen name="DevArea" component={DevArea}/>
+
+            <Stack.Screen name="Cadastro" component={ListCadastro}
+                options={({navigation}) => { return{ title: "Cadastro", headerRight: () => (
+                        <Button type='clear' onPress={() => navigation.navigate("FormCadastro")}
+                        icon={ <Icon name="add" size={25} color="#F2F4F8"/> } />)}}}/>
+            <Stack.Screen name="FormCadastro" component={FormCadastro}/>
 
             <Stack.Screen name="Funcionarios" component={ListFuncionarios}
                 options={({navigation}) => { return{ title: "Funcionários", headerRight: () => (
