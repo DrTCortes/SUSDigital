@@ -1,7 +1,7 @@
 export default [
     {
         id: 1,
-        name: 'Cardiologia',
+        name: 'Cardiologia ',
         descricao: 'Profissionais especializados em cuidar do coração.',
         avatarUrl: 'https://image.flaticon.com/icons/png/512/1863/1863349.png',
     },
