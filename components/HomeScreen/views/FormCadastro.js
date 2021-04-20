@@ -1,40 +1,40 @@
 import React, { useState, useContext } from 'react'
 import { Text, View, TextInput, StyleSheet, Button } from 'react-native'
-import UsersContext from '../context/AppContext'
+import Context from '../../context/AppContext'
 
 export default ({route, navigation}) => {
-    const [user, setUser] = useState(route.params ? route.params : {})
-    const { dispatch } = useContext(UsersContext)
+    const [func, setFunc] = useState(route.params ? route.params : {})
+    const { dispatch } = useContext(Context)
 
     return (
         <View style={style.form}>
             <Text>Nome</Text>
             <TextInput
                 style={style.input}
-                onChangeText={name => setUser({...user, name})}
+                onChangeText={name => setFunc({...func, name})}
                 placeholder="Informe o Nome"
-                value={user.name}
+                value={func.name}
             />
             <Text>Email</Text>
             <TextInput
                 style={style.input}
-                onChangeText={email => setUser({...user, email})}
+                onChangeText={email => setFunc({...func, email})}
                 placeholder="Informe o E-mail"
-                value={user.email}
+                value={func.email}
             />
             <Text>URL do Avatar</Text>
             <TextInput
                 style={style.input}
-                onChangeText={avatarUrl => setUser({...user, avatarUrl})}
+                onChangeText={avatarUrl => setFunc({...func, avatarUrl})}
                 placeholder="Informe a URL do Avatar"
-                value={user.avatarUrl}
+                value={func.avatarUrl}
             />
             <Button
                 title="Salvar"
                 onPress={() => {
                     dispatch({
-                        type: user.id ? 'updateUser' : 'createUser',
-                        payload: user,
+                        type: func.id ? 'updateFunc' : 'createFunc',
+                        payload: func,
                     })
                     navigation.goBack()
                 }}

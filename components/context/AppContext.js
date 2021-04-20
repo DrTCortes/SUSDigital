@@ -1,8 +1,9 @@
 import React, { createContext, useReducer } from 'react'
 import funcs from '../Funcionarios/data'
 import especs from '../Especialidades/data'
+import cadastros from '../HomeScreen/data'
 
-const initialState = { funcs, especs }
+const initialState = { funcs, especs, cadastros }
 const UsersContext = createContext({})
 
 const actions = {
@@ -11,21 +12,21 @@ const actions = {
         func.id = Math.random()
         return {
             ...state,
-            funcs: [...state.funcs, func],
+            cadastros: [...state.cadastros, func],
         }
     },
     updateFunc(state, action) {
         const updated = action.payload
         return {
             ...state,
-            funcs: state.funcs.map(u => u.id === updated.id ? updated : u)
+            cadastros: state.cadastros.map(u => u.id === updated.id ? updated : u)
         }
     },
     deleteFunc(state, action) {
         const func = action.payload
         return {
             ...state,
-            funcs: state.funcs.filter(u => u.id !== func.id)
+            cadastros: state.cadastros.filter(u => u.id !== func.id)
         }
     },
 
