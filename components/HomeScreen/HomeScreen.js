@@ -51,11 +51,7 @@ export default props => {
                 data={state.funcs}
                 renderItem={getFuncItem}
       />
-      <FlatList
-                keyExtractor={espec => espec.id.toString()}
-                data={state.especs}
-                renderItem={getEspecItem}
-      />
+
 
       </View>
 
