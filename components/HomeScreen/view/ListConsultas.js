@@ -7,13 +7,13 @@ export default props => {
 
     const { state, dispatch } = useContext(AppContext)
 
-    function confirmFuncDeletion(func) {
+    function confirmConsultaDeletion(consulta) {
         Alert.alert('Excluir Usuário', 'Deseja excluir o usuário?', [
             { text: 'Sim',
                 onPress() {
                     dispatch({
-                        type: 'deleteFunc',
-                        payload: func,
+                        type: 'deleteConsulta',
+                        payload: consulta,
                     })}
             },
             {
@@ -21,16 +21,16 @@ export default props => {
             }
         ])}
 
-    function getActions(func) {
+    function getActions(consulta) {
         return (
             <>
                 <Button
-                    onPress={() => props.navigation.navigate('FormFunc', func)}
+                    onPress={() => props.navigation.navigate('FormConsultas', consulta)}
                     type="clear"
                     icon={<Icon name="edit" size={25} color="orange" />}
                 />
                 <Button
-                    onPress={() => dispatch({type: 'deleteFunc', payload: func})}
+                    onPress={() => dispatch({type: 'deleteConsulta', payload: consulta})}
                     type="clear"
                     icon={<Icon name="delete" size={25} color="red" />}
                 />
@@ -38,25 +38,25 @@ export default props => {
         )
     }
 
-    function getFuncItem({ item: func }) {
+    function getConsultaItem({ item: consulta }) {
         return (
-            <ListItem key={func.id} bottomDivider rightElement={getActions(func)}
-                onPress={() => props.navigation.navigate('FormFunc', func)}>
-                    <Avatar tittle={func.name} rounded source={func.avatarUrl && { uri: func.avatarUrl }}/>
+            <ListItem key={consulta.c_id} bottomDivider rightElement={getActions(consulta)}
+                onPress={() => props.navigation.navigate('FormConsultas', consulta)}>
+                    <Avatar tittle={consulta.c_id} rounded source={consulta.c_avatarUrl && { uri: consulta.c_avatarUrl }}/>
                     <ListItem.Content>
-                        <ListItem.Title>{func.name}</ListItem.Title>
-                        <ListItem.Subtitle>{func.email}</ListItem.Subtitle>
+                        <ListItem.Title>{consulta.c_func}</ListItem.Title>
+                        <ListItem.Subtitle>{consulta.c_paciente}</ListItem.Subtitle>
                     </ListItem.Content>
-                        <View style={{flexDirection:'row'}}>{getActions(func)}</View>
+                        <View style={{flexDirection:'row'}}>{getActions(consulta)}</View>
             </ListItem>
         )}
 
     return (
         <View>
             <FlatList
-                keyExtractor={func => func.id.toString()}
-                data={state.funcs}
-                renderItem={ getFuncItem } />
+                keyExtractor={consulta => consulta.c_id.toString()}
+                data={state.consultas}
+                renderItem={ getConsultaItem } />
         </View>
     )
 }

@@ -1,65 +1,45 @@
 import React, {useContext} from 'react';
-import { View, TextInput, SafeAreaView, StatusBar, FlatList, Alert } from 'react-native';
+import { View, TextInput, SafeAreaView, StatusBar, FlatList, Alert, Text } from 'react-native';
 import { ListItem, Button, Icon, Avatar } from 'react-native-elements'
 import Styles from '../styles';
-import Context from '../context/AppContext'
+import AppContext from '../context/AppContext'
 
 
 
 export default props => {
   
-  const { state, dispatch } = useContext(Context)
+  const { state, dispatch } = useContext(AppContext)
 
+  function getConsultaItem({ item: consulta }) {
+    return (
+        <ListItem key={consulta.c_id} bottomDivider
+        onPress={() => props.navigation.navigate('FormConsultas', consulta)}>
+            <Avatar tittle={consulta.c_id} rounded source={consulta.c_avatarUrl && { uri: consulta.c_avatarUrl }}/>
+            <ListItem.Content>
+                <ListItem.Title>{consulta.c_paciente}</ListItem.Title>
+                <ListItem.Subtitle>{consulta.c_especialidade} </ListItem.Subtitle>
+            </ListItem.Content>
+            <ListItem.Content>
+                <ListItem.Subtitle>{consulta.c_posto}</ListItem.Subtitle>
+                <ListItem.Subtitle>Dr. {consulta.c_medico}</ListItem.Subtitle>
+            </ListItem.Content>
+        </ListItem>
+    )}
   
-  function getFuncItem({ item: func }) {
-    return (
-        <ListItem
-            key={func.id}
-            bottomDivider
-            onPress={() => {}}>
-                <Avatar tittle={func.name} rounded source={func.avatarUrl && { uri: func.avatarUrl }}/>
-                <ListItem.Content>
-                    <ListItem.Title>{func.name}</ListItem.Title>
-                    <ListItem.Subtitle>{func.email}</ListItem.Subtitle>
-                </ListItem.Content>
-        </ListItem>
-    )
-}
-  function getEspecItem({ item: espec }) {
-    return (
-        <ListItem
-            key={espec.id}
-            bottomDivider
-            onPress={() => {}}>
-                <Avatar tittle={espec.name} rounded source={espec.avatarUrl && { uri: espec.avatarUrl }}/>
-                <ListItem.Content>
-                    <ListItem.Title>{espec.name}</ListItem.Title>
-                    <ListItem.Subtitle>{espec.email}</ListItem.Subtitle>
-                </ListItem.Content>
-        </ListItem>
-    )
-}
   return (
     <SafeAreaView style={Styles.container}>
       <StatusBar animated={true} backgroundColor="#606060"/>
-      <View style={ {flex: 9, height: '90%'}}>
-
-      
+      <View style={ {flex: 9}}>
 
       <FlatList
-                keyExtractor={func => func.id.toString()}
-                data={state.funcs}
-                renderItem={getFuncItem}
-      />
-      <FlatList
-                keyExtractor={espec => espec.id.toString()}
-                data={state.especs}
-                renderItem={getEspecItem}
+                keyExtractor={consulta => consulta.c_id.toString()}
+                data={state.consultas}
+                renderItem={getConsultaItem}
       />
 
       </View>
 
-      <View style={{flex: 1}}>
+      <View style={{flex: 1, alignItems: 'center'}}>
         <Button style={[Styles.button, {width: 300}]} type="outline" title="Área do Desenvolvedor" 
         onPress={()=>{ props.navigation.navigate("DevArea")}} />
       </View>

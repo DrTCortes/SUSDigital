@@ -1,5 +1,6 @@
 import React, { useState, useContext } from 'react'
 import { Text, View, TextInput, StyleSheet, Button } from 'react-native'
+import Styles from '../../styles'
 import Context from '../../context/AppContext'
 
 export default ({route, navigation}) => {
@@ -7,36 +8,37 @@ export default ({route, navigation}) => {
     const { dispatch } = useContext(Context)
 
     return (
-        <View style={style.form}>
+        <View style={Styles.form}>
             <Text>Nome</Text>
             <TextInput
-                style={style.input}
+                style={Styles.input}
                 onChangeText={name => setPosto({...posto, name})}
                 placeholder="Informe o Nome do Posto"
                 value={posto.name}
             />
             <Text>Endereço</Text>
             <TextInput
-                style={style.input}
+                style={Styles.input}
                 onChangeText={endereco => setPosto({...posto, endereco})}
                 placeholder="Informe o Endereço"
                 value={posto.endereco}
             />
             <Text>Estado</Text>
             <TextInput
-                style={style.input}
+                style={Styles.input}
                 onChangeText={estado => setPosto({...posto, estado})}
                 placeholder="Informe o Estado"
                 value={posto.estado}
             />
             <Text>Cidade</Text>
             <TextInput
-                style={style.input}
+                style={Styles.input}
                 onChangeText={cidade => setPosto({...posto, cidade})}
                 placeholder="Informe a Cidade"
                 value={posto.cidade}
             />
             <Button
+                style={Styles.button}  type='outline'
                 title="Salvar"
                 onPress={() => {
                     dispatch({
@@ -49,15 +51,3 @@ export default ({route, navigation}) => {
         </View>
     )
 }
-
-const style = StyleSheet.create({
-    form: {
-        padding: 12
-    },
-    input: {
-        height: 40,
-        borderColor: 'gray',
-        borderWidth: 1,
-        marginBottom: 15,
-    }
-})
