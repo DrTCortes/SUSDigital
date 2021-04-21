@@ -42,7 +42,7 @@ export default ({route, navigation}) => {
         )}
 
     return (
-        <View>
+        <View style={Styles.container}>
 
             <Text style={Styles.text}>Selecione o funcionário: </Text>   
             <FlatList
