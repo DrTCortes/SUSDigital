@@ -136,7 +136,7 @@ const actions = {
     },
     createConsulta(state, action) {
         const consulta = action.payload
-        consulta.id = Math.random()
+        consulta.c_id = Math.random()
         return {
             ...state,
             consultas: [...state.consultas, consulta],

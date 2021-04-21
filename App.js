@@ -7,6 +7,7 @@ import HomeScreen from './components/HomeScreen/HomeScreen';
 
 import ListConsultas from './components/HomeScreen/view/ListConsultas';
 import FormConsultas from './components/HomeScreen/view/FormConsultas';
+import SelectConsulta from './components/HomeScreen/view/SelectConsulta';
 
 import ListFuncionarios from './components/Funcionarios/views/ListFunc';
 import FormFunc from './components/Funcionarios/views/FormFunc';
@@ -48,6 +49,8 @@ export default props => {
                         <Button type='clear' onPress={() => navigation.navigate("FormConsultas")}
                         icon={ <Icon name="add" size={25} color="#F2F4F8"/> } />)}}}/>
             <Stack.Screen name="FormConsultas" component={FormConsultas}/>
+            <Stack.Screen name="SelectConsulta" component={SelectConsulta}/>
+            
 
             <Stack.Screen name="DevArea" component={DevArea}/>
 

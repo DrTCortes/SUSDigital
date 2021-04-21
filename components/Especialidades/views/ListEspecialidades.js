@@ -50,7 +50,7 @@ export default props => {
                     <Avatar tittle={espec.name} rounded source={espec.avatarUrl && { uri: espec.avatarUrl }}/>
                     <ListItem.Content>
                         <ListItem.Title>{espec.name}</ListItem.Title>
-                        <ListItem.Subtitle>{espec.email}</ListItem.Subtitle>
+                        <ListItem.Subtitle>{espec.descricao}</ListItem.Subtitle>
                     </ListItem.Content>
                         <View style={{flexDirection:'row'}}>{getActions(espec)}</View>
             </ListItem>

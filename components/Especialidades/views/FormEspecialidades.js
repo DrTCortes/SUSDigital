@@ -1,5 +1,6 @@
 import React, { useState, useContext } from 'react'
 import { Text, View, TextInput, StyleSheet, Button } from 'react-native'
+import Styles from '../../styles'
 import AppContext from '../../context/AppContext'
 
 export default ({route, navigation}) => {
@@ -8,26 +9,26 @@ export default ({route, navigation}) => {
 
     return (
         <View style={style.form}>
-            <Text>Nome</Text>
-            <TextInput
-                style={style.input}
+            <Text>Name</Text>
+            <TextInput 
                 onChangeText={name => setEspec({...espec, name})}
-                placeholder="Informe o Nome"
+                placeholder="Informe o nome"
                 value={espec.name}
+                style={Styles.input}
             />
-            <Text>Email</Text>
-            <TextInput
-                style={style.input}
-                onChangeText={email => setEspec({...espec, email})}
-                placeholder="Informe o E-mail"
-                value={espec.email}
+            <Text>Descrição</Text>
+            <TextInput 
+                onChangeText={descricao => setEspec({...espec, descricao})}
+                placeholder="Informe a descrição da especialidade"
+                value={espec.descricao}
+                style={Styles.input}
             />
-            <Text>URL do Avatar</Text>
-            <TextInput
-                style={style.input}
+            <Text>Url do Avatar</Text>
+            <TextInput 
                 onChangeText={avatarUrl => setEspec({...espec, avatarUrl})}
-                placeholder="Informe a URL do Avatar"
+                placeholder="Informe a Url do avatar"
                 value={espec.avatarUrl}
+                style={Styles.input}
             />
             <Button
                 title="Salvar"

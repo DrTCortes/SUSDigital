@@ -16,20 +16,20 @@ export default [
         cidade: 'Salvador',
         
     },
-    {
-        id: 3,
-        name: 'CS Engenho velho da Federação',
-        endereco: 'Rua: Apolinario Santana - Engenho velho da Federação',
-        especialidade: 'Unidade basica de saude',
-        estado:'Bahia',
-        cidade: 'Salvador',
-    },
-    {
-        id: 4,
-        name: 'CS Sete de Abril',
-        endereco: 'Rua Feliciano, s/n - Sete de Abril ( ponto de referencia 50ª CPM)',
-        especialidade: 'Unidade basica de saude',
-        estado:'Bahia',
-        cidade: 'Salvador',
-    },
+    // {
+    //     id: 3,
+    //     name: 'CS Engenho velho da Federação',
+    //     endereco: 'Rua: Apolinario Santana - Engenho velho da Federação',
+    //     especialidade: 'Unidade basica de saude',
+    //     estado:'Bahia',
+    //     cidade: 'Salvador',
+    // },
+    // {
+    //     id: 4,
+    //     name: 'CS Sete de Abril',
+    //     endereco: 'Rua Feliciano, s/n - Sete de Abril ( ponto de referencia 50ª CPM)',
+    //     especialidade: 'Unidade basica de saude',
+    //     estado:'Bahia',
+    //     cidade: 'Salvador',
+    // },
 ]

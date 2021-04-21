@@ -1,5 +1,5 @@
 import React, {useContext} from 'react';
-import { View, TextInput, SafeAreaView, StatusBar, FlatList, Alert } from 'react-native';
+import { View, TextInput, SafeAreaView, StatusBar, FlatList, Alert, Text } from 'react-native';
 import { ListItem, Button, Icon, Avatar } from 'react-native-elements'
 import Styles from '../styles';
 import AppContext from '../context/AppContext'
@@ -24,15 +24,12 @@ export default props => {
                 <ListItem.Subtitle>{consulta.c_medico}</ListItem.Subtitle>
             </ListItem.Content>
         </ListItem>
-        // <view  style={{ backgroundColor: 'red',height: '500', alignItems: 'flex-end'}}></view>
     )}
   
   return (
     <SafeAreaView style={Styles.container}>
       <StatusBar animated={true} backgroundColor="#606060"/>
       <View style={ {flex: 9}}>
-
-      
 
       <FlatList
                 keyExtractor={consulta => consulta.c_id.toString()}
