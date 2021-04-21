@@ -10,21 +10,18 @@ export default props => {
   
   const { state, dispatch } = useContext(AppContext)
 
-  
-  function getFuncItem({ item: func }) {
+  function getConsultaItem({ item: consulta }) {
     return (
-        <ListItem
-            key={func.id}
-            bottomDivider
-            onPress={() => {}}>
-                <Avatar tittle={func.name} rounded source={func.avatarUrl && { uri: func.avatarUrl }}/>
+        <ListItem key={consulta.id} bottomDivider
+            onPress={() => props.navigation.navigate('FormConsultas', consulta)}>
+                <Avatar tittle={consulta.name} rounded source={consulta.avatarUrl && { uri: consulta.avatarUrl }}/>
                 <ListItem.Content>
-                    <ListItem.Title>{func.name}</ListItem.Title>
-                    <ListItem.Subtitle>{func.email}</ListItem.Subtitle>
+                    <ListItem.Title>{consulta.name}</ListItem.Title>
+                    <ListItem.Subtitle>{consulta.email}</ListItem.Subtitle>
                 </ListItem.Content>
         </ListItem>
-    )
-}
+    )}
+  
   return (
     <SafeAreaView style={Styles.container}>
       <StatusBar animated={true} backgroundColor="#606060"/>
@@ -33,14 +30,9 @@ export default props => {
       
 
       <FlatList
-                keyExtractor={func => func.id.toString()}
-                data={state.funcs}
-                renderItem={getFuncItem}
-      />
-      <FlatList
-                keyExtractor={espec => espec.id.toString()}
-                data={state.especs}
-                renderItem={getFuncItem}
+                keyExtractor={consulta => consulta.id.toString()}
+                data={state.consultas}
+                renderItem={getConsultaItem}
       />
 
       </View>

@@ -38,7 +38,12 @@ export default props => {
         <NavigationContainer>
           <Stack.Navigator initialRouteName="Home" screenOptions={screenOptions}>
 
-            <Stack.Screen name="Consultas" component={HomeScreen}
+            <Stack.Screen name="Home" component={HomeScreen}
+                options={({navigation}) => { return{ title: "SUSDigital", headerRight: () => (
+                        <Button type='clear' onPress={() => navigation.navigate("FormConsultas")}
+                        icon={ <Icon name="add" size={25} color="#F2F4F8"/> } />)}}}/>
+
+            <Stack.Screen name="Consultas" component={ListConsultas}
                 options={({navigation}) => { return{ title: "Consultas", headerRight: () => (
                         <Button type='clear' onPress={() => navigation.navigate("FormConsultas")}
                         icon={ <Icon name="add" size={25} color="#F2F4F8"/> } />)}}}/>
