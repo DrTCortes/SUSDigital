@@ -1,6 +1,7 @@
 export default [
     {
         id:1,
+        type: 'medico',
         name:'Daiane Sampaio',
         email:'daianesantanasampaio@gmail.com',
         crm: '876767',
@@ -14,6 +15,7 @@ export default [
     },
     {
         id:2,
+        type: 'medico',
         name:'Gabriel Pereira',
         email:'Joao@gmail.com',
         crm: '665657',
@@ -27,6 +29,7 @@ export default [
     },
     // {
     //     id:4,
+    //     type: 'medico',
     //     name:'Adriano Santana',
     //     email:'adriano.sampaio@outlook.com',
     //     crm: '234343',
@@ -40,6 +43,7 @@ export default [
     // },
     // {
     //     id:5,
+    //     type: 'medico',
     //     name:'Maria do Santos',
     //     email:'maria@outlook.com',
     //     crm: '766534',
@@ -53,6 +57,7 @@ export default [
     // },
     // {
     //     id:6,
+    //     type: 'medico',
     //     name:'José Reinaldo',
     //     email:'josereinaldo@clinica.com.br',
     //     crm: '5756768',
@@ -66,6 +71,7 @@ export default [
     // },
     // {
     //     id:7,
+    //     type: 'medico',
     //     name:'Daniela Alencar',
     //     email:'dani.dani@outlook.com',
     //     crm: '556678',
@@ -79,6 +85,7 @@ export default [
     // },
     // {
     //     id:8,
+    //     type: 'medico',
     //     name:'Pereira Silva',
     //     email:'pereirasilva@hospital.com',
     //     rg: '115676763',
@@ -92,6 +99,7 @@ export default [
     // },
     // {
     //     id:9,
+    //     type: 'medico',
     //     name:'Theo Luiz Cardoso',
     //     email:'theoluiz@cardosoclinica.com.br',
     //     crm: '758856',

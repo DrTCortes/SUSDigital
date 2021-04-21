@@ -9,17 +9,30 @@ export default ({route, navigation}) => {
     const { state, dispatch } = useContext(AppContext)
 
     function getSelection(select) {
-        return (
-            <>
-            
-            </>
-        )
+        if (select.type === "funcionario"){
+            consulta.c_func = select.name
+        
+        }else if(select.type === "paciente"){
+                consulta.c_paciente = select.name
+                consulta.c_avatarUrl = select.avatarUrl
+        
+        }else if(select.type === "especialidade"){
+                consulta.c_especialidade = select.name
+        
+        }else if(select.type === "posto"){
+            consulta.c_posto = select.name
+        
+        }else if(select.type === "medico"){
+            consulta.c_medico = select.name
+        }
+
+        return        
     }
 
     function getSelectItem({ item: select }) {
         return (
             <ListItem key={select.id} bottomDivider
-                onPress={() => name => setConsulta({...consulta, name})}>
+                onPress={() => getSelection(select)}>
                     <Avatar tittle={select.id} rounded source={select.avatarUrl && { uri: select.avatarUrl }}/>
                     <ListItem.Content>
                         <ListItem.Title>{select.name}</ListItem.Title>
@@ -85,38 +98,3 @@ const style = StyleSheet.create({
         marginBottom: 15,
     }
 })
-{/* <Text>Funcionário</Text>
-<TextInput
-    style={style.input}
-    onChangeText={c_func => setConsulta({...consulta, c_func})}
-    placeholder="Informe o Funcionário"
-    value={consulta.c_func}
-/>
-<Text>Paciente</Text>
-<TextInput
-    style={style.input}
-    onChangeText={c_paciente => setConsulta({...consulta, c_paciente})}
-    placeholder="Informe o Paciente"
-    value={consulta.c_paciente}
-/>
-<Text>Especialidade</Text>
-<TextInput
-    style={style.input}
-    onChangeText={c_especialidade => setConsulta({...consulta, c_especialidade})}
-    placeholder="Informe a Especialidade"
-    value={consulta.c_especialidade}
-/>
-<Text>Posto</Text>
-<TextInput
-    style={style.input}
-    onChangeText={c_posto => setConsulta({...consulta, c_posto})}
-    placeholder="Informe a Especialidade"
-    value={consulta.c_posto}
-/>
-<Text>Médico</Text>
-<TextInput
-    style={style.input}
-    onChangeText={c_medico => setConsulta({...consulta, c_medico})}
-    placeholder="Informe a Especialidade"
-    value={consulta.c_medico}
-/> */}

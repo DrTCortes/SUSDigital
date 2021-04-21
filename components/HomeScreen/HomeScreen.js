@@ -18,6 +18,7 @@ export default props => {
             <ListItem.Content>
                 <ListItem.Title>{consulta.c_paciente}</ListItem.Title>
                 <ListItem.Subtitle>{consulta.c_especialidade} </ListItem.Subtitle>
+                <ListItem.Subtitle>{consulta.name} </ListItem.Subtitle>
             </ListItem.Content>
             <ListItem.Content>
                 <ListItem.Subtitle>{consulta.c_posto}</ListItem.Subtitle>

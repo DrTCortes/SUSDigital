@@ -45,7 +45,7 @@ export default props => {
                     <Avatar tittle={posto.name} rounded source={posto.avatarUrl && { uri: posto.avatarUrl }}/>
                     <ListItem.Content>
                         <ListItem.Title>{posto.name}</ListItem.Title>
-                        <ListItem.Subtitle>{posto.email}</ListItem.Subtitle>
+                        <ListItem.Subtitle>{posto.endereco}</ListItem.Subtitle>
                     </ListItem.Content>
                         <View style={{flexDirection:'row'}}>{getActions(posto)}</View>
             </ListItem>

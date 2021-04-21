@@ -1,6 +1,7 @@
 export default [
     {
           c_id: 1,
+          name: "",
           c_func: 'Jorge',
           c_paciente: 'João Silva Braga',
           c_especialidade: 'Cardiologia',
