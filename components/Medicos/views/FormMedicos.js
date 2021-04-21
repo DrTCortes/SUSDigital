@@ -1,5 +1,6 @@
 import React, { useState, useContext } from 'react'
 import { Text, View, TextInput, StyleSheet, Button } from 'react-native'
+import Styles from '../../styles'
 import Context from '../../context/AppContext'
 
 export default ({route, navigation}) => {
@@ -77,15 +78,3 @@ export default ({route, navigation}) => {
         </View>
     )
 }
-
-const Styles = StyleSheet.create({
-    form: {
-        padding: 12
-    },
-    input: {
-        height: 40,
-        borderColor: 'gray',
-        borderWidth: 1,
-        marginBottom: 15,
-    }
-})

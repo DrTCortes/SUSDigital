@@ -1,5 +1,6 @@
 import React, { useState, useContext } from 'react'
 import { Text, View, TextInput, StyleSheet, Button } from 'react-native'
+import Styles from '../../styles'
 import Context from '../../context/AppContext'
 
 export default ({route, navigation}) => {
@@ -7,10 +8,10 @@ export default ({route, navigation}) => {
     const { dispatch } = useContext(Context)
 
     return (
-        <View style={style.form}>
+        <View style={Styles.form}>
             <Text>Nome</Text>
             <TextInput
-                style={style.input}
+                style={Styles.input}
                 onChangeText={name => setPaciente({...paciente, name})}
                 placeholder="Informe o Nome"
                 value={paciente.name}
@@ -18,14 +19,14 @@ export default ({route, navigation}) => {
             
             <Text>Email</Text>
             <TextInput
-                style={style.input}
+                style={Styles.input}
                 onChangeText={email => setPaciente({...paciente, email})}
                 placeholder="Informe o E-mail"
                 value={paciente.email}
             />
             <Text>URL do Avatar</Text>
             <TextInput
-                style={style.input}
+                style={Styles.input}
                 onChangeText={avatarUrl => setPaciente({...paciente, avatarUrl})}
                 placeholder="Informe a URL do Avatar"
                 value={paciente.avatarUrl}
@@ -43,15 +44,3 @@ export default ({route, navigation}) => {
         </View>
     )
 }
-//testando
-const style = StyleSheet.create({
-    form: {
-        padding: 12
-    },
-    input: {
-        height: 40,
-        borderColor: 'gray',
-        borderWidth: 1,
-        marginBottom: 15,
-    }
-})

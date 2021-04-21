@@ -1,6 +1,6 @@
 import React, { useState, useContext } from 'react'
-import { Text, View, TextInput, StyleSheet, Button, FlatList } from 'react-native'
-import { ListItem, Icon, Avatar } from 'react-native-elements'
+import { Text, View, TextInput, StyleSheet, FlatList } from 'react-native'
+import { ListItem, Icon, Avatar, Button } from 'react-native-elements'
 import AppContext from '../../context/AppContext'
 import Styles from '../../styles'
 
@@ -9,6 +9,7 @@ export default ({route, navigation}) => {
     const { state, dispatch } = useContext(AppContext)
 
     function getSelection(select) {
+        
         if (select.type === "funcionario"){
             consulta.c_func = select.name
         
@@ -41,39 +42,41 @@ export default ({route, navigation}) => {
         )}
 
     return (
-        <View style={Styles.form}>
+        <View>
 
-            <Text>Selecione o funcionário: </Text>   
+            <Text style={Styles.text}>Selecione o funcionário: </Text>   
             <FlatList
                 keyExtractor={select => select.id.toString()}
                 data={state.funcs}
                 renderItem={ getSelectItem } />
             
-            <Text>Selecione o paciente: </Text>
+            <Text style={Styles.text}>Selecione o paciente: </Text>
             <FlatList
                 keyExtractor={select => select.id.toString()}
                 data={state.pacientes}
                 renderItem={ getSelectItem } />
             
-            <Text>Selecione a especialidade: </Text>
+            <Text style={Styles.text}>Selecione a especialidade: </Text>
             <FlatList
                 keyExtractor={select => select.id.toString()}
                 data={state.especs}
                 renderItem={ getSelectItem } />
             
-            <Text>Selecione o posto: </Text>
+            <Text style={Styles.text}>Selecione o posto: </Text>
             <FlatList
                 keyExtractor={select => select.id.toString()}
                 data={state.postos}
                 renderItem={ getSelectItem } />
             
-            <Text>Selecione o medico: </Text>
+            <Text style={Styles.text}>Selecione o medico: </Text>
             <FlatList
                 keyExtractor={select => select.id.toString()}
                 data={state.medicos}
                 renderItem={ getSelectItem } />
             
-            <Button
+            <Button 
+                style={Styles.button}  
+                type='outline'
                 title="Salvar"
                 onPress={() => {
                     dispatch({
@@ -86,15 +89,3 @@ export default ({route, navigation}) => {
         </View>
     )
 }
-
-const style = StyleSheet.create({
-    form: {
-        padding: 12
-    },
-    input: {
-        height: 40,
-        borderColor: 'gray',
-        borderWidth: 1,
-        marginBottom: 15,
-    }
-})

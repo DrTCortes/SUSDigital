@@ -17,13 +17,14 @@ export default StyleSheet.create({
       form :{
         padding: 10,
       },
-      input:{
-        backgroundColor: '#fff',
+      input: {
         height: 40,
-        marginBottom: 10,
-        borderRadius: 5,
-        paddingHorizontal: 10,
-      },
+        padding: 5,
+        borderColor: '#208bdc',
+        borderWidth: 1,
+        marginBottom: 15,
+        backgroundColor: '#fff',
+    },
       button:{
         margin: 4,
         backgroundColor: '#FFF',
@@ -41,9 +42,17 @@ export default StyleSheet.create({
         padding: 10,
         alignContent: 'space-between'
     },
+    text:{
+      fontFamily: 'serif',
+      fontWeight: 'bold',
+      fontSize: 16,
+      color:'#415A80',
+      padding: 10,
+      marginTop: 10,
+    },
     name: {
         fontWeight: 'bold',
-        fontSize: 15,
+        fontSize: 16,
 
     },
     desc: {
