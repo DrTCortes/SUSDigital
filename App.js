@@ -11,8 +11,8 @@ import FormCadastro from './components/HomeScreen/FormCadastro';
 import ListFuncionarios from './components/Funcionarios/views/ListFunc';
 import FormFunc from './components/Funcionarios/views/FormFunc';
 
-import ListMedicos from './components/Medicos/ListMedicos'
-import FormMedicos from './components/Medicos/FormMedicos'
+import ListMedicos from './components/Medicos/views/ListMedicos'
+import FormMedicos from './components/Medicos/views/FormMedicos'
 
 import ListEspecialidades from './components/Especialidades/views/ListEspecialidades'
 import FormEspecialidades from './components/Especialidades/views/FormEspecialidades'

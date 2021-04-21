@@ -3,8 +3,9 @@ import funcs from '../Funcionarios/data'
 import especs from '../Especialidades/data'
 import pacientes from '../Pacientes/data'
 import postos from '../Postos/data'
+import medicos from '../Medicos/data'
 
-const initialState = { funcs, especs, pacientes, postos }
+const initialState = { funcs, especs, pacientes, postos, medicos }
 const UsersContext = createContext({})
 
 const actions = {
@@ -97,6 +98,31 @@ const actions = {
         return {
             ...state,
             postos: state.postos.filter(u => u.id !== posto.id)
+        }
+    },
+
+    //Medicos
+
+    createMedico(state, action) {
+        const medico = action.payload
+        medico.id = Math.random()
+        return {
+            ...state,
+            medicos: [...state.medicos, medico],
+        }
+    },
+    updateMedico(state, action) {
+        const updated = action.payload
+        return {
+            ...state,
+            medicos: state.medicos.map(u => u.id === updated.id ? updated : u)
+        }
+    },
+    deleteMedico(state, action) {
+        const medico = action.payload
+        return {
+            ...state,
+            medicos: state.medicos.filter(u => u.id !== medico.id)
         }
     },
 
