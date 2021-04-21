@@ -1,10 +1,10 @@
 import React, { useState, useContext } from 'react'
 import { Text, View, TextInput, StyleSheet, Button } from 'react-native'
-import Context from '../../context/AppContext'
+import AppContext from '../../context/AppContext'
 
 export default ({route, navigation}) => {
     const [func, setFunc] = useState(route.params ? route.params : {})
-    const { dispatch } = useContext(Context)
+    const { dispatch } = useContext(AppContext)
 
     return (
         <View style={style.form}>

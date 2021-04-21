@@ -1,11 +1,11 @@
 import React, { useContext } from 'react'
 import { View, FlatList, Alert } from 'react-native'
 import { ListItem, Button, Icon, Avatar } from 'react-native-elements'
-import Context from '../../context/AppContext'
+import AppContext from '../../context/AppContext'
 
 export default props => {
 
-    const { state, dispatch } = useContext(Context)
+    const { state, dispatch } = useContext(AppContext)
 
     function confirmFuncDeletion(func) {
         Alert.alert('Excluir Usuário', 'Deseja excluir o usuário?', [
