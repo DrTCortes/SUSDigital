@@ -9,32 +9,46 @@ export default ({route, navigation}) => {
 
     return (
         <View style={Styles.form}>
-            <Text>Nome</Text>
+            <Text>Funcionário</Text>
             <TextInput
                 style={style.input}
-                onChangeText={name => setConsulta({...consulta, name})}
-                placeholder="Informe o Nome"
-                value={consulta.name}
+                onChangeText={c_func => setConsulta({...consulta, c_func})}
+                placeholder="Informe o Funcionário"
+                value={consulta.c_func}
             />
-            <Text>Email</Text>
+            <Text>Paciente</Text>
             <TextInput
                 style={style.input}
-                onChangeText={email => setConsulta({...consulta, email})}
-                placeholder="Informe o E-mail"
-                value={consulta.email}
+                onChangeText={c_paciente => setConsulta({...consulta, c_paciente})}
+                placeholder="Informe o Paciente"
+                value={consulta.c_paciente}
             />
-            <Text>URL do Avatar</Text>
+            <Text>Especialidade</Text>
             <TextInput
                 style={style.input}
-                onChangeText={avatarUrl => setConsulta({...consulta, avatarUrl})}
-                placeholder="Informe a URL do Avatar"
-                value={consulta.avatarUrl}
+                onChangeText={c_especialidade => setConsulta({...consulta, c_especialidade})}
+                placeholder="Informe a Especialidade"
+                value={consulta.c_especialidade}
+            />
+            <Text>Posto</Text>
+            <TextInput
+                style={style.input}
+                onChangeText={c_posto => setConsulta({...consulta, c_posto})}
+                placeholder="Informe a Especialidade"
+                value={consulta.c_posto}
+            />
+            <Text>Médico</Text>
+            <TextInput
+                style={style.input}
+                onChangeText={c_medico => setConsulta({...consulta, c_medico})}
+                placeholder="Informe a Especialidade"
+                value={consulta.c_medico}
             />
             <Button
                 title="Salvar"
                 onPress={() => {
                     dispatch({
-                        type: consulta.id ? 'updateConsulta' : 'createConsulta',
+                        type: consulta.c_id ? 'updateConsulta' : 'createConsulta',
                         payload: consulta,
                     })
                     navigation.goBack()

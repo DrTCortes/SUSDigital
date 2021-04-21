@@ -40,12 +40,12 @@ export default props => {
 
     function getConsultaItem({ item: consulta }) {
         return (
-            <ListItem key={consulta.id} bottomDivider rightElement={getActions(consulta)}
+            <ListItem key={consulta.c_id} bottomDivider rightElement={getActions(consulta)}
                 onPress={() => props.navigation.navigate('FormConsultas', consulta)}>
-                    <Avatar tittle={consulta.name} rounded source={consulta.avatarUrl && { uri: consulta.avatarUrl }}/>
+                    <Avatar tittle={consulta.c_id} rounded source={consulta.c_avatarUrl && { uri: consulta.c_avatarUrl }}/>
                     <ListItem.Content>
-                        <ListItem.Title>{consulta.name}</ListItem.Title>
-                        <ListItem.Subtitle>{consulta.email}</ListItem.Subtitle>
+                        <ListItem.Title>{consulta.c_func}</ListItem.Title>
+                        <ListItem.Subtitle>{consulta.c_paciente}</ListItem.Subtitle>
                     </ListItem.Content>
                         <View style={{flexDirection:'row'}}>{getActions(consulta)}</View>
             </ListItem>
@@ -54,7 +54,7 @@ export default props => {
     return (
         <View>
             <FlatList
-                keyExtractor={consulta => consulta.id.toString()}
+                keyExtractor={consulta => consulta.c_id.toString()}
                 data={state.consultas}
                 renderItem={ getConsultaItem } />
         </View>

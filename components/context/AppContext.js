@@ -146,14 +146,14 @@ const actions = {
         const updated = action.payload
         return {
             ...state,
-            consultas: state.consultas.map(u => u.id === updated.id ? updated : u)
+            consultas: state.consultas.map(u => u.c_id === updated.c_id ? updated : u)
         }
     },
     deleteConsulta(state, action) {
         const consulta = action.payload
         return {
             ...state,
-            consultas: state.consultas.filter(u => u.id !== consulta.id)
+            consultas: state.consultas.filter(u => u.c_id !== consulta.c_id)
         }
     },
 

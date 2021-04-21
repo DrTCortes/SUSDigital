@@ -12,14 +12,19 @@ export default props => {
 
   function getConsultaItem({ item: consulta }) {
     return (
-        <ListItem key={consulta.id} bottomDivider
-            onPress={() => props.navigation.navigate('FormConsultas', consulta)}>
-                <Avatar tittle={consulta.name} rounded source={consulta.avatarUrl && { uri: consulta.avatarUrl }}/>
-                <ListItem.Content>
-                    <ListItem.Title>{consulta.name}</ListItem.Title>
-                    <ListItem.Subtitle>{consulta.email}</ListItem.Subtitle>
-                </ListItem.Content>
+        <ListItem key={consulta.c_id} bottomDivider
+        onPress={() => props.navigation.navigate('FormConsultas', consulta)}>
+            <Avatar tittle={consulta.c_id} rounded source={consulta.c_avatarUrl && { uri: consulta.c_avatarUrl }}/>
+            <ListItem.Content>
+                <ListItem.Title>{consulta.c_paciente}</ListItem.Title>
+                <ListItem.Subtitle>{consulta.c_especialidade} </ListItem.Subtitle>
+            </ListItem.Content>
+            <ListItem.Content>
+                <ListItem.Subtitle>{consulta.c_posto}</ListItem.Subtitle>
+                <ListItem.Subtitle>{consulta.c_medico}</ListItem.Subtitle>
+            </ListItem.Content>
         </ListItem>
+        // <view  style={{ backgroundColor: 'red',height: '500', alignItems: 'flex-end'}}></view>
     )}
   
   return (
@@ -30,7 +35,7 @@ export default props => {
       
 
       <FlatList
-                keyExtractor={consulta => consulta.id.toString()}
+                keyExtractor={consulta => consulta.c_id.toString()}
                 data={state.consultas}
                 renderItem={getConsultaItem}
       />
