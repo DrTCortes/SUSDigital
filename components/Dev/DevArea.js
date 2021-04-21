@@ -13,5 +13,6 @@ return(
       <Button style={Styles.button}  type='outline' title={"Especialidades"} onPress={()=>{ props.navigation.navigate("Especialidades")}}/>
       <Button style={Styles.button}  type='outline' title={"Postos"} onPress={()=>{ props.navigation.navigate("Postos")}}/>
       <Button style={Styles.button}  type='outline' title={"Pacientes"} onPress={()=>{ props.navigation.navigate("Pacientes")}}/>
+      <Button style={Styles.button}  type='outline' title={"Consultas"} onPress={()=>{ props.navigation.navigate("Consultas")}}/>
     </View>
   )}

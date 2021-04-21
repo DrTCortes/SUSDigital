@@ -4,11 +4,14 @@ import especs from '../Especialidades/data'
 import pacientes from '../Pacientes/data'
 import postos from '../Postos/data'
 import medicos from '../Medicos/data'
+import consultas from '../HomeScreen/data'
 
-const initialState = { funcs, especs, pacientes, postos, medicos }
+const initialState = { funcs, especs, pacientes, postos, medicos, consultas }
 const UsersContext = createContext({})
 
 const actions = {
+    // Actions para Crição, Update e Delete de Funcionarios
+
     createFunc(state, action) {
         const func = action.payload
         func.id = Math.random()
@@ -32,7 +35,7 @@ const actions = {
         }
     },
 
-    // Espec
+    // Especialidades
 
     createEspec(state, action) {
         const espec = action.payload
@@ -56,6 +59,9 @@ const actions = {
             especs: state.especs.filter(u => u.id !== espec.id)
         }
     },
+
+    // Pacientes
+
     createPaciente(state, action) {
         const paciente = action.payload
         paciente.id = Math.random()
@@ -78,6 +84,9 @@ const actions = {
             pacientes: state.pacientes.filter(u => u.id !== paciente.id)
         }
     },
+
+    // Postos
+
     createPosto(state, action) {
         const posto = action.payload
         posto.id = Math.random()
@@ -123,6 +132,28 @@ const actions = {
         return {
             ...state,
             medicos: state.medicos.filter(u => u.id !== medico.id)
+        }
+    },
+    createConsulta(state, action) {
+        const consulta = action.payload
+        consulta.id = Math.random()
+        return {
+            ...state,
+            consultas: [...state.consultas, consulta],
+        }
+    },
+    updateConsulta(state, action) {
+        const updated = action.payload
+        return {
+            ...state,
+            consultas: state.consultas.map(u => u.id === updated.id ? updated : u)
+        }
+    },
+    deleteConsulta(state, action) {
+        const consulta = action.payload
+        return {
+            ...state,
+            consultas: state.consultas.filter(u => u.id !== consulta.id)
         }
     },
 

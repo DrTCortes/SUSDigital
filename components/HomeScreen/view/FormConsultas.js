@@ -1,40 +1,41 @@
 import React, { useState, useContext } from 'react'
 import { Text, View, TextInput, StyleSheet, Button } from 'react-native'
-import UsersContext from '../context/AppContext'
+import AppContext from '../../context/AppContext'
+import Styles from '../../styles'
 
 export default ({route, navigation}) => {
-    const [user, setUser] = useState(route.params ? route.params : {})
-    const { dispatch } = useContext(UsersContext)
+    const [consulta, setConsulta] = useState(route.params ? route.params : {})
+    const { dispatch } = useContext(AppContext)
 
     return (
-        <View style={style.form}>
+        <View style={Styles.form}>
             <Text>Nome</Text>
             <TextInput
                 style={style.input}
-                onChangeText={name => setUser({...user, name})}
+                onChangeText={name => setConsulta({...consulta, name})}
                 placeholder="Informe o Nome"
-                value={user.name}
+                value={consulta.name}
             />
             <Text>Email</Text>
             <TextInput
                 style={style.input}
-                onChangeText={email => setUser({...user, email})}
+                onChangeText={email => setConsulta({...consulta, email})}
                 placeholder="Informe o E-mail"
-                value={user.email}
+                value={consulta.email}
             />
             <Text>URL do Avatar</Text>
             <TextInput
                 style={style.input}
-                onChangeText={avatarUrl => setUser({...user, avatarUrl})}
+                onChangeText={avatarUrl => setConsulta({...consulta, avatarUrl})}
                 placeholder="Informe a URL do Avatar"
-                value={user.avatarUrl}
+                value={consulta.avatarUrl}
             />
             <Button
                 title="Salvar"
                 onPress={() => {
                     dispatch({
-                        type: user.id ? 'updateUser' : 'createUser',
-                        payload: user,
+                        type: consulta.id ? 'updateConsulta' : 'createConsulta',
+                        payload: consulta,
                     })
                     navigation.goBack()
                 }}
