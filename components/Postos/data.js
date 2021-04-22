@@ -7,6 +7,7 @@ export default [
         especialidade: 'Unidade basica de saude',
         estado:'Bahia',
         cidade: 'Salvador',
+        cep: '',
     },
     {
         id: 2,
@@ -16,6 +17,7 @@ export default [
         especialidade: 'Unidade basica de saude',
         estado:'Bahia',
         cidade: 'Salvador',
+        cep: '',
         
     },
     // {
@@ -26,6 +28,7 @@ export default [
     //     especialidade: 'Unidade basica de saude',
     //     estado:'Bahia',
     //     cidade: 'Salvador',
+    //     cep: '',
     // },
     // {
     //     id: 4,
@@ -35,5 +38,6 @@ export default [
     //     especialidade: 'Unidade basica de saude',
     //     estado:'Bahia',
     //     cidade: 'Salvador',
+    //     cep: '',
     // },
 ]
