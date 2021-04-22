@@ -18,6 +18,13 @@ export default ({route, navigation}) => {
                 placeholder="Informe a unidade de saúde"
                 value={posto.name}
             />
+                 <Text>Especialidade da unidade:</Text>
+            <TextInput
+                style={Styles.input}
+                onChangeText={especialidadeposto => setPosto({...posto, especialidadeposto})}
+                placeholder="Informe a Especialidade"
+                value={posto.especialidadeposto}
+            />
             <Text>Endereço:</Text>
             <TextInput
                 style={Styles.input}
@@ -45,7 +52,17 @@ export default ({route, navigation}) => {
                 onChangeText={cep => setPosto({...posto, cep})}
                 placeholder="Informe o CEP"
                 value={posto.cep}
+                
             />
+              <Text>URL do Avatar</Text>
+            <TextInput
+                onChangeText={avatarUrl => setPosto({...posto, avatarUrl})}
+                placeholder="Informe a URL do Avatar"
+                value={posto.avatarUrl}
+                style={Styles.input} 
+            />
+
+          
             <Button
              style={Styles.button}  
                 type='outline'
