@@ -7,6 +7,7 @@ export default ({route, navigation}) => {
     const [posto, setPosto] = useState(route.params ? route.params : {})
     const { dispatch } = useContext(Context)
 
+
     return (
         <View style={Styles.form}>
             <Text>Unidade de saude:</Text>
