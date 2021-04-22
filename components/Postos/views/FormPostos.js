@@ -9,33 +9,40 @@ export default ({route, navigation}) => {
 
     return (
         <View style={Styles.form}>
-            <Text>Nome</Text>
+            <Text>Unidade de saude:</Text>
             <TextInput
                 style={Styles.input}
                 onChangeText={name => setPosto({...posto, name})}
-                placeholder="Informe o Nome do Posto"
+                placeholder="Informe a unidade de saúde"
                 value={posto.name}
             />
-            <Text>Endereço</Text>
+            <Text>Endereço:</Text>
             <TextInput
                 style={Styles.input}
                 onChangeText={endereco => setPosto({...posto, endereco})}
                 placeholder="Informe o Endereço"
                 value={posto.endereco}
             />
-            <Text>Estado</Text>
+            <Text>Estado:</Text>
             <TextInput
                 style={Styles.input}
                 onChangeText={estado => setPosto({...posto, estado})}
                 placeholder="Informe o Estado"
                 value={posto.estado}
             />
-            <Text>Cidade</Text>
+            <Text>Cidade:</Text>
             <TextInput
                 style={Styles.input}
                 onChangeText={cidade => setPosto({...posto, cidade})}
                 placeholder="Informe a Cidade"
                 value={posto.cidade}
+            />
+              <Text>CEP:</Text>
+            <TextInput
+                style={Styles.input}
+                onChangeText={cep => setPosto({...posto, cep})}
+                placeholder="Informe o CEP"
+                value={posto.cep}
             />
             <Button
                 style={Styles.button}  type='outline'
