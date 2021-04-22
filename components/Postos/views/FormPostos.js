@@ -1,7 +1,8 @@
 import React, { useState, useContext } from 'react'
-import { Text, View, TextInput, StyleSheet, Button } from 'react-native'
+import { Text, View, TextInput, StyleSheet} from 'react-native'
 import Styles from '../../styles'
 import Context from '../../context/AppContext'
+import {Button} from 'react-native-elements'
 
 export default ({route, navigation}) => {
     const [posto, setPosto] = useState(route.params ? route.params : {})
@@ -46,7 +47,8 @@ export default ({route, navigation}) => {
                 value={posto.cep}
             />
             <Button
-                style={Styles.button}  type='outline'
+             style={Styles.button}  
+                type='outline'
                 title="Salvar"
                 onPress={() => {
                     dispatch({
