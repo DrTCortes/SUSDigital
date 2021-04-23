@@ -46,6 +46,7 @@ export default props => {
                     <ListItem.Content>
                         <ListItem.Title>{posto.name}</ListItem.Title>
                         <ListItem.Subtitle>{posto.endereco}</ListItem.Subtitle>
+                        <ListItem.Subtitle>{posto.especialidadeposto}</ListItem.Subtitle>
                     </ListItem.Content>
                         <View style={{flexDirection:'row'}}>{getActions(posto)}</View>
             </ListItem>
