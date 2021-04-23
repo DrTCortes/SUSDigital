@@ -32,6 +32,7 @@ export default ({route, navigation}) => {
                 placeholder="Informe a URL do Avatar"
                 value={paciente.avatarUrl}
             />
+            
             <Button
                 style={Styles.button}  
                 type='outline'
