@@ -28,7 +28,7 @@ export default props => {
             <>
                 {/* Botão para editar */}
                 <Button
-                    onPress={() => props.navigation.navigate('Dados da Especialidade', espec)}
+                    onPress={() => props.navigation.navigate('FormEspec', espec)}
                     type="clear"
                     icon={<Icon name="edit" size={25} color="orange" />}
                 />
@@ -46,7 +46,7 @@ export default props => {
     function getEspecItem({ item: espec }) {
         return (
             <ListItem key={espec.id} bottomDivider rightElement={getActions(espec)}
-                onPress={() => props.navigation.navigate('Dados da Especialidade', espec)}>
+                onPress={() => props.navigation.navigate('FormEspec', espec)}>
                     <Avatar tittle={espec.name} rounded source={espec.avatarUrl && { uri: espec.avatarUrl }}/>
                     <ListItem.Content>
                         <ListItem.Title>{espec.name}</ListItem.Title>

@@ -1,7 +1,9 @@
 import React, { useState, useContext } from 'react'
-import { Text, View, TextInput, StyleSheet, Button } from 'react-native'
-import Styles from '../../styles'
+import { Text, View, TextInput, StyleSheet } from 'react-native'
+import {Button} from 'react-native-elements'
 import AppContext from '../../context/AppContext'
+import Styles from '../../styles'
+
 
 export default ({route, navigation}) => {
     const [espec, setEspec] = useState(route.params ? route.params : {})
@@ -31,6 +33,8 @@ export default ({route, navigation}) => {
                 style={Styles.input}
             />
             <Button
+                style={Styles.button}  
+                type='outline'
                 title="Salvar"
                 onPress={() => {
                     dispatch({
