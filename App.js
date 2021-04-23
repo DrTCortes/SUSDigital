@@ -28,7 +28,6 @@ import DevArea from './components/Dev/DevArea'
 import { Button, Icon } from 'react-native-elements';
 import { UsersProvider } from './components/context/AppContext';
 
-
 const Stack = createStackNavigator();
 
 export default props => {
