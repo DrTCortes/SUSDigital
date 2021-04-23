@@ -1,7 +1,8 @@
 import React, { useState, useContext } from 'react'
-import { Text, View, TextInput, StyleSheet, Button } from 'react-native'
+import { Text, View, TextInput, StyleSheet } from 'react-native'
 import Styles from '../../styles'
 import Context from '../../context/AppContext'
+import {Button} from 'react-native-elements'
 
 export default ({route, navigation}) => {
     const [medico, setMedico] = useState(route.params ? route.params : {})
@@ -37,13 +38,13 @@ export default ({route, navigation}) => {
                 value={medico.crm} 
                 style={Styles.input}          
             />
-            <Text>RG</Text>
+            {/* <Text>RG</Text>
             <TextInput            
                 onChangeText={rg => setMedico({...medico, rg})} 
                 placeholder='Informe o RG'
                 value={medico.rg} 
                 style={Styles.input}          
-            />
+            /> */}
             <Text>CPF</Text>
             <TextInput            
                 onChangeText={cpf => setMedico({...medico, cpf})} 
@@ -51,13 +52,13 @@ export default ({route, navigation}) => {
                 value={medico.cpf} 
                 style={Styles.input}          
             />
-            <Text>Sexo,</Text>
+            {/* <Text>Sexo,</Text>
             <TextInput           
                 onChangeText={sexo => setMedico({...medico, sexo})} 
                 placeholder='sexo' 
                 value={medico.sexo} 
                 style={Styles.input}          
-            />
+            /> */}
             <Text>DDD e Telefone</Text>
             <TextInput           
                 onChangeText={telefone => setMedico({...medico, telefone})} 
@@ -66,6 +67,8 @@ export default ({route, navigation}) => {
                 style={Styles.input}          
             />           
             <Button
+                style={Styles.button}  
+                type='outline'
                 title="Salvar"
                 onPress={() => {
                     dispatch({
