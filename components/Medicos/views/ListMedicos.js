@@ -20,12 +20,12 @@ export default props => {
                 text: 'Não'
             }
         ])}
-
+    //Botões de edit e delete 
     function getActions(medico) {
         return (
             <>
-                <Button
-                    onPress={() => props.navigation.navigate('FormMedicos', medico)}
+                <Button  //ao clicar no botão edit o cadastro de medico é exibido para alteração
+                    onPress={() => props.navigation.navigate('FormMedicos', medico)} 
                     type="clear"
                     icon={<Icon name="edit" size={25} color="orange" />}
                 />
@@ -40,6 +40,7 @@ export default props => {
 
     function getMedicoItem({ item: medico }) {
         return (
+            //Exibe a lista de medico, com nome,email e foto
             <ListItem key={medico.id} bottomDivider rightElement={getActions(medico)}
                 onPress={() => props.navigation.navigate('FormMedicos', medico)}>
                     <Avatar tittle={medico.name} rounded source={medico.avatarUrl && { uri: medico.avatarUrl }}/>

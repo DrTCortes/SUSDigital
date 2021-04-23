@@ -114,8 +114,8 @@ const actions = {
 
     createMedico(state, action) {
         const medico = action.payload
-        medico.id = Math.random()
-        return {
+        medico.id = Math.random() //gera o id do medico
+        return { //retorna estado e informações do medico cadasttrado
             ...state,
             medicos: [...state.medicos, medico],
         }
