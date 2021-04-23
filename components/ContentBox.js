@@ -22,8 +22,7 @@ export default props => {
         )
     }
 
-
-    // Implementação do ContentBox
+// Implementação do ContentBox
 // function HomeScreen({ navigation }) {
 //     return (
 //       <SafeAreaView>

@@ -3,28 +3,30 @@ import React from 'react';
 import { createStackNavigator, HeaderTitle } from '@react-navigation/stack';
 import { NavigationContainer } from '@react-navigation/native';
 
-import HomeScreen from './components/HomeScreen';
+import HomeScreen from './components/HomeScreen/HomeScreen';
 
-import ListFuncionarios from './components/Funcionarios/views/UserList';
+import ListConsultas from './components/HomeScreen/view/ListConsultas';
+import FormConsultas from './components/HomeScreen/view/FormConsultas';
+
+import ListFuncionarios from './components/Funcionarios/views/ListFunc';
 import FormFunc from './components/Funcionarios/views/FormFunc';
 
-import ListMedicos from './components/Medicos/ListMedicos'
-import FormMedicos from './components/Medicos/FormMedicos'
+import ListMedicos from './components/Medicos/views/ListMedicos'
+import FormMedicos from './components/Medicos/views/FormMedicos'
 
-import ListEspecialidades from './components/Especialidades/ListEspecialidades'
-import FormEspecialidades from './components/Especialidades/FormEspecialidades'
+import ListEspecialidades from './components/Especialidades/views/ListEspecialidades'
+import FormEspecialidades from './components/Especialidades/views/FormEspecialidades'
 
-import ListPostos from './components/Postos/ListPostos'
-import FormPostos from './components/Postos/FormPostos'
+import ListPostos from './components/Postos/views/ListPostos'
+import FormPostos from './components/Postos/views/FormPostos'
 
-import ListPacientes from './components/Pacientes/ListPacientes'
-import FormPacientes from './components/Pacientes/FormPacientes'
+import ListPacientes from './components/Pacientes/views/ListPacientes'
+import FormPacientes from './components/Pacientes/views/FormPacientes'
 
 import DevArea from './components/Dev/DevArea'
 
 import { Button, Icon } from 'react-native-elements';
-import { UsersProvider } from './components/Funcionarios/context/UsersContext';
-
+import { UsersProvider } from './components/context/AppContext';
 
 const Stack = createStackNavigator();
 
@@ -35,13 +37,15 @@ export default props => {
         <NavigationContainer>
           <Stack.Navigator initialRouteName="Home" screenOptions={screenOptions}>
 
-          <Stack.Screen
-            name="Home"
-            component={HomeScreen}
-            options={({navigation}) => {
-              return{
-                  title: "SUS Digital",
-                  }}} />
+            <Stack.Screen name="Home" component={HomeScreen}
+                options={({navigation}) => { return{ title: "SUSDigital", headerRight: () => (
+                        <Button type='clear' title="Nova Consulta" onPress={() => navigation.navigate("FormConsultas")} />)}}}/>
+
+            <Stack.Screen name="Consultas" component={ListConsultas}
+                options={({navigation}) => { return{ title: "Consultas", headerRight: () => (
+                        <Button type='clear' onPress={() => navigation.navigate("FormConsultas")}
+                        icon={ <Icon name="add" size={25} color="#F2F4F8"/> } />)}}}/>
+            <Stack.Screen name="FormConsultas" options={()=> {return{ title:"Formulário de Consultas"}}} component={FormConsultas}/>
 
             <Stack.Screen name="DevArea" component={DevArea}/>
 
@@ -50,8 +54,7 @@ export default props => {
                 options={({navigation}) => { return{ title: "Funcionários", headerRight: () => (
                         <Button type='clear' onPress={() => navigation.navigate("FormFunc")}
                         icon={ <Icon name="add" size={25} color="#F2F4F8"/> } />)}}}/>
-            <Stack.Screen name="FormFunc" component={FormFunc}/>
-
+            <Stack.Screen name="FormFunc" options={()=> {return{ title:"Formulário de Consultas"}}} component={FormFunc}/>
 
             <Stack.Screen name="Medicos" component={ListMedicos}
                 options={({navigation}) => { return{ title: "Médicos", headerRight: () => (
@@ -61,22 +64,21 @@ export default props => {
 
             <Stack.Screen name="Especialidades" component={ListEspecialidades}
                 options={({navigation}) => { return{ title: "Especialidades", headerRight: () => (
-                        <Button type='clear' onPress={() => navigation.navigate("Dados da Especialidade")}
+                        <Button type='clear' onPress={() => navigation.navigate("FormEspec")}
                         icon={ <Icon name="add" size={25} color="#F2F4F8"/> } />)}}}/>
-            <Stack.Screen name="Dados da Especialidade" component={FormEspecialidades}/>
+            <Stack.Screen name="FormEspec" options={()=>{return{title:"Dados da Especialidade"}}} component={FormEspecialidades}/>
 
             <Stack.Screen name="Postos" component={ListPostos}
                 options={({navigation}) => { return{ title: "Postos", headerRight: () => (
                         <Button type='clear' onPress={() => navigation.navigate("FormPostos")}
                         icon={ <Icon name="add" size={25} color="#F2F4F8"/> } />)}}}/>
-            <Stack.Screen name="FormPostos" component={FormPostos}/>
+            <Stack.Screen name="FormPostos" options={()=> {return{ title:"Cadastros de postos"}}} component={FormPostos}/>
 
             <Stack.Screen name="Pacientes" component={ListPacientes}
                 options={({navigation}) => { return{ title: "Pacientes", headerRight: () => (
                         <Button type='clear' onPress={() => navigation.navigate("FormPacientes")}
                         icon={ <Icon name="add" size={25} color="#F2F4F8"/> } />)}}}/> 
-            <Stack.Screen name="FormPacientes" component={FormPacientes}/>
-
+            <Stack.Screen name="FormPacientes" options={()=> {return{ title:"Formulário de Pacientes"}}} component={FormPacientes}/>
 
           </Stack.Navigator>
         </NavigationContainer>
