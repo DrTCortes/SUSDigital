@@ -1,7 +1,8 @@
 import React, { useState, useContext } from 'react'
-import { Text, View, TextInput, StyleSheet, Button } from 'react-native'
-import Styles from '../../styles'
+import { Text, View, TextInput, StyleSheet } from 'react-native'
 import Context from '../../context/AppContext'
+import {Button} from 'react-native-elements'
+import Styles from '../../styles'
 
 export default ({route, navigation}) => {
     const [paciente, setPaciente] = useState(route.params ? route.params : {})
@@ -16,7 +17,7 @@ export default ({route, navigation}) => {
                 placeholder="Informe o Nome"
                 value={paciente.name}
             />
-            
+
             <Text>Email</Text>
             <TextInput
                 style={Styles.input}
@@ -32,6 +33,8 @@ export default ({route, navigation}) => {
                 value={paciente.avatarUrl}
             />
             <Button
+                style={Styles.button}  
+                type='outline'
                 title="Salvar"
                 onPress={() => {
                     dispatch({

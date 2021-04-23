@@ -79,7 +79,7 @@ export default props => {
                 options={({navigation}) => { return{ title: "Pacientes", headerRight: () => (
                         <Button type='clear' onPress={() => navigation.navigate("FormPacientes")}
                         icon={ <Icon name="add" size={25} color="#F2F4F8"/> } />)}}}/> 
-            <Stack.Screen name="FormPacientes" component={FormPacientes}/>
+            <Stack.Screen name="FormPacientes" options={()=> {return{ title:"Formulário de Pacientes"}}} component={FormPacientes}/>
 
           </Stack.Navigator>
         </NavigationContainer>
