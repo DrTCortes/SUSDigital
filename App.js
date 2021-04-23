@@ -65,9 +65,9 @@ export default props => {
 
             <Stack.Screen name="Especialidades" component={ListEspecialidades}
                 options={({navigation}) => { return{ title: "Especialidades", headerRight: () => (
-                        <Button type='clear' onPress={() => navigation.navigate("Dados da Especialidade")}
+                        <Button type='clear' onPress={() => navigation.navigate("FormEspec")}
                         icon={ <Icon name="add" size={25} color="#F2F4F8"/> } />)}}}/>
-            <Stack.Screen name="Dados da Especialidade"  component={FormEspecialidades}/>
+            <Stack.Screen name="FormEspec" options={()=>{return{title:"Dados da Especialidade"}}} component={FormEspecialidades}/>
 
             <Stack.Screen name="Postos" component={ListPostos}
                 options={({navigation}) => { return{ title: "Postos", headerRight: () => (
