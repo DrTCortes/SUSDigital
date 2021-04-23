@@ -40,14 +40,13 @@ export default props => {
 
             <Stack.Screen name="Home" component={HomeScreen}
                 options={({navigation}) => { return{ title: "SUSDigital", headerRight: () => (
-                        <Button type='clear' onPress={() => navigation.navigate("FormConsultas")}
-                        icon={ <Icon name="add" size={25} color="#F2F4F8"/> } />)}}}/>
+                        <Button type='clear' title="Nova Consulta" onPress={() => navigation.navigate("FormConsultas")} />)}}}/>
 
             <Stack.Screen name="Consultas" component={ListConsultas}
                 options={({navigation}) => { return{ title: "Consultas", headerRight: () => (
                         <Button type='clear' onPress={() => navigation.navigate("FormConsultas")}
                         icon={ <Icon name="add" size={25} color="#F2F4F8"/> } />)}}}/>
-            <Stack.Screen name="FormConsultas" component={FormConsultas}/>
+            <Stack.Screen name="FormConsultas" options={()=> {return{ title:"Formulário de Consultas"}}} component={FormConsultas}/>
 
             <Stack.Screen name="DevArea" component={DevArea}/>
 
@@ -56,7 +55,7 @@ export default props => {
                 options={({navigation}) => { return{ title: "Funcionários", headerRight: () => (
                         <Button type='clear' onPress={() => navigation.navigate("FormFunc")}
                         icon={ <Icon name="add" size={25} color="#F2F4F8"/> } />)}}}/>
-            <Stack.Screen name="FormFunc" component={FormFunc}/>
+            <Stack.Screen name="FormFunc" options={()=> {return{ title:"Formulário de Consultas"}}} component={FormFunc}/>
 
             <Stack.Screen name="Medicos" component={ListMedicos}
                 options={({navigation}) => { return{ title: "Médicos", headerRight: () => (
@@ -68,7 +67,7 @@ export default props => {
                 options={({navigation}) => { return{ title: "Especialidades", headerRight: () => (
                         <Button type='clear' onPress={() => navigation.navigate("Dados da Especialidade")}
                         icon={ <Icon name="add" size={25} color="#F2F4F8"/> } />)}}}/>
-            <Stack.Screen name="Dados da Especialidade" component={FormEspecialidades}/>
+            <Stack.Screen name="Dados da Especialidade"  component={FormEspecialidades}/>
 
             <Stack.Screen name="Postos" component={ListPostos}
                 options={({navigation}) => { return{ title: "Postos", headerRight: () => (
