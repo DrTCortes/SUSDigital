@@ -47,20 +47,20 @@ export default props => {
                         icon={ <Icon name="add" size={25} color="#F2F4F8"/> } />)}}}/>
             <Stack.Screen name="FormConsultas" options={()=> {return{ title:"Formulário de Consultas"}}} component={FormConsultas}/>
 
-            <Stack.Screen name="DevArea" component={DevArea}/>
+            <Stack.Screen name="DevArea" options={()=> {return{ title:"Área Administrativa"}}} component={DevArea}/>
 
 
             <Stack.Screen name="Funcionarios" component={ListFuncionarios}
                 options={({navigation}) => { return{ title: "Funcionários", headerRight: () => (
                         <Button type='clear' onPress={() => navigation.navigate("FormFunc")}
                         icon={ <Icon name="add" size={25} color="#F2F4F8"/> } />)}}}/>
-            <Stack.Screen name="FormFunc" options={()=> {return{ title:"Formulário de Consultas"}}} component={FormFunc}/>
+            <Stack.Screen name="FormFunc" options={()=> {return{ title:"Formulário de Funcionários"}}} component={FormFunc}/>
 
             <Stack.Screen name="Medicos" component={ListMedicos}
                 options={({navigation}) => { return{ title: "Médicos", headerRight: () => (
                         <Button type='clear' onPress={() => navigation.navigate("FormMedicos")}
                         icon={ <Icon name="add" size={25} color="#F2F4F8"/> } />)}}}/>
-            <Stack.Screen name="FormMedicos" component={FormMedicos}/>
+            <Stack.Screen name="FormMedicos" options={()=> {return{ title:"Formulário de Médicos"}}} component={FormMedicos}/>
 
             <Stack.Screen name="Especialidades" component={ListEspecialidades}
                 options={({navigation}) => { return{ title: "Especialidades", headerRight: () => (
