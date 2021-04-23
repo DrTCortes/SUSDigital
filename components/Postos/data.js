@@ -25,6 +25,7 @@ export default [
     },
     // {
     //     id: 3,
+    
     //     type: 'posto',
     //     name: 'CS Engenho velho da Federação',
     //     especialidadeposto:'Unidade basica de saude',
