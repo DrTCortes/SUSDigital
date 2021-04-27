@@ -64,9 +64,19 @@ export default StyleSheet.create({
       backgroundColor: '#188dbb',
       alignItems: 'center',
     },
+    infoHeader:{
+      width: '100%',
+      backgroundColor: 'orange',
+      flexDirection: 'row',
+      alignItems: 'flex-start',
+      alignContent: 'flex-start',
+      justifyContent: 'flex-start'
+    },
     ImageInfo: {
-      width: "100%",
-      height: 300,
+      width: 130,
+      height: 130,
+      marginVertical: 50,
+      borderRadius: 200,
       backgroundColor: "#fff",
       
     },
@@ -75,7 +85,6 @@ export default StyleSheet.create({
       fontWeight: 'bold',
       fontSize: 30,
       color:'#fff',
-      transform: [{translateY: -180}],
       textShadowColor: "#000",
       textShadowRadius: 5,
     },
@@ -84,7 +93,6 @@ export default StyleSheet.create({
       fontWeight: 'bold',
       fontSize: 16,
       color:'#02cdd0',
-      transform: [{translateY: -180}],
       textShadowColor: "#000",
       textShadowRadius: 5,
     },
