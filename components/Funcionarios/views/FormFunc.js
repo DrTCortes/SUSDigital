@@ -1,6 +1,6 @@
 import React, { useState, useContext } from 'react'
-import { Text, View, TextInput, StyleSheet } from 'react-native'
-import {Button} from 'react-native-elements'
+import { Text, View, TextInput, Switch, BottomSheet} from 'react-native'
+import {Button, Tab} from 'react-native-elements'
 import AppContext from '../../context/AppContext'
 import Styles from '../../styles'
 
@@ -24,6 +24,16 @@ export default ({route, navigation}) => {
                 placeholder="Informe o E-mail"
                 value={func.email}
             />
+            <Text style={{marginBottom: 15}}>Deseja receber novidades por email?
+            <Switch
+                style={{marginHorizontal: 5}}
+                trackColor={{ false: "#767577", true: "#81b0ff" }}
+                thumbColor={func.isEnabled ? "#f5dd4b" : "#f4f3f4"}
+                ios_backgroundColor="#3e3e3e"
+                onValueChange={isEnabled => setFunc({...func, isEnabled})}
+                value={func.isEnabled}
+             />
+             </Text>
             <Text>URL do Avatar</Text>
             <TextInput
                 style={Styles.input}
