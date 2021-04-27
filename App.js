@@ -10,6 +10,7 @@ import FormConsultas from './components/HomeScreen/view/FormConsultas';
 
 import ListFuncionarios from './components/Funcionarios/views/ListFunc';
 import FormFunc from './components/Funcionarios/views/FormFunc';
+import InfoFunc from './components/Funcionarios/views/InfoFunc';
 
 import ListMedicos from './components/Medicos/views/ListMedicos'
 import FormMedicos from './components/Medicos/views/FormMedicos'
@@ -39,7 +40,8 @@ export default props => {
 
             <Stack.Screen name="Home" component={HomeScreen}
                 options={({navigation}) => { return{ title: "SUSDigital", headerRight: () => (
-                        <Button type='clear' title="Nova Consulta" onPress={() => navigation.navigate("FormConsultas")} />)}}}/>
+                        <Button type='clear' onPress={() => navigation.navigate("FormConsultas")} 
+                        icon={ <Icon name="add" size={25} color="#F2F4F8"/> } />)}}}/>
 
             <Stack.Screen name="Consultas" component={ListConsultas}
                 options={({navigation}) => { return{ title: "Consultas", headerRight: () => (
@@ -55,6 +57,7 @@ export default props => {
                         <Button type='clear' onPress={() => navigation.navigate("FormFunc")}
                         icon={ <Icon name="add" size={25} color="#F2F4F8"/> } />)}}}/>
             <Stack.Screen name="FormFunc" options={()=> {return{ title:"Formulário de Funcionários"}}} component={FormFunc}/>
+            <Stack.Screen name="InfoFunc" options={()=> {return{ title:" "}}} component={InfoFunc}/>
 
             <Stack.Screen name="Medicos" component={ListMedicos}
                 options={({navigation}) => { return{ title: "Médicos", headerRight: () => (
@@ -87,6 +90,6 @@ export default props => {
     }
 
   const screenOptions = {
-  headerStyle: { backgroundColor: '#415A80'},
+  headerStyle: { backgroundColor: '#188dbb'},
   headerTintColor: '#fff',
   headerTitleStyle: { fontWeight: 'bold'} }

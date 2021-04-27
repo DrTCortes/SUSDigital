@@ -41,7 +41,7 @@ export default props => {
     function getFuncItem({ item: func }) {
         return (
             <ListItem key={func.id} bottomDivider rightElement={getActions(func)}
-                onPress={() => props.navigation.navigate('FormFunc', func)}>
+                onPress={() => props.navigation.navigate('InfoFunc', func)}>
                     <Avatar tittle={func.name} rounded source={func.avatarUrl && { uri: func.avatarUrl }}/>
                     <ListItem.Content>
                         <ListItem.Title>{func.name}</ListItem.Title>
