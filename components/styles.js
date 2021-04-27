@@ -3,11 +3,10 @@ import {StyleSheet} from 'react-native'
 export default StyleSheet.create({
     container: {
       flex: 1,
-        backgroundColor: '#F2F4F8',
-        justifyContent: 'center',
+      backgroundColor: '#F2F4F8',
       },
       header: {
-      backgroundColor: '#415A80',
+      backgroundColor: '#188dbb',
       justifyContent: 'flex-start',
       },
       body: {
@@ -15,11 +14,12 @@ export default StyleSheet.create({
         flexWrap: 'wrap',
       },
       form :{
-        padding: 10,
+        marginVertical: 10,
+        marginHorizontal: 20,
       },
       input: {
         height: 40,
-        padding: 5,
+        padding: 10,
         borderColor: '#208bdc',
         borderWidth: 1,
         marginBottom: 15,
@@ -37,7 +37,7 @@ export default StyleSheet.create({
         borderTopWidth: 4,
         borderRadius: 20,
         marginTop: 20,
-        backgroundColor: '#F2F4F8',
+        backgroundColor: '#188dbb',
         borderTopColor: '#415A80',
         padding: 10,
         alignContent: 'space-between'
@@ -59,6 +59,46 @@ export default StyleSheet.create({
         fontSize: 13,
         marginTop: 5,
 
+    },
+    infoScreen:{
+      backgroundColor: '#188dbb',
+      alignItems: 'center',
+    },
+    ImageInfo: {
+      width: "100%",
+      height: 300,
+      backgroundColor: "#fff",
+      
+    },
+    infoText: {
+      fontFamily: 'serif',
+      fontWeight: 'bold',
+      fontSize: 30,
+      color:'#fff',
+      transform: [{translateY: -180}],
+      textShadowColor: "#000",
+      textShadowRadius: 5,
+    },
+    infoText2: {
+      fontFamily: 'serif',
+      fontWeight: 'bold',
+      fontSize: 16,
+      color:'#02cdd0',
+      transform: [{translateY: -180}],
+      textShadowColor: "#000",
+      textShadowRadius: 5,
+    },
+    formImageInfo1: {
+      width: "120%",
+      height: 100,
+      backgroundColor: '#02cdd0',
+      transform: [{skewY: "-6deg"}, {translateY: -22}],
+    },
+    formImageInfo2: {
+      width: "120%",
+      height: 100,
+      backgroundColor: '#188dbb',
+      transform: [{skewY: "-10deg"}, {translateY: -100}]
     },
     });
 
