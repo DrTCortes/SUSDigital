@@ -75,7 +75,7 @@ export default StyleSheet.create({
     ImageInfo: {
       width: 130,
       height: 130,
-      marginVertical: 50,
+      marginVertical: 20,
       borderRadius: 200,
       backgroundColor: "#fff",
       
