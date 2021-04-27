@@ -13,12 +13,22 @@ export default ({route, navigation}) => {
 
     return (
         <View style={[Styles.container, Styles.infoScreen]}>
-            <Image style={Styles.ImageInfo} source={func.avatarUrl && { uri: func.avatarUrl }}/>
+            <View style={Styles.infoHeader}>
+
+                <Button type='clear'  onPress={() => navigation.navigate("Funcionarios")}
+                            icon={ <Icon name="add" size={25} color="#red"/> } />
+                <Image style={Styles.ImageInfo} source={func.avatarUrl && { uri: func.avatarUrl }}/>
+                {/* func.avatarUrl && { uri: func.avatarUrl } */}
+                
+                <View style={{alignItems: 'center', flex: 1, paddingVertical: 20, marginVertical: 20}}>
+                    <Text style={Styles.infoText2}>{func.type}</Text>
+                    <Text style={Styles.infoText}>{func.name}</Text>
+                </View>
+
+            </View>
             <View style={Styles.formImageInfo1}/>
             <View style={Styles.formImageInfo2}/>
-            {console.log(func.isEnabled)}
-            <Text style={Styles.infoText2}>{func.type}</Text>
-            <Text style={Styles.infoText}>{func.name}</Text>
+            
         </View>
     )
 }

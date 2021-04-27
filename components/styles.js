@@ -64,29 +64,35 @@ export default StyleSheet.create({
       backgroundColor: '#188dbb',
       alignItems: 'center',
     },
+    infoHeader:{
+      width: '100%',
+      backgroundColor: '#E9E9E9',
+      flexDirection: 'row',
+      alignItems: 'flex-start',
+      alignContent: 'flex-start',
+      justifyContent: 'flex-start'
+    },
     ImageInfo: {
-      width: "100%",
-      height: 300,
+      width: 130,
+      height: 130,
+      marginVertical: 20,
+      borderRadius: 200,
       backgroundColor: "#fff",
-      
+      shadowRadius: 5,
+      shadowColor: "red"
     },
     infoText: {
       fontFamily: 'serif',
       fontWeight: 'bold',
-      fontSize: 30,
-      color:'#fff',
-      transform: [{translateY: -180}],
-      textShadowColor: "#000",
-      textShadowRadius: 5,
+      fontSize: 24,
+      textAlign: 'center',
+      color:'#188dbb',
     },
     infoText2: {
       fontFamily: 'serif',
       fontWeight: 'bold',
       fontSize: 16,
       color:'#02cdd0',
-      transform: [{translateY: -180}],
-      textShadowColor: "#000",
-      textShadowRadius: 5,
     },
     formImageInfo1: {
       width: "120%",
@@ -98,7 +104,7 @@ export default StyleSheet.create({
       width: "120%",
       height: 100,
       backgroundColor: '#188dbb',
-      transform: [{skewY: "-10deg"}, {translateY: -100}]
+      transform: [{skewY: "-10deg"}, {translateY: -100}],
     },
     });
 
