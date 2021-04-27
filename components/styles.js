@@ -66,7 +66,7 @@ export default StyleSheet.create({
     },
     infoHeader:{
       width: '100%',
-      backgroundColor: 'orange',
+      backgroundColor: '#E9E9E9',
       flexDirection: 'row',
       alignItems: 'flex-start',
       alignContent: 'flex-start',
@@ -78,23 +78,21 @@ export default StyleSheet.create({
       marginVertical: 20,
       borderRadius: 200,
       backgroundColor: "#fff",
-      
+      shadowRadius: 5,
+      shadowColor: "red"
     },
     infoText: {
       fontFamily: 'serif',
       fontWeight: 'bold',
-      fontSize: 30,
-      color:'#fff',
-      textShadowColor: "#000",
-      textShadowRadius: 5,
+      fontSize: 24,
+      textAlign: 'center',
+      color:'#188dbb',
     },
     infoText2: {
       fontFamily: 'serif',
       fontWeight: 'bold',
       fontSize: 16,
       color:'#02cdd0',
-      textShadowColor: "#000",
-      textShadowRadius: 5,
     },
     formImageInfo1: {
       width: "120%",
@@ -106,7 +104,7 @@ export default StyleSheet.create({
       width: "120%",
       height: 100,
       backgroundColor: '#188dbb',
-      transform: [{skewY: "-10deg"}, {translateY: -100}]
+      transform: [{skewY: "-10deg"}, {translateY: -100}],
     },
     });
 
