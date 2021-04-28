@@ -99,13 +99,27 @@ export default StyleSheet.create({
       height: 100,
       backgroundColor: '#02cdd0',
       transform: [{skewY: "-6deg"}, {translateY: -22}],
-    },
+    }, 
     formImageInfo2: {
       width: "100%",
       height: 100,
       backgroundColor: '#188dbb',
       transform: [{skewY: "-10deg"}, {translateY: -100}],
     },
+    imageIcon: {
+      width: 30,
+      height: 30,
+      backgroundColor: "#fff",
+      shadowRadius: 5,
+      shadowColor: "red"
+      
+    },
+    contentBox: {
+      width: '100%',
+      height: 50,
+      backgroundColor: 'red',
+      margin: 10,
+    }
     });
 
 // Paleta de Cores:

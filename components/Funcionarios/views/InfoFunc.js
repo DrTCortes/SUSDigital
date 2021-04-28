@@ -1,13 +1,23 @@
 import React, { useState, useContext } from 'react'
-import { View, Image, Text} from 'react-native'
+import { View, Image, Text, FlatList} from 'react-native'
 import { ListItem, Button, Icon, Avatar } from 'react-native-elements'
 import Styles from '../../styles'
 import AppContext from '../../context/AppContext'
 
 export default ({route, navigation}) => {
     const [func, setFunc] = useState(route.params ? route.params : {})
-    const { dispatch } = useContext(AppContext)
+    const { state, dispatch } = useContext(AppContext)
 
+    function getSelectItem({ item: select }) {
+        return (
+            <View style={Styles.contentBox}
+                onPress={() => getSelection(select)}>
+                    <Image style={Styles.imageIcon} source={select.avatarUrl && { uri: select.avatarUrl }}/>
+                    <View >
+                        <Text>{select.name}</Text>
+                    </View>
+            </View>
+        )}
 
 
 
@@ -25,9 +35,15 @@ export default ({route, navigation}) => {
                     <Text style={Styles.infoText}>{func.name}</Text>
                 </View>
             </View>
+
             <View style={Styles.formImageInfo1}/>
             <View style={Styles.formImageInfo2}/>
-            
+
+            <Text style={Styles.text}>Selecione o posto: </Text>
+            <FlatList
+                keyExtractor={select => select.id.toString()}
+                data={state.postos}
+                renderItem={ getSelectItem } />
         </View>
     )
 }
