@@ -18,6 +18,7 @@ import infoMedico from './components/Medicos/views/infoMedico';
 
 import ListEspecialidades from './components/Especialidades/views/ListEspecialidades'
 import FormEspecialidades from './components/Especialidades/views/FormEspecialidades'
+import InfoEspec from './components/Especialidades/views/InfoEspecialidades';
 
 import ListPostos from './components/Postos/views/ListPostos'
 import FormPostos from './components/Postos/views/FormPostos'
@@ -72,6 +73,7 @@ export default props => {
                         <Button type='clear' onPress={() => navigation.navigate("FormEspec")}
                         icon={ <Icon name="add" size={25} color="#F2F4F8"/> } />)}}}/>
             <Stack.Screen name="FormEspec" options={()=>{return{title:"Dados da Especialidade"}}} component={FormEspecialidades}/>
+            <Stack.Screen name="InfoEspec" options={()=> {return{headerShown: false}}} component={InfoEspec}/>
 
             <Stack.Screen name="Postos" component={ListPostos}
                 options={({navigation}) => { return{ title: "Postos", headerRight: () => (

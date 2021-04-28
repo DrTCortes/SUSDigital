@@ -32,6 +32,20 @@ export default ({route, navigation}) => {
                 value={espec.avatarUrl}
                 style={Styles.input}
             />
+            <Text>Postos Disponíveis</Text>
+            <TextInput 
+                onChangeText={posto => setEspec({...espec, posto})}
+                placeholder="Informe o nome"
+                value={espec.posto}
+                style={Styles.input}
+            />
+            <Text>Medicos Disponíveis</Text>
+            <TextInput 
+                onChangeText={medico => setEspec({...espec, medico})}
+                placeholder="Informe o nome"
+                value={espec.medico}
+                style={Styles.input}
+            />
             <Button
                 style={Styles.button}  
                 type='outline'
