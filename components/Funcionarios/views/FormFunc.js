@@ -1,6 +1,6 @@
 import React, { useState, useContext } from 'react'
-import { Text, View, TextInput, Switch, BottomSheet} from 'react-native'
-import {Button, Tab, CheckBox} from 'react-native-elements'
+import { Text, View, TextInput, Switch } from 'react-native'
+import {Button, Slider} from 'react-native-elements'
 import AppContext from '../../context/AppContext'
 import Styles from '../../styles'
 
@@ -41,13 +41,10 @@ export default ({route, navigation}) => {
                 placeholder="Informe a URL do Avatar"
                 value={func.avatarUrl}
             />
-            <CheckBox
-                center
-                title='Click Here'
-                checkedIcon='dot-circle-o'
-                uncheckedIcon='circle-o'
-          
-                onPress={CheckBox => setFunc({...func, CheckBox})}
+            <Slider
+                thumbStyle={{ height: 10, width: 10, backgroundColor: '#188dbb'}}
+                value={func.Slider}
+                onValueChange={Slider => setFunc({...func, Slider})}
             />
             <Button
                 style={Styles.button}  

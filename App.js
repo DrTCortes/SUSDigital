@@ -57,7 +57,7 @@ export default props => {
                         <Button type='clear' onPress={() => navigation.navigate("FormFunc")}
                         icon={ <Icon name="add" size={25} color="#F2F4F8"/> } />)}}}/>
             <Stack.Screen name="FormFunc" options={()=> {return{ title:"Formulário de Funcionários"}}} component={FormFunc}/>
-            <Stack.Screen name="InfoFunc" options={()=> {return{ title:" "}}, {headerShown: false}} component={InfoFunc}/>
+            <Stack.Screen name="InfoFunc" options={()=> {return{headerShown: false}}} component={InfoFunc}/>
 
             <Stack.Screen name="Medicos" component={ListMedicos}
                 options={({navigation}) => { return{ title: "Médicos", headerRight: () => (

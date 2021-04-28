@@ -95,13 +95,13 @@ export default StyleSheet.create({
       color:'#02cdd0',
     },
     formImageInfo1: {
-      width: "120%",
+      width: "100%",
       height: 100,
       backgroundColor: '#02cdd0',
       transform: [{skewY: "-6deg"}, {translateY: -22}],
     },
     formImageInfo2: {
-      width: "120%",
+      width: "100%",
       height: 100,
       backgroundColor: '#188dbb',
       transform: [{skewY: "-10deg"}, {translateY: -100}],

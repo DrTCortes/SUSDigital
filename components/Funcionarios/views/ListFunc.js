@@ -27,12 +27,12 @@ export default props => {
                 <Button
                     onPress={() => props.navigation.navigate('FormFunc', func)}
                     type="clear"
-                    icon={<Icon name="edit" size={25} color="orange" />}
+                    icon={<Icon name="edit" size={25} color="#188dbb" />}
                 />
                 <Button
                     onPress={() => dispatch({type: 'deleteFunc', payload: func})}
                     type="clear"
-                    icon={<Icon name="delete" size={25} color="red" />}
+                    icon={<Icon name="delete" size={25} color="#188dbb" />}
                 />
             </>
         )
