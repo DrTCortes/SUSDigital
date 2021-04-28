@@ -12,8 +12,9 @@ import ListFuncionarios from './components/Funcionarios/views/ListFunc';
 import FormFunc from './components/Funcionarios/views/FormFunc';
 import InfoFunc from './components/Funcionarios/views/InfoFunc';
 
-import ListMedicos from './components/Medicos/views/ListMedicos'
-import FormMedicos from './components/Medicos/views/FormMedicos'
+import ListMedicos from './components/Medicos/views/ListMedicos';
+import FormMedicos from './components/Medicos/views/FormMedicos';
+import infoMedico from './components/Medicos/views/infoMedico';
 
 import ListEspecialidades from './components/Especialidades/views/ListEspecialidades'
 import FormEspecialidades from './components/Especialidades/views/FormEspecialidades'
@@ -64,7 +65,8 @@ export default props => {
                         <Button type='clear' onPress={() => navigation.navigate("FormMedicos")}
                         icon={ <Icon name="add" size={25} color="#F2F4F8"/> } />)}}}/>
             <Stack.Screen name="FormMedicos" options={()=> {return{ title:"Formulário de Médicos"}}} component={FormMedicos}/>
-
+            <Stack.Screen name="infoMedico" options={()=> {return{headerShown: false}}} component={infoMedico}/>
+            
             <Stack.Screen name="Especialidades" component={ListEspecialidades}
                 options={({navigation}) => { return{ title: "Especialidades", headerRight: () => (
                         <Button type='clear' onPress={() => navigation.navigate("FormEspec")}

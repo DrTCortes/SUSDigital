@@ -27,12 +27,12 @@ export default props => {
                 <Button  //ao clicar no botão edit o cadastro de medico é exibido para alteração
                     onPress={() => props.navigation.navigate('FormMedicos', medico)} 
                     type="clear"
-                    icon={<Icon name="edit" size={25} color="orange" />}
+                    icon={<Icon name="edit" size={25} color="#188dbb" />}
                 />
                 <Button
                     onPress={() => dispatch({type: 'deleteMedico', payload: medico})}
                     type="clear"
-                    icon={<Icon name="delete" size={25} color="red" />}
+                    icon={<Icon name="delete" size={25} color="#188dbb" />}
                 />
             </>
         )
@@ -42,7 +42,7 @@ export default props => {
         return (
             //Exibe a lista de medico, com nome,email e foto
             <ListItem key={medico.id} bottomDivider rightElement={getActions(medico)}
-                onPress={() => props.navigation.navigate('FormMedicos', medico)}>
+                    onPress={() => props.navigation.navigate('infoMedico', medico)}>
                     <Avatar tittle={medico.name} rounded source={medico.avatarUrl && { uri: medico.avatarUrl }}/>
                     <ListItem.Content>
                         <ListItem.Title>{medico.name}</ListItem.Title>

@@ -2,8 +2,8 @@ export default [
     {
         id:1,
         type: 'medico',
-        name:'Daiane Sampaio',
-        email:'daianesantanasampaio@gmail.com',
+        name:'Sophia Mello',
+        email:'sophiabushmello@gmail.com',
         crm: '876767',
         rg: '1198789789',
         cpf: '98675646769',
@@ -11,7 +11,7 @@ export default [
         telefone: '759877888',
         especialidade : 'Clinico Geral',
         avatarUrl: 
-          'https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_1280.png',
+          'https://www.diabetes.org.br/wp-content/uploads/2020/03/imagem_m%C3%A9dica_ipad.png',
     },
     {
         id:2,
@@ -25,7 +25,7 @@ export default [
         telefone: '758777888',
         especialidade : 'Cardiologia',
         avatarUrl:
-           'https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_1280.png',
+           'https://posfg.com.br/wp-content/uploads/2020/10/POSFG-Dia-do-m%C3%A9dico-site.png',
     },
     // {
     //     id:4,
