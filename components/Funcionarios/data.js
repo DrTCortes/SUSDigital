@@ -4,8 +4,7 @@ export default [
           type: 'funcionario',
           name: 'João Silva',
           email: 'josil@email.com',
-          isEnabled: false,
-          CheckBox: "",
+          isEnabled: true,
           avatarUrl:
             'https://image.freepik.com/free-photo/waist-up-portrait-handsome-serious-unshaven-male-keeps-hands-together-dressed-dark-blue-shirt-has-talk-with-interlocutor-stands-against-white-wall-self-confident-man-freelancer_273609-16320.jpg',
         },
