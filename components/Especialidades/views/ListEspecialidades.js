@@ -9,7 +9,7 @@ export default props => {
 
     //Função para exibir um modal de confirmação de deletar a especialidade
     function confirmEspecDeletion(espec) {
-        Alert.alert('Excluir Usuário', 'Deseja excluir o usuário?', [
+        Alert.alert('Excluir Especialidade?', 'Deseja excluir o Especialidade?', [
             { text: 'Sim',
                 onPress() {
                     dispatch({

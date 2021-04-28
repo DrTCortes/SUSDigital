@@ -70,6 +70,7 @@ export default props => {
                         <Button type='clear' onPress={() => navigation.navigate("FormEspec")}
                         icon={ <Icon name="add" size={25} color="#F2F4F8"/> } />)}}}/>
             <Stack.Screen name="FormEspec" options={()=>{return{title:"Dados da Especialidade"}}} component={FormEspecialidades}/>
+            <Stack.Screen name="InfoEspec" options={()=> {return{ title:" "}}, {headerShown: false}} component={InfoFunc}/>
 
             <Stack.Screen name="Postos" component={ListPostos}
                 options={({navigation}) => { return{ title: "Postos", headerRight: () => (
