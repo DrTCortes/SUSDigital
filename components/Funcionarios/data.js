@@ -5,7 +5,7 @@ export default [
           name: 'João Silva',
           email: 'josil@email.com',
           isEnabled: false,
-          CheckBox: false,
+          CheckBox: "",
           avatarUrl:
             'https://image.freepik.com/free-photo/waist-up-portrait-handsome-serious-unshaven-male-keeps-hands-together-dressed-dark-blue-shirt-has-talk-with-interlocutor-stands-against-white-wall-self-confident-man-freelancer_273609-16320.jpg',
         },
@@ -36,6 +36,7 @@ export default [
           avatarUrl:
             'https://image.freepik.com/free-photo/portrait-smiling-young-man-eyewear_171337-4842.jpg',
         },
+
     
       ];
       
