@@ -50,7 +50,13 @@ export default ({route, navigation}) => {
                 style={Styles.button}  
                 type='outline'
                 title="Salvar"
-                onPress={}
+                onPress={() => {
+                    dispatch({
+                        type: func.id ? 'updateFunc' : 'createFunc',
+                        payload: func,
+                    })
+                    navigation.goBack()
+                }}
             />
         </View>
     )
