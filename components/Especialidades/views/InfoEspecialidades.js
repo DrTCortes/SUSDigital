@@ -12,8 +12,8 @@ export default ({route, navigation}) => {
         <View style={[Styles.container, Styles.infoScreen]}>
             <View style={Styles.infoHeader}>
 
-                <Button type='clear'  onPress={() => navigation.navigate("Especialidade")}
-                            icon={ <Icon name="add" size={25} color="#red"/> } />
+                <Button type='clear'  onPress={() => navigation.navigate("Especialidades")}
+                            icon={ <Icon name="chevron-left" size={25} color="#188dbb"/> } />
                 <Image style={Styles.ImageInfo} source={func.avatarUrl && { uri: func.avatarUrl }}/>
                 {/* func.avatarUrl && { uri: func.avatarUrl } */}
                 
