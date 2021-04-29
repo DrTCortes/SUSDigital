@@ -45,7 +45,7 @@ export default [
          DN: '30/06/2013',
          Mae:'Amanda Santos Lima',
          email: 'dossantosfer@gmail.com',
-         avatarUrl: 'https://geloelimaodotcom.files.wordpress.com/2014/02/menino-rugas.jpg',
+         avatarUrl: 'https://i.pinimg.com/originals/38/ca/74/38ca749048d1a3706beeed4a6a93439e.jpg',
 
      },
 ]
