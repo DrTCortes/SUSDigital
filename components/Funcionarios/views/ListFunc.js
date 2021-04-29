@@ -39,7 +39,7 @@ export default props => {
         )}
 
     return (
-        <View style={{ flex: 1}}>
+        <View style={[Styles.container, {alignItems: 'center'}]}>
             <FlatList
                 keyExtractor={func => func.id.toString()}
                 data={state.funcs}

@@ -3,6 +3,7 @@ import {StyleSheet} from 'react-native'
 export default StyleSheet.create({
     container: {
       flex: 1,
+      width: '100%',
       backgroundColor: '#F2F4F8',
       },
       header: {
@@ -64,14 +65,12 @@ export default StyleSheet.create({
     infoScreen:{
       backgroundColor: '#188dbb',
       alignItems: 'center',
+      marginBottom: 500, 
     },
     infoHeader:{
       width: '100%',
       backgroundColor: '#E9E9E9',
       flexDirection: 'row',
-      alignItems: 'flex-start',
-      alignContent: 'flex-start',
-      justifyContent: 'flex-start'
     },
     ImageInfo: {
       width: 130,
@@ -97,15 +96,15 @@ export default StyleSheet.create({
     },
     formImageInfo1: {
       width: "100%",
-      height: 100,
+      height: 50,
       backgroundColor: '#02cdd0',
-      transform: [{skewY: "-6deg"}, {translateY: -22}],
+      transform: [{skewY: "-6deg"}, {translateY: -20}],
     }, 
     formImageInfo2: {
       width: "100%",
-      height: 100,
+      height: 50,
       backgroundColor: '#188dbb',
-      transform: [{skewY: "-10deg"}, {translateY: -100}],
+      transform: [{skewY: "-10deg"}, {translateY: -40}],
     },
     imageIcon: {
       width: 40,
@@ -123,10 +122,23 @@ export default StyleSheet.create({
       borderRadius: 2,
       borderTopLeftRadius: 30,
       borderBottomRightRadius: 30,
-      marginHorizontal: 'auto',
       marginVertical: 10,
-      flexDirection: 'row',
       alignItems: 'center',
+      flexDirection: 'row',
+      alignContent: 'center',
+    },
+    contentBox2: {
+      width: 100,
+      height: 100,
+      borderRadius: 2,
+      borderTopLeftRadius: 30,
+      borderBottomRightRadius: 30,
+      borderColor: '#188dbb',
+      borderWidth: 5,
+    },
+    horizontalCenter: {
+      width: "100%",
+      justifyContent: 'space-around',
     }
     });
 

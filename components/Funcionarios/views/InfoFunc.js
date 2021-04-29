@@ -41,33 +41,42 @@ export default ({route, navigation}) => {
                 </View>
             </View>
 
-            <View style={Styles.formImageInfo1}/>
-            <View style={Styles.formImageInfo2}/>
+            <View style={[Styles.horizontalCenter, Styles.infoHeader]}>
+                <View style={Styles.contentBox2}></View>
+                <View style={Styles.contentBox2}></View>
+            </View>
 
-            <Text style={[Styles.text, {color: "#e1e1e1", fontSize: 18}]}>Selecione o posto: </Text>
-            <FlatList
-                keyExtractor={select => select.id.toString()}
-                data={state.postos}
-                renderItem={ getSelectItem } />
+            <View style={[Styles.horizontalCenter, ]}>
+                <View style={Styles.formImageInfo1}/>
+                <View style={Styles.formImageInfo2}/>
+            </View>
+            
+            <View Styles={{}}>
+                <Text style={[Styles.text, {color: "#e1e1e1", fontSize: 18}]}>Selecione o posto: </Text>
+                <FlatList
+                    keyExtractor={select => select.id.toString()}
+                    data={state.postos}
+                    renderItem={ getSelectItem } />
 
-            <Text style={[Styles.text, {color: "#e1e1e1", fontSize: 18}]}>Selecione o Paciente: </Text>
-            <FlatList
-                keyExtractor={select => select.id.toString()}
-                data={state.pacientes}
-                renderItem={ getSelectItem } />
-                
-            <Button
-             style={Styles.button}  
-                type='outline'
-                title="Salvar"
-                onPress={() => {
-                    dispatch({
-                        type: func.id ? 'updateFunc' : 'createFunc',
-                        payload: func,
-                    })
-                    navigation.goBack()
-                }}
-            />
+                <Text style={[Styles.text, {color: "#e1e1e1", fontSize: 18}]}>Selecione o Paciente: </Text>
+                <FlatList
+                    keyExtractor={select => select.id.toString()}
+                    data={state.pacientes}
+                    renderItem={ getSelectItem } />
+                    
+                <Button
+                style={Styles.button}  
+                    type='outline'
+                    title="Salvar"
+                    onPress={() => {
+                        dispatch({
+                            type: func.id ? 'updateFunc' : 'createFunc',
+                            payload: func,
+                        })
+                        navigation.goBack()
+                    }}
+                />
+            </View>
         </View>
     )
 }
