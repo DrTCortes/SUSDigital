@@ -26,6 +26,7 @@ export default StyleSheet.create({
         backgroundColor: '#fff',
     },
       button:{
+        
         margin: 4,
         backgroundColor: '#FFF',
         fontWeight: "bold",
@@ -107,18 +108,25 @@ export default StyleSheet.create({
       transform: [{skewY: "-10deg"}, {translateY: -100}],
     },
     imageIcon: {
-      width: 30,
-      height: 30,
+      width: 40,
+      height: 40,
+      marginHorizontal: 20,
+      borderRadius: 20,
       backgroundColor: "#fff",
       shadowRadius: 5,
       shadowColor: "red"
       
     },
     contentBox: {
-      width: '100%',
-      height: 50,
-      backgroundColor: 'red',
-      margin: 10,
+      width: 320,
+      height: 60,
+      borderRadius: 2,
+      borderTopLeftRadius: 30,
+      borderBottomRightRadius: 30,
+      marginHorizontal: 'auto',
+      marginVertical: 10,
+      flexDirection: 'row',
+      alignItems: 'center',
     }
     });
 

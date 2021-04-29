@@ -1,6 +1,6 @@
 import React, { useState, useContext } from 'react'
-import { Text, View, FlatList } from 'react-native'
-import { ListItem, Icon, Avatar, Button } from 'react-native-elements'
+import { Text, View, FlatList, Image } from 'react-native'
+import { ListItem, Button } from 'react-native-elements'
 import AppContext from '../../context/AppContext'
 import Styles from '../../styles'
 
@@ -9,7 +9,6 @@ export default ({route, navigation}) => {
     const { state, dispatch } = useContext(AppContext)
 
     function getSelection(select) {
-        console.log("Rodou!")
         if (select.type === "funcionario"){
             consulta.c_func = select.name
         
@@ -34,7 +33,7 @@ export default ({route, navigation}) => {
         return (
             <ListItem key={select.id} bottomDivider
                 onPress={() => getSelection(select)}>
-                    <Avatar tittle={select.id} rounded source={select.avatarUrl && { uri: select.avatarUrl }}/>
+                    <Image style={Styles.imageIcon} source={select.avatarUrl && { uri: select.avatarUrl }}/>
                     <ListItem.Content>
                         <ListItem.Title>{select.name}</ListItem.Title>
                     </ListItem.Content>
