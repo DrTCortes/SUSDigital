@@ -21,7 +21,7 @@ export default ({route, navigation}) => {
         return (
             <TouchableOpacity style={[Styles.contentBox, {backgroundColor: '#e1e1e1'}]}
                 onPress={() => getSelection(select)}>
-                    <Image style={Styles.imageIcon} tittkkbkbkjvcfhfvhh  le={select.name} rounded source={select.avatarUrl && { uri: select.avatarUrl }}/>
+                    <Image style={Styles.imageIcon} source={select.avatarUrl && { uri: select.avatarUrl }}/>
                     <Text > {select.name} </Text>
             </TouchableOpacity>
         )}
