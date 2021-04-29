@@ -1,7 +1,8 @@
 import React, { useContext } from 'react'
-import { View, FlatList, Alert } from 'react-native'
+import { View, FlatList, Alert, Image, TouchableOpacity } from 'react-native'
 import { ListItem, Button, Icon, Avatar } from 'react-native-elements'
 import Context from '../../context/AppContext'
+import Styles from '../../styles'
 
 export default props => {
 
@@ -27,12 +28,12 @@ export default props => {
                 <Button  //ao clicar no botão edit o cadastro de medico é exibido para alteração
                     onPress={() => props.navigation.navigate('FormMedicos', medico)} 
                     type="clear"
-                    icon={<Icon name="edit" size={25} color="#188dbb" />}
+                    icon={<Icon name="edit" size={25} color="#FFF" />}
                 />
                 <Button
                     onPress={() => dispatch({type: 'deleteMedico', payload: medico})}
                     type="clear"
-                    icon={<Icon name="delete" size={25} color="#188dbb" />}
+                    icon={<Icon name="delete" size={25} color="#FFF" />}
                 />
             </>
         )
@@ -41,19 +42,21 @@ export default props => {
     function getMedicoItem({ item: medico }) {
         return (
             //Exibe a lista de medico, com nome,email e foto
-            <ListItem key={medico.id} bottomDivider rightElement={getActions(medico)}
+            <TouchableOpacity style={[Styles.contentBox, {backgroundColor: '#188dbb'}]} key={medico.id} bottomDivider rightElement={getActions(medico)}
                     onPress={() => props.navigation.navigate('infoMedico', medico)}>
-                    <Avatar tittle={medico.name} rounded source={medico.avatarUrl && { uri: medico.avatarUrl }}/>
+                     <Avatar  style={Styles.imageIcon} tittle={medico.name} rounded source={medico.avatarUrl && { uri: medico.avatarUrl }}/> 
                     <ListItem.Content>
-                        <ListItem.Title>{medico.name}</ListItem.Title>
-                        <ListItem.Subtitle>{medico.email}</ListItem.Subtitle>
+                        <ListItem.Title style={{color: '#FFF'}}>{medico.name}</ListItem.Title>
+                        <ListItem.Subtitle style={{color: '#c9c9c9'}}>{medico.email}</ListItem.Subtitle>
                     </ListItem.Content>
                         <View style={{flexDirection:'row'}}>{getActions(medico)}</View>
-            </ListItem>
+            </TouchableOpacity>                        
+            // <ListItem key={medico.id} bottomDivider rightElement={getActions(medico)}            
+            // </ListItem>
         )}
 
     return (
-        <View>
+        <View style={[Styles.container, {alignItems: 'center'}]}>
             <FlatList
                 keyExtractor={medico => medico.id.toString()}
                 data={state.medicos}
@@ -61,3 +64,4 @@ export default props => {
         </View>
     )
 }
+

@@ -1,8 +1,10 @@
-import React, { useState, useContext } from 'react'
-import { Text, View, TextInput, StyleSheet } from 'react-native'
-import Styles from '../../styles'
-import Context from '../../context/AppContext'
-import {Button} from 'react-native-elements'
+import React, { useState, useContext } from 'react';
+import { Text, View, TextInput, StyleSheet } from 'react-native';
+import Styles from '../../styles';
+import Context from '../../context/AppContext';
+import {Button} from 'react-native-elements';
+
+import DatePicker from 'react-native-datepicker';
 
 export default ({route, navigation}) => {
     const [medico, setMedico] = useState(route.params ? route.params : {})
@@ -11,13 +13,22 @@ export default ({route, navigation}) => {
     return (
         //Tela de cadastro do medico
         <View style={Styles.form}>
-            <Text>Nome</Text>
+            <Text>Nome</Text>                        
             <TextInput                 
                 onChangeText={name => setMedico({...medico, name})}
                 placeholder="Informe o Nome"
                 value={medico.name}
                 style={Styles.input} 
             />
+            <Text>Data de Nascimento</Text>  
+             <DatePicker
+                format="DD-MM-YYYY"        
+                 date = {medico.nascimento}
+                 onPressDate
+                 onDateChange={nascimento => setMedico({...medico, nascimento})}
+                 value = {medico.nascimento}
+                 confirmBtnText="Confirm"
+            />             
             <Text>Email</Text>
             <TextInput                
                 onChangeText={email => setMedico({...medico, email})}
@@ -66,7 +77,7 @@ export default ({route, navigation}) => {
                 placeholder='Informe o telefone' 
                 value={medico.telefone} 
                 style={Styles.input}          
-            />           
+            />               
             <Button
                 style={Styles.button}  
                 type='outline'
@@ -82,3 +93,21 @@ export default ({route, navigation}) => {
         </View>
     )
 }
+const styles = StyleSheet.create({
+    container: {
+      flex: 1,
+      padding: 10,
+      justifyContent: 'center',
+      alignItems: 'center',
+    },
+    title: {
+      textAlign: 'center',
+      fontSize: 20,
+      fontWeight: 'bold',
+      padding: 20,
+    },
+    datePickerStyle: {
+      width: 200,
+      marginTop: 20,
+    },
+  });
