@@ -42,7 +42,7 @@ export default [
          CPF: '638.183.672-56',
          CNS: '714430945810009',
          Sexo: 'Masculino',
-         DN: '30/06/2013',
+         DN: '30/06/2002',
          Mae:'Amanda Santos Lima',
          email: 'dossantosfer@gmail.com',
          avatarUrl: 'https://i.pinimg.com/originals/38/ca/74/38ca749048d1a3706beeed4a6a93439e.jpg',
