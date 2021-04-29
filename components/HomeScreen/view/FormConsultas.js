@@ -1,5 +1,5 @@
 import React, { useState, useContext } from 'react'
-import { Text, View, FlatList, Image } from 'react-native'
+import { Text, View, FlatList, Image, TouchableOpacity } from 'react-native'
 import { ListItem, Button } from 'react-native-elements'
 import AppContext from '../../context/AppContext'
 import Styles from '../../styles'
@@ -31,17 +31,17 @@ export default ({route, navigation}) => {
 
     function getSelectItem({ item: select }) {
         return (
-            <ListItem key={select.id} bottomDivider
+            <TouchableOpacity style={[Styles.contentBox, {backgroundColor: '#188dbb'}]}
                 onPress={() => getSelection(select)}>
                     <Image style={Styles.imageIcon} source={select.avatarUrl && { uri: select.avatarUrl }}/>
                     <ListItem.Content>
                         <ListItem.Title>{select.name}</ListItem.Title>
                     </ListItem.Content>
-            </ListItem>
+            </TouchableOpacity>
         )}
 
     return (
-        <View style={Styles.container}>
+        <View style={[Styles.container, Styles.horizontalCenter]}>
 
             <Text style={Styles.text}>Selecione o funcionário: </Text>   
             <FlatList
@@ -72,7 +72,7 @@ export default ({route, navigation}) => {
                 keyExtractor={select => select.id.toString()}
                 data={state.medicos}
                 renderItem={ getSelectItem } />
-            
+            <View style={{width: '90%', margin: 20}}>
             <Button 
                 style={Styles.button}  
                 type='outline'
@@ -85,6 +85,7 @@ export default ({route, navigation}) => {
                     navigation.goBack()
                 }}
                 />
+            </View>
         </View>
     )
 }
