@@ -27,7 +27,7 @@ export default StyleSheet.create({
         backgroundColor: '#fff',
     },
       button:{
-        
+        width: '100%',
         margin: 4,
         backgroundColor: '#FFF',
         fontWeight: "bold",
@@ -64,8 +64,6 @@ export default StyleSheet.create({
     },
     infoScreen:{
       backgroundColor: '#188dbb',
-      alignItems: 'center',
-      marginBottom: 500, 
     },
     infoHeader:{
       width: '100%',
@@ -98,13 +96,13 @@ export default StyleSheet.create({
       width: "100%",
       height: 50,
       backgroundColor: '#02cdd0',
-      transform: [{skewY: "-6deg"}, {translateY: -20}],
+      transform: [{skewY: "-6deg"}, {translateY: -25}],
     }, 
     formImageInfo2: {
       width: "100%",
       height: 50,
       backgroundColor: '#188dbb',
-      transform: [{skewY: "-10deg"}, {translateY: -40}],
+      transform: [{skewY: "-10deg"}, {translateY: -45}],
     },
     imageIcon: {
       width: 40,
@@ -128,17 +126,26 @@ export default StyleSheet.create({
       alignContent: 'center',
     },
     contentBox2: {
-      width: 100,
-      height: 100,
+      width: 300,
       borderRadius: 2,
-      borderTopLeftRadius: 30,
-      borderBottomRightRadius: 30,
+      borderRadius: 10,
       borderColor: '#188dbb',
       borderWidth: 5,
     },
     horizontalCenter: {
       width: "100%",
+      alignItems: 'center',
       justifyContent: 'space-around',
+    },
+    infoBox: {
+      width: '100%',
+      paddingHorizontal: 10,
+      paddingTop: 5,
+    },
+    infoBoxContent: {
+      backgroundColor: '#188dbb',
+      textAlign: 'center',
+      paddingVertical: 10,
     }
     });
 
