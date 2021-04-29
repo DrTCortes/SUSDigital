@@ -21,11 +21,10 @@ export default ({route, navigation}) => {
         return (
             <TouchableOpacity style={[Styles.contentBox, {backgroundColor: '#e1e1e1'}]}
                 onPress={() => getSelection(select)}>
-                    <Image style={Styles.imageIcon} tittle={select.name} rounded source={select.avatarUrl && { uri: select.avatarUrl }}/>
+                    <Image style={Styles.imageIcon} tittkkbkbkjvcfhfvhh  le={select.name} rounded source={select.avatarUrl && { uri: select.avatarUrl }}/>
                     <Text > {select.name} </Text>
             </TouchableOpacity>
         )}
-
 
     return (
         <View style={[Styles.container, Styles.infoScreen, Styles.horizontalCenter]}>
@@ -53,7 +52,6 @@ export default ({route, navigation}) => {
                         
                     </View>
                 </View>
-
             </View>
 
             <View style={[Styles.horizontalCenter, ]}>
@@ -61,7 +59,7 @@ export default ({route, navigation}) => {
                 <View style={Styles.formImageInfo2}/>
             </View>
             
-            <View Styles={{}}>
+            <View>
                 <Text style={[Styles.text, {color: "#e1e1e1", fontSize: 18}]}>Selecione o posto: </Text>
                 <FlatList
                     keyExtractor={select => select.id.toString()}
@@ -75,7 +73,7 @@ export default ({route, navigation}) => {
                     renderItem={ getSelectItem } />
                     
                 <Button
-                style={Styles.button}  
+                    style={Styles.button}  
                     type='outline'
                     title="Salvar"
                     onPress={() => {

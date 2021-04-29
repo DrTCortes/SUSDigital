@@ -27,7 +27,7 @@ export default StyleSheet.create({
         backgroundColor: '#fff',
     },
       button:{
-        
+        width: '100%',
         margin: 4,
         backgroundColor: '#FFF',
         fontWeight: "bold",
@@ -96,13 +96,13 @@ export default StyleSheet.create({
       width: "100%",
       height: 50,
       backgroundColor: '#02cdd0',
-      transform: [{skewY: "-6deg"}, {translateY: -20}],
+      transform: [{skewY: "-6deg"}, {translateY: -25}],
     }, 
     formImageInfo2: {
       width: "100%",
       height: 50,
       backgroundColor: '#188dbb',
-      transform: [{skewY: "-10deg"}, {translateY: -40}],
+      transform: [{skewY: "-10deg"}, {translateY: -45}],
     },
     imageIcon: {
       width: 40,
