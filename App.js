@@ -38,7 +38,7 @@ export default props => {
     return (
       <UsersProvider>
         <NavigationContainer>
-          <Stack.Navigator initialRouteName="Funcionarios" screenOptions={screenOptions}>
+          <Stack.Navigator initialRouteName="Home" screenOptions={screenOptions}>
 
             <Stack.Screen name="Home" component={HomeScreen}
                 options={({navigation}) => { return{ title: "SUSDigital", headerRight: () => (
