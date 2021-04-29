@@ -60,7 +60,7 @@ export default StyleSheet.create({
     desc: {
         fontSize: 13,
         marginTop: 5,
-
+ 
     },
     infoScreen:{
       backgroundColor: '#188dbb',
