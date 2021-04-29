@@ -28,22 +28,32 @@ export default ({route, navigation}) => {
 
 
     return (
-        <View style={[Styles.container, Styles.infoScreen]}>
-            <View style={Styles.infoHeader}>
-
-                <Button type='clear'  onPress={() => navigation.navigate("Funcionarios")}
-                            icon={  <Icon name="chevron-left" size={25} color="#188dbb"/> } />
-                <Image style={Styles.ImageInfo} source={func.avatarUrl && { uri: func.avatarUrl }}/>
-                
-                <View style={{alignItems: 'center', flex: 1, paddingVertical: 20, marginVertical: 20}}>
-                    <Text style={Styles.infoText2}>{func.type}</Text>
-                    <Text style={Styles.infoText}>{func.name}</Text>
+        <View style={[Styles.container, Styles.infoScreen, Styles.horizontalCenter]}>
+            <View style={{width: '100%', backgroundColor: '#E9E9E9'}}>
+                    
+                <View style={Styles.infoHeader}>
+                    <Button type='clear'  onPress={() => navigation.navigate("Funcionarios")}
+                                icon={  <Icon name="chevron-left" size={25} color="#188dbb"/> } />
+                    <Image style={Styles.ImageInfo} source={func.avatarUrl && { uri: func.avatarUrl }}/>
+                    
+                    <View style={{alignItems: 'center', flex: 1, paddingVertical: 20, marginVertical: 20}}>
+                        <Text style={Styles.infoText2}>{func.type}</Text>
+                        <Text style={Styles.infoText}>{func.name}</Text>
+                    </View>
                 </View>
-            </View>
 
-            <View style={[Styles.horizontalCenter, Styles.infoHeader]}>
-                <View style={Styles.contentBox2}></View>
-                <View style={Styles.contentBox2}></View>
+                <View style={[Styles.horizontalCenter, Styles.infoHeader, {marginBottom: 50}]}>
+                    <View style={Styles.contentBox2}>
+
+                        <Text style={Styles.infoBox}>Posto em que trabalha:</Text>
+                        <Text style={[Styles.infoBox, Styles.infoText]}> {func.posto} </Text>
+
+                        <Text style={Styles.infoBox}>Paciente ao qual presta atendimento:</Text>
+                        <Text style={[Styles.infoBox, Styles.infoText]}> {func.paciente} </Text>
+                        
+                    </View>
+                </View>
+
             </View>
 
             <View style={[Styles.horizontalCenter, ]}>
@@ -73,7 +83,7 @@ export default ({route, navigation}) => {
                             type: func.id ? 'updateFunc' : 'createFunc',
                             payload: func,
                         })
-                        navigation.goBack()
+                        // navigation.goBack()
                     }}
                 />
             </View>

@@ -64,8 +64,6 @@ export default StyleSheet.create({
     },
     infoScreen:{
       backgroundColor: '#188dbb',
-      alignItems: 'center',
-      marginBottom: 500, 
     },
     infoHeader:{
       width: '100%',
@@ -128,17 +126,26 @@ export default StyleSheet.create({
       alignContent: 'center',
     },
     contentBox2: {
-      width: 100,
-      height: 100,
+      width: 300,
       borderRadius: 2,
-      borderTopLeftRadius: 30,
-      borderBottomRightRadius: 30,
+      borderRadius: 10,
       borderColor: '#188dbb',
       borderWidth: 5,
     },
     horizontalCenter: {
       width: "100%",
+      alignItems: 'center',
       justifyContent: 'space-around',
+    },
+    infoBox: {
+      width: '100%',
+      paddingHorizontal: 10,
+      paddingTop: 5,
+    },
+    infoBoxContent: {
+      backgroundColor: '#188dbb',
+      textAlign: 'center',
+      paddingVertical: 10,
     }
     });
 
