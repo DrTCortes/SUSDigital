@@ -1,5 +1,5 @@
 import React, { useState, useContext } from 'react'
-import { Text, View, TextInput, Switch, Alert} from 'react-native'
+import { Text, View, TextInput, Switch, Alert, CheckBox } from 'react-native'
 import {Button, Slider} from 'react-native-elements'
 
 import AppContext from '../../context/AppContext'
@@ -12,20 +12,17 @@ export default ({route, navigation}) => {
     function confirmData(func, borderRed){
         if (func.name === '' || func.name === null || func.name === undefined ){
             Alert.alert( "Dado Incorreto", "O campo 'Nome' não pode estar em branco",
-                [{ text: "OK", onPress: () => console.log("OK Pressed") }] )
-                {console.log("Adicione Nome ")}
+                [{ text: "OK"}] )
 
         }else if (func.email === '' || func.email === null || func.email === undefined ){
             
             Alert.alert( "Dado Incorreto", "O campo 'Email' não pode estar em branco",
-                [{ text: "OK", onPress: () => console.log("OK Pressed") }] )
-            {console.log("Adicione Email")}
+                [{ text: "OK"}] )
 
         }else if (func.avatarUrl === '' || func.avatarUrl === null || func.avatarUrl === undefined ){
             
             Alert.alert( "Dado Incorreto", "O campo 'Foto' não pode estar em branco",
-                [{ text: "OK", onPress: () => console.log("OK Pressed") }] )
-            {console.log("Adicione Foto")}
+                [{ text: "OK"}] )
 
         }else{
                 dispatch({

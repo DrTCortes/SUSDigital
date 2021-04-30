@@ -28,6 +28,7 @@ export default [
           email: 'marcos@contato.br',
           isEnabled: 'false',
           posto: " ",
+          paciente: " ",
           avatarUrl:
             'https://image.freepik.com/free-photo/elegant-black-man-office_1157-34040.jpg',
         },
@@ -38,6 +39,7 @@ export default [
           email: 'fre.samp@email.com',
           isEnabled: true,
           posto: " ",
+          paciente: " ",
           avatarUrl:
             'https://image.freepik.com/free-photo/portrait-smiling-young-man-eyewear_171337-4842.jpg',
         },
