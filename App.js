@@ -25,6 +25,7 @@ import FormPostos from './components/Postos/views/FormPostos'
 
 import ListPacientes from './components/Pacientes/views/ListPacientes'
 import FormPacientes from './components/Pacientes/views/FormPacientes'
+import InfoPacientes from './components/Pacientes/views/InfoPacientes'
 
 import DevArea from './components/Dev/DevArea'
 
@@ -86,6 +87,7 @@ export default props => {
                         <Button type='clear' onPress={() => navigation.navigate("FormPacientes")}
                         icon={ <Icon name="add" size={25} color="#F2F4F8"/> } />)}}}/> 
             <Stack.Screen name="FormPacientes" options={()=> {return{ title:"Formulário de Pacientes"}}} component={FormPacientes}/>
+            <Stack.Screen name="InfoPacientes" options={()=> {return{headerShown: false}}} component={InfoPacientes}/>
 
           </Stack.Navigator>
         </NavigationContainer>
