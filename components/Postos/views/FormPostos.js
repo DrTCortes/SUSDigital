@@ -127,7 +127,7 @@ export default ({route, navigation}) => {
                 style={!inputIsErrCep ? Styles.input: Styles.inputErr}
                 onBlur={e => getEndereco(e.target.value)}
                 onChangeText={cep => setPosto({...posto, cep})}
-                placeholder="Informe o CEP"
+                placeholder="Informe o Cep corretamente"
                 value={posto.cep}
                 
             />
