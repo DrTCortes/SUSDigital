@@ -72,6 +72,7 @@ export default ({route, navigation}) => {
                     data={state.pacientes}
                     renderItem={ getSelectItem } />
                     
+                     
                 <Button
                     style={Styles.button}  
                     type='outline'
