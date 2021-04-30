@@ -7,6 +7,7 @@ export default [
         avatarUrl: 'https://image.flaticon.com/icons/png/512/1863/1863349.png',
         posto: ' ',
         medico: ' ',
+        isEnabled: 'true',
     },
     {
         id: 2,
@@ -16,6 +17,7 @@ export default [
         avatarUrl: 'https://thumbs.dreamstime.com/b/%C3%ADcone-da-psicologia-111368814.jpg',
         posto: ' ',
         medico: ' ',
+        isEnabled: 'true',
     },
     {
         id: 3,
@@ -25,6 +27,7 @@ export default [
         avatarUrl: 'https://image.flaticon.com/icons/png/512/482/482319.png',
         posto: ' ',
         medico: ' ',
+        isEnabled: 'true',
     },
     {
         id: 4,
@@ -34,6 +37,7 @@ export default [
         avatarUrl: 'https://image.flaticon.com/icons/png/512/1616/1616474.png',
         posto: ' ',
         medico: ' ',
+        isEnabled: 'true',
     },
     // {
     //     id: 5,
