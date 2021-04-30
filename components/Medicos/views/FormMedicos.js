@@ -27,7 +27,21 @@ export default ({route, navigation}) => {
             Alert.alert( "Dado Incorreto", "O campo 'Foto' não pode estar em branco",
                 [{ text: "OK", onPress: () => console.log("OK Pressed") }] )
             {console.log("Adicione Foto")}
-
+        }else if (medico.crm === '' || medico.crm === null || medico.crm === undefined ){
+            
+            Alert.alert( "Dado Incorreto", "O campo 'crm' não pode estar em branco",
+                [{ text: "OK", onPress: () => console.log("OK Pressed") }] )
+            {console.log("Adicione crm")}
+        }else if (medico.cpf === '' || medico.cpf === null || medico.cpf === undefined ){
+            
+            Alert.alert( "Dado Incorreto", "O campo 'cpf' não pode estar em branco",
+                [{ text: "OK", onPress: () => console.log("OK Pressed") }] )
+            {console.log("Adicione cpf")}    
+        }else if (medico.telefone === '' || medico.telefone === null || medico.telefone === undefined ){
+            
+            Alert.alert( "Dado Incorreto", "O campo 'telefone' não pode estar em branco",
+                [{ text: "OK", onPress: () => console.log("OK Pressed") }] )
+            {console.log("Adicione telefone")}        
         }else{
                 dispatch({
                     type: medico.id ? 'updateMedico' : 'createMedico',
