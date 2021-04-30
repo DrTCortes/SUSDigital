@@ -5,8 +5,8 @@ export default [
         name: 'Cardiologia ',
         descricao: 'Profissionais especializados em cuidar do coração.',
         avatarUrl: 'https://image.flaticon.com/icons/png/512/1863/1863349.png',
-        posto: 'Hospital Municipal de Salvador HMS',
-        medico: 'Daiane Sampaio',
+        posto: ' ',
+        medico: ' ',
     },
     {
         id: 2,
@@ -14,8 +14,8 @@ export default [
         name: 'Psicologia',
         descricao: 'Profissionais especializados em tratar a mente.',
         avatarUrl: 'https://thumbs.dreamstime.com/b/%C3%ADcone-da-psicologia-111368814.jpg',
-        posto: 'CS Nelson Piauhy Dourado',
-        medico: 'Gabriel Pereira',
+        posto: ' ',
+        medico: ' ',
     },
     // {
     //     id: 3,
