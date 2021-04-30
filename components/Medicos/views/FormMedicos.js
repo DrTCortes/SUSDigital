@@ -1,14 +1,50 @@
 import React, { useState, useContext } from 'react';
-import { Text, View, TextInput, StyleSheet } from 'react-native';
+import { Text, View, TextInput, StyleSheet, Switch, Alert } from 'react-native';
 import Styles from '../../styles';
 import Context from '../../context/AppContext';
-import {Button} from 'react-native-elements';
+import {Button, CheckBox } from 'react-native-elements';
 
 import DatePicker from 'react-native-datepicker';
 
 export default ({route, navigation}) => {
     const [medico, setMedico] = useState(route.params ? route.params : {})
     const { dispatch } = useContext(Context)
+
+    function confirmData(medico, borderRed){
+        if (medico.name === '' || medico.name === null || medico.name === undefined ){
+            Alert.alert( "Dado Incorreto", "O campo 'Nome' não pode estar em branco",
+                [{ text: "OK", onPress: () => console.log("OK Pressed") }] )
+                {console.log("Adicione Nome ")}
+
+        }else if (medico.email === '' || medico.email === null || medico.email === undefined ){
+            
+            Alert.alert( "Dado Incorreto", "O campo 'Email' não pode estar em branco",
+                [{ text: "OK", onPress: () => console.log("OK Pressed") }] )
+            {console.log("Adicione Email")}
+
+        }else if (medico.avatarUrl === '' || medico.avatarUrl === null || medico.avatarUrl === undefined ){
+            
+            Alert.alert( "Dado Incorreto", "O campo 'Foto' não pode estar em branco",
+                [{ text: "OK", onPress: () => console.log("OK Pressed") }] )
+            {console.log("Adicione Foto")}
+
+        }else{
+                dispatch({
+                    type: medico.id ? 'updateMedico' : 'createMedico',
+                    payload: medico,
+                })
+                navigation.goBack()}
+    }
+
+
+    function handleToggle(checkboes) {
+          if(checkboes === checkboes) {
+            checkboes = !checkboes
+            return checkboes
+          }
+          return !checkboes
+
+      }   
 
     return (
         //Tela de cadastro do medico
@@ -20,15 +56,26 @@ export default ({route, navigation}) => {
                 value={medico.name}
                 style={Styles.input} 
             />
-            <Text>Data de Nascimento</Text>  
-             <DatePicker
-                format="DD-MM-YYYY"        
-                 date = {medico.nascimento}
-                 onPressDate
-                 onDateChange={nascimento => setMedico({...medico, nascimento})}
-                 value = {medico.nascimento}
-                 confirmBtnText="Confirm"
-            />             
+            <View  style={{flexDirection:'row'}}>  
+                <Text>Data de Nascimento    </Text>
+                <Text>Médico Ativo?</Text>  
+            </View>
+            <View  style={{flexDirection:'row'}}>              
+                <DatePicker
+                    format="DD-MM-YYYY"        
+                    date = {medico.nascimento}
+                    onDateChange={value => setMedico({...medico, nascimento})}
+                    value = {medico.nascimento}
+                />                            
+                <CheckBox                    
+                    checked = {medico.ativo}
+                    onPress= {ativo => setMedico({...medico,ativo : handleToggle(medico.ativo) })}
+                    // c = '#F2F4F8'
+                    tintColors={{ true: '#FC8F00' }}
+                    //style={Styles.input}   
+                />  
+            </View>
+                
             <Text>Email</Text>
             <TextInput                
                 onChangeText={email => setMedico({...medico, email})}
@@ -82,13 +129,7 @@ export default ({route, navigation}) => {
                 style={Styles.button}  
                 type='outline'
                 title="Salvar"
-                onPress={() => {
-                    dispatch({
-                        type: medico.id ? 'updateMedico' : 'createMedico', //função do appContext
-                        payload: medico,
-                    })
-                    navigation.goBack()
-                }}
+                onPress={() => {confirmData(medico)}}
             />
         </View>
     )
