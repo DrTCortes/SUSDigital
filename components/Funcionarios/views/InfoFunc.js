@@ -26,6 +26,7 @@ export default ({route, navigation}) => {
             </TouchableOpacity>
         )}
 
+        debugger
     return (
         <View style={[Styles.container, Styles.infoScreen, Styles.horizontalCenter]}>
             <View style={{width: '100%', backgroundColor: '#E9E9E9'}}>
@@ -40,6 +41,7 @@ export default ({route, navigation}) => {
                         <Text style={Styles.infoText}>{func.name}</Text>
                     </View>
                 </View>
+                
 
                 <View style={[Styles.horizontalCenter, Styles.infoHeader, {marginBottom: 50}]}>
                     <View style={Styles.contentBox2}>

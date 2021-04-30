@@ -44,7 +44,7 @@ export default ({route, navigation}) => {
                 <View style={[Styles.horizontalCenter, Styles.infoHeader, {marginBottom: 50}]}>
                     <View style={Styles.contentBox2}>
 
-                        <Text style={Styles.infoBox}>Posto em que trabalha:</Text>
+                        <Text style={Styles.infoBox}>Medico atribuido a esse posto:</Text>
                         <Text style={[Styles.infoBox, Styles.infoText]}> {posto.medico} </Text>
 
                         <Text style={Styles.infoBox}>Paciente ao qual presta atendimento:</Text>
