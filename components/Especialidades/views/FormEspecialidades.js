@@ -1,5 +1,5 @@
 import React, { useState, useContext } from 'react'
-import { Text, View, TextInput, StyleSheet } from 'react-native'
+import { Text, View, TextInput, StyleSheet, Alert } from 'react-native'
 import {Button} from 'react-native-elements'
 import AppContext from '../../context/AppContext'
 import Styles from '../../styles'
@@ -8,6 +8,44 @@ import Styles from '../../styles'
 export default ({route, navigation}) => {
     const [espec, setEspec] = useState(route.params ? route.params : {})
     const { dispatch } = useContext(AppContext)
+
+    function confirmData(espec, borderRed){
+        if (espec.name === '' || espec.name === null || espec.name === undefined ){
+            Alert.alert( "Dado Incorreto", "O campo 'Nome' não pode estar em branco",
+                [{ text: "OK", onPress: () => console.log("OK Pressed") }] )
+                // {console.log("Adicione Nome ")}
+
+        }else if (espec.descricao === '' || espec.descricao === null || espec.descricao === undefined ){
+            
+            Alert.alert( "Dado Incorreto", "O campo 'Descrição' não pode estar em branco",
+                [{ text: "OK", onPress: () => console.log("OK Pressed") }] )
+            // {console.log("Adicione Email")}
+
+        }else if (espec.avatarUrl === '' || espec.avatarUrl === null || espec.avatarUrl === undefined ){
+            
+            Alert.alert( "Dado Incorreto", "O campo 'Foto' não pode estar em branco",
+                [{ text: "OK", onPress: () => console.log("OK Pressed") }] )
+            // {console.log("Adicione Foto")}
+
+        }else if (espec.posto === '' || espec.posto === null || espec.posto === undefined ){
+            
+            Alert.alert( "Dado Incorreto", "O campo 'Posto' não pode estar em branco",
+                [{ text: "OK", onPress: () => console.log("OK Pressed") }] )
+            // {console.log("Adicione Posto")}
+
+        }else if (espec.medico === '' || espec.medico === null || espec.medico === undefined ){
+            
+            Alert.alert( "Dado Incorreto", "O campo 'Médico' não pode estar em branco",
+                [{ text: "OK", onPress: () => console.log("OK Pressed") }] )
+            // {console.log("Adicione Medico")}
+
+        }else{
+                dispatch({
+                    type: espec.id ? 'updateEspec' : 'createEspec',
+                    payload: espec,
+                })
+                navigation.goBack()}
+    }
 
     return (
         <View style={style.form}>
@@ -50,13 +88,14 @@ export default ({route, navigation}) => {
                 style={Styles.button}  
                 type='outline'
                 title="Salvar"
-                onPress={() => {
-                    dispatch({
-                        type: espec.id ? 'updateEspec' : 'createEspec',
-                        payload: espec,
-                    })
-                    navigation.goBack()
-                }}
+                onPress={() => {confirmData(espec)}}
+                // onPress={() => {
+                //     dispatch({
+                //         type: espec.id ? 'updateEspec' : 'createEspec',
+                //         payload: espec,
+                //     })
+                //     navigation.goBack()
+                // }}
             />
         </View>
     )
