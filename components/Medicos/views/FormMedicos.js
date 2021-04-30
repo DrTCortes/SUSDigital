@@ -2,7 +2,7 @@ import React, { useState, useContext } from 'react';
 import { Text, View, TextInput, StyleSheet, Switch, Alert } from 'react-native';
 import Styles from '../../styles';
 import Context from '../../context/AppContext';
-import {Button, CheckBox } from 'react-native-elements';
+import {Button, CheckBox, Avatar } from 'react-native-elements';
 
 import DatePicker from 'react-native-datepicker';
 
@@ -84,10 +84,10 @@ export default ({route, navigation}) => {
                 <CheckBox                    
                     checked = {medico.ativo}
                     onPress= {ativo => setMedico({...medico,ativo : handleToggle(medico.ativo) })}
-                    // c = '#F2F4F8'
                     tintColors={{ true: '#FC8F00' }}
                     //style={Styles.input}   
                 />  
+                {/* <Avatar rounded source={medico.avatarUrl && { uri: medico.avatarUrl }}/>  */}
             </View>
                 
             <Text>Email</Text>
@@ -165,4 +165,14 @@ const styles = StyleSheet.create({
       width: 200,
       marginTop: 20,
     },
+    avatar: {
+        width: 100,
+        height: 100,
+        marginHorizontal: 20,
+        borderRadius: 20,
+        backgroundColor: "#fff",
+        shadowRadius: 5,
+        shadowColor: "red"
+        
+      },
   });
