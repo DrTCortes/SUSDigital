@@ -26,6 +26,14 @@ export default StyleSheet.create({
         marginBottom: 15,
         backgroundColor: '#fff',
     },
+    inputErr: {
+      height: 40,
+      padding: 10,
+      borderColor: 'red',
+      borderWidth: 1,
+      marginBottom: 15,
+      backgroundColor: '#fff',
+    },
       button:{
         margin: 4,
         backgroundColor: '#FFF',
