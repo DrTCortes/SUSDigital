@@ -3,8 +3,7 @@ import { Text, View, TextInput, StyleSheet, Switch, Alert } from 'react-native';
 import Styles from '../../styles';
 import Context from '../../context/AppContext';
 import {Button, CheckBox } from 'react-native-elements';
-
-// import DatePicker from 'react-native-datepicker';
+import DatePicker from 'react-native-datepicker';
 
 export default ({route, navigation}) => {
     const [medico, setMedico] = useState(route.params ? route.params : {})
