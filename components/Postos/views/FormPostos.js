@@ -1,5 +1,6 @@
 import React, { useState, useContext } from 'react'
 import { Text, View, TextInput, StyleSheet} from 'react-native'
+import axios from 'axios'
 import Styles from '../../styles'
 import Context from '../../context/AppContext'
 import {Button} from 'react-native-elements'
@@ -8,7 +9,20 @@ export default ({route, navigation}) => {
     const [posto, setPosto] = useState(route.params ? route.params : {})
     const { dispatch } = useContext(Context)
 
+    const [cidade, setCidade] = useState('');
+    const [estado, setEstado] = useState('');
+    const [endereco, setEndereco] = useState('');
 
+    const api = axios.create({
+        baseURL: 'https://viacep.com.br/ws/'
+    });
+
+    async function getEndereco(cep) {
+        const { data } = await api.get(`${cep}/json/`)
+        setCidade(data.localidade);
+        setEstado(data.uf);
+        setEndereco(data.logradouro)
+    }
     return (
         <View style={Styles.form}>
             <Text>Unidade de saude:</Text>
@@ -25,35 +39,37 @@ export default ({route, navigation}) => {
                 placeholder="Informe a Especialidade"
                 value={posto.especialidadeposto}
             />
+             <Text>CEP:</Text>
+            <TextInput
+                style={Styles.input}
+                onBlur={e => getEndereco(e.target.value)}
+                onChangeText={cep => setPosto({...posto, cep})}
+                placeholder="Informe o CEP"
+                value={posto.cep}
+                
+            />
             <Text>Endereço:</Text>
             <TextInput
                 style={Styles.input}
                 onChangeText={endereco => setPosto({...posto, endereco})}
                 placeholder="Informe o Endereço"
-                value={posto.endereco}
+                value={endereco}
             />
             <Text>Estado:</Text>
             <TextInput
                 style={Styles.input}
                 onChangeText={estado => setPosto({...posto, estado})}
                 placeholder="Informe o Estado"
-                value={posto.estado}
+                value={estado}
             />
             <Text>Cidade:</Text>
             <TextInput
                 style={Styles.input}
                 onChangeText={cidade => setPosto({...posto, cidade})}
                 placeholder="Informe a Cidade"
-                value={posto.cidade}
+                value={cidade}
             />
-              <Text>CEP:</Text>
-            <TextInput
-                style={Styles.input}
-                onChangeText={cep => setPosto({...posto, cep})}
-                placeholder="Informe o CEP"
-                value={posto.cep}
-                
-            />
+             
               <Text>URL do Avatar</Text>
             <TextInput
                 onChangeText={avatarUrl => setPosto({...posto, avatarUrl})}
@@ -70,7 +86,7 @@ export default ({route, navigation}) => {
                 onPress={() => {
                     dispatch({
                         type: posto.id ? 'updatePosto' : 'createPosto',
-                        payload: posto,
+                        payload: {...posto, endereco, estado, cidade},
                     })
                     navigation.goBack()
                 }}
