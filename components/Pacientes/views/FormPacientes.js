@@ -1,5 +1,5 @@
 import React, { useState, useContext } from 'react'
-import { Text, View, TextInput, StyleSheet } from 'react-native'
+import { Text, View, TextInput, Alert } from 'react-native'
 import Context from '../../context/AppContext'
 import {Button} from 'react-native-elements'
 import Styles from '../../styles'
@@ -7,6 +7,29 @@ import Styles from '../../styles'
 export default ({route, navigation}) => {
     const [paciente, setPaciente] = useState(route.params ? route.params : {})
     const { dispatch } = useContext(Context)
+
+    function confirmData(paciente, borderRed){
+        if (paciente.name === '' || paciente.name === null || paciente.name === undefined ){
+            Alert.alert( "Dado Incorreto", "O campo 'Nome' não pode estar em branco",
+                [{ text: "OK"}] )
+
+        }else if (paciente.email === '' || paciente.email === null || paciente.email === undefined ){
+            
+            Alert.alert( "Dado Incorreto", "O campo 'Email' não pode estar em branco",
+                [{ text: "OK"}] )
+
+        }else if (paciente.avatarUrl === '' || paciente.avatarUrl === null || paciente.avatarUrl === undefined ){
+            
+            Alert.alert( "Dado Incorreto", "O campo 'Foto' não pode estar em branco",
+                [{ text: "OK"}] )
+
+        }else{
+                dispatch({
+                    type: paciente.id ? 'updatePaciente' : 'createPaciente',
+                    payload: paciente,
+                })
+                navigation.goBack()}
+    }
 
     return (
         <View style={Styles.form}>
@@ -71,13 +94,7 @@ export default ({route, navigation}) => {
                 style={Styles.button}  
                 type='outline'
                 title="Salvar"
-                onPress={() => {
-                    dispatch({
-                        type: paciente.id ? 'updatePaciente' : 'createPaciente',
-                        payload: paciente,
-                    })
-                    navigation.goBack()
-                }}
+                onPress={() => {confirmData(paciente)}}
             />
         </View>
     )
