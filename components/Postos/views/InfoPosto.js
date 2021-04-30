@@ -5,15 +5,15 @@ import Styles from '../../styles'
 import AppContext from '../../context/AppContext'
 
 export default ({route, navigation}) => {
-    const [espec, setEspec] = useState(route.params ? route.params : {})
+    const [posto, setPosto] = useState(route.params ? route.params : {})
     const { state, dispatch } = useContext(AppContext)
     
     function getSelection(select) {
-        if (select.type === "medico"){
-            espec.medico = select.name            
-        }else if(select.type === "posto"){
-                espec.posto = select.name            
-        }     
+        if (select.type === "paciente"){
+            posto.paciente = select.name            
+        }else if(select.type === "medico"){
+                posto.medico = select.name            
+        }    
         return
     }
 
@@ -22,33 +22,34 @@ export default ({route, navigation}) => {
             <TouchableOpacity style={[Styles.contentBox, {backgroundColor: '#e1e1e1'}]}
                 onPress={() => getSelection(select)}>
                     <Image style={Styles.imageIcon} source={select.avatarUrl && { uri: select.avatarUrl }}/>
-                    <Text > {select.name} </Text>
+                    <Text> {select.name} </Text>
             </TouchableOpacity>
-        )}
+        )
+    }
 
     return (
         <View style={[Styles.container, Styles.infoScreen, Styles.horizontalCenter]}>
             <View style={{width: '100%', backgroundColor: '#E9E9E9'}}>
                     
                 <View style={Styles.infoHeader}>
-                    <Button type='clear'  onPress={() => navigation.navigate("Especialidades")}
+                    <Button type='clear'  onPress={() => navigation.navigate("Postos")}
                                 icon={  <Icon name="chevron-left" size={25} color="#188dbb"/> } />
-                    <Image style={Styles.ImageInfo} source={espec.avatarUrl && { uri: espec.avatarUrl }}/>
+                    <Image style={Styles.ImageInfo} source={posto.avatarUrl && { uri: posto.avatarUrl }}/>
                     
                     <View style={{alignItems: 'center', flex: 1, paddingVertical: 20, marginVertical: 20}}>
-                        <Text style={Styles.infoText2}>{espec.type}</Text>
-                        <Text style={Styles.infoText}>{espec.name}</Text>
+                        <Text style={Styles.infoText2}>{posto.type}</Text>
+                        <Text style={Styles.infoText}>{posto.name}</Text>
                     </View>
                 </View>
 
                 <View style={[Styles.horizontalCenter, Styles.infoHeader, {marginBottom: 50}]}>
                     <View style={Styles.contentBox2}>
 
-                        <Text style={Styles.infoBox}>Posto em que se tem esta especialidade:</Text>
-                        <Text style={[Styles.infoBox, Styles.infoText]}> {espec.posto} </Text>
+                        <Text style={Styles.infoBox}>Medico atribuido a esse posto:</Text>
+                        <Text style={[Styles.infoBox, Styles.infoText]}> {posto.medico} </Text>
 
-                        <Text style={Styles.infoBox}>Médico que atende a especialidade:</Text>
-                        <Text style={[Styles.infoBox, Styles.infoText]}> {espec.medico} </Text>
+                        <Text style={Styles.infoBox}>Paciente ao qual presta atendimento:</Text>
+                        <Text style={[Styles.infoBox, Styles.infoText]}> {posto.paciente} </Text>
                         
                     </View>
                 </View>
@@ -60,26 +61,27 @@ export default ({route, navigation}) => {
             </View>
             
             <View>
-                <Text style={[Styles.text, {color: "#e1e1e1", fontSize: 18}]}>Selecione o posto: </Text>
-                <FlatList
-                    keyExtractor={select => select.id.toString()}
-                    data={state.postos}
-                    renderItem={ getSelectItem } />
-
-                <Text style={[Styles.text, {color: "#e1e1e1", fontSize: 18}]}>Selecione o médico: </Text>
+                <Text style={[Styles.text, {color: "#e1e1e1", fontSize: 18}]}>Profissional de saude: </Text>
                 <FlatList
                     keyExtractor={select => select.id.toString()}
                     data={state.medicos}
                     renderItem={ getSelectItem } />
-                    
+
+                <Text style={[Styles.text, {color: "#e1e1e1", fontSize: 18}]}>Selecione o paciente: </Text>
+                <FlatList
+                    keyExtractor={select => select.id.toString()}
+                    data={state.pacientes}
+                    renderItem={ getSelectItem } />
+
+                     
                 <Button
                     style={Styles.button}  
                     type='outline'
                     title="Salvar"
                     onPress={() => {
                         dispatch({
-                            type: espec.id ? 'updateEspec' : 'createEspec',
-                            payload: espec,
+                            type: posto.id ? 'updatePosto' : 'createPosto',
+                            payload: posto,
                         })
                         // navigation.goBack()
                     }}

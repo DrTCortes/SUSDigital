@@ -10,6 +10,8 @@ export default [
         Mae:'Maria Joana Carvalho Barreto',
         email: 'joaopaulo2019@gmail.com',
         avatarUrl: 'https://i.pinimg.com/736x/93/7d/f2/937df27e5b279abcd5272fc36f93e5c4.jpg',
+        posto: ' ',
+        especialidade: ' ',
     },
     {
         id: 2,

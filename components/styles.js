@@ -26,6 +26,14 @@ export default StyleSheet.create({
         marginBottom: 15,
         backgroundColor: '#fff',
     },
+    inputErr: {
+      height: 40,
+      padding: 10,
+      borderColor: 'red',
+      borderWidth: 1,
+      marginBottom: 15,
+      backgroundColor: '#fff',
+    },
       button:{
         margin: 4,
         backgroundColor: '#FFF',
@@ -40,6 +48,9 @@ export default StyleSheet.create({
       padding: 10,
       marginTop: 10,
     },
+    textInput: {
+      textTransform: 'uppercase'
+    },
     name: {
         fontWeight: 'bold',
         fontSize: 16,
@@ -48,7 +59,7 @@ export default StyleSheet.create({
     desc: {
         fontSize: 13,
         marginTop: 5,
-
+ 
     },
     infoScreen:{
       backgroundColor: '#188dbb',
@@ -97,10 +108,7 @@ export default StyleSheet.create({
       height: 40,
       marginHorizontal: 20,
       borderRadius: 20,
-      backgroundColor: "#fff",
-      shadowRadius: 5,
-      shadowColor: "red"
-      
+      backgroundColor: "#fff",    
     },
     contentBox: {
       width: 320,

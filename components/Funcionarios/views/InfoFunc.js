@@ -40,6 +40,7 @@ export default ({route, navigation}) => {
                         <Text style={Styles.infoText}>{func.name}</Text>
                     </View>
                 </View>
+                
 
                 <View style={[Styles.horizontalCenter, Styles.infoHeader, {marginBottom: 50}]}>
                     <View style={Styles.contentBox2}>
