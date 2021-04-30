@@ -97,10 +97,7 @@ export default StyleSheet.create({
       height: 40,
       marginHorizontal: 20,
       borderRadius: 20,
-      backgroundColor: "#fff",
-      shadowRadius: 5,
-      shadowColor: "red"
-      
+      backgroundColor: "#fff",    
     },
     contentBox: {
       width: 320,
