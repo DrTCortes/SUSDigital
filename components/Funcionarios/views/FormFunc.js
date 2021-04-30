@@ -1,12 +1,39 @@
 import React, { useState, useContext } from 'react'
-import { Text, View, TextInput, StyleSheet } from 'react-native'
-import {Button} from 'react-native-elements'
+import { Text, View, TextInput, Switch, Alert} from 'react-native'
+import {Button, Slider} from 'react-native-elements'
+
 import AppContext from '../../context/AppContext'
 import Styles from '../../styles'
 
 export default ({route, navigation}) => {
     const [func, setFunc] = useState(route.params ? route.params : {})
     const { dispatch } = useContext(AppContext)
+
+    function confirmData(func, borderRed){
+        if (func.name === '' || func.name === null || func.name === undefined ){
+            Alert.alert( "Dado Incorreto", "O campo 'Nome' não pode estar em branco",
+                [{ text: "OK", onPress: () => console.log("OK Pressed") }] )
+                {console.log("Adicione Nome ")}
+
+        }else if (func.email === '' || func.email === null || func.email === undefined ){
+            
+            Alert.alert( "Dado Incorreto", "O campo 'Email' não pode estar em branco",
+                [{ text: "OK", onPress: () => console.log("OK Pressed") }] )
+            {console.log("Adicione Email")}
+
+        }else if (func.avatarUrl === '' || func.avatarUrl === null || func.avatarUrl === undefined ){
+            
+            Alert.alert( "Dado Incorreto", "O campo 'Foto' não pode estar em branco",
+                [{ text: "OK", onPress: () => console.log("OK Pressed") }] )
+            {console.log("Adicione Foto")}
+
+        }else{
+                dispatch({
+                    type: func.id ? 'updateFunc' : 'createFunc',
+                    payload: func,
+                })
+                navigation.goBack()}
+    }
 
     return (
         <View style={Styles.form}>
@@ -24,6 +51,16 @@ export default ({route, navigation}) => {
                 placeholder="Informe o E-mail"
                 value={func.email}
             />
+            <Text style={{marginBottom: 15}}>Deseja receber novidades por email?
+            <Switch
+                style={{marginHorizontal: 5}}
+                trackColor={{ false: "#767577", true: "#81b0ff" }}
+                thumbColor={func.isEnabled ? "#f5dd4b" : "#f4f3f4"}
+                ios_backgroundColor="#3e3e3e"
+                onValueChange={isEnabled => setFunc({...func, isEnabled})}
+                value={func.isEnabled}
+             />
+            </Text>
             <Text>URL do Avatar</Text>
             <TextInput
                 style={Styles.input}
@@ -31,17 +68,17 @@ export default ({route, navigation}) => {
                 placeholder="Informe a URL do Avatar"
                 value={func.avatarUrl}
             />
+            <Text>Defina o quão bacana é esse funcionário</Text>
+            <Slider
+                thumbStyle={{ height: 10, width: 10, backgroundColor: '#188dbb'}}
+                value={func.Slider}
+                onValueChange={Slider => setFunc({...func, Slider})}
+            />
             <Button
-                style={Styles.button}  
+                style={Styles.button}
                 type='outline'
                 title="Salvar"
-                onPress={() => {
-                    dispatch({
-                        type: func.id ? 'updateFunc' : 'createFunc',
-                        payload: func,
-                    })
-                    navigation.goBack()
-                }}
+                onPress={() => {confirmData(func)}}
             />
         </View>
     )

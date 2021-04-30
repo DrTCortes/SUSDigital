@@ -1,25 +1,12 @@
 import React, { useContext } from 'react'
-import { View, FlatList, Alert } from 'react-native'
+import { View, FlatList, Alert, Image, TouchableOpacity } from 'react-native'
 import { ListItem, Button, Icon, Avatar } from 'react-native-elements'
 import AppContext from '../../context/AppContext'
+import Styles from '../../styles'
 
 export default props => {
 
     const { state, dispatch } = useContext(AppContext)
-
-    function confirmFuncDeletion(func) {
-        Alert.alert('Excluir Usuário', 'Deseja excluir o usuário?', [
-            { text: 'Sim',
-                onPress() {
-                    dispatch({
-                        type: 'deleteFunc',
-                        payload: func,
-                    })}
-            },
-            {
-                text: 'Não'
-            }
-        ])}
 
     function getActions(func) {
         return (
@@ -27,12 +14,12 @@ export default props => {
                 <Button
                     onPress={() => props.navigation.navigate('FormFunc', func)}
                     type="clear"
-                    icon={<Icon name="edit" size={25} color="orange" />}
+                    icon={<Icon name="edit" size={25} color="#FFF" />}
                 />
                 <Button
                     onPress={() => dispatch({type: 'deleteFunc', payload: func})}
                     type="clear"
-                    icon={<Icon name="delete" size={25} color="red" />}
+                    icon={<Icon name="delete" size={25} color="#FFF" />}
                 />
             </>
         )
@@ -40,19 +27,19 @@ export default props => {
 
     function getFuncItem({ item: func }) {
         return (
-            <ListItem key={func.id} bottomDivider rightElement={getActions(func)}
-                onPress={() => props.navigation.navigate('FormFunc', func)}>
-                    <Avatar tittle={func.name} rounded source={func.avatarUrl && { uri: func.avatarUrl }}/>
+            <TouchableOpacity style={[Styles.contentBox, {backgroundColor: '#188dbb'}]} key={func.id} bottomDivider rightElement={getActions(func)}
+                onPress={() => props.navigation.navigate('InfoFunc', func)}>
+                    <Image style={Styles.imageIcon} rounded source={func.avatarUrl && { uri: func.avatarUrl }}/>
                     <ListItem.Content>
-                        <ListItem.Title>{func.name}</ListItem.Title>
-                        <ListItem.Subtitle>{func.email}</ListItem.Subtitle>
+                        <ListItem.Title style={{color: '#FFF'}}>{func.name}</ListItem.Title>
+                        <ListItem.Subtitle style={{color: '#c9c9c9'}}>{func.email}</ListItem.Subtitle>
                     </ListItem.Content>
                         <View style={{flexDirection:'row'}}>{getActions(func)}</View>
-            </ListItem>
+            </TouchableOpacity>
         )}
 
     return (
-        <View>
+        <View style={[Styles.container, {alignItems: 'center'}]}>
             <FlatList
                 keyExtractor={func => func.id.toString()}
                 data={state.funcs}

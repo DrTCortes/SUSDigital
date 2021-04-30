@@ -44,7 +44,7 @@ export default props => {
                 onPress={() => props.navigation.navigate('FormConsultas', consulta)}>
                     <Avatar tittle={consulta.c_id} rounded source={consulta.c_avatarUrl && { uri: consulta.c_avatarUrl }}/>
                     <ListItem.Content>
-                        <ListItem.Title>{consulta.c_func}</ListItem.Title>
+                        <ListItem.Title>{consulta.c_paciente}</ListItem.Title>
                         <ListItem.Subtitle>{consulta.c_paciente}</ListItem.Subtitle>
                     </ListItem.Content>
                         <View style={{flexDirection:'row'}}>{getActions(consulta)}</View>

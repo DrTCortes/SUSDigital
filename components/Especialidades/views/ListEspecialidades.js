@@ -9,7 +9,7 @@ export default props => {
 
     //Função para exibir um modal de confirmação de deletar a especialidade
     function confirmEspecDeletion(espec) {
-        Alert.alert('Excluir Usuário', 'Deseja excluir o usuário?', [
+        Alert.alert('Excluir Especialidade?', 'Deseja excluir o Especialidade?', [
             { text: 'Sim',
                 onPress() {
                     dispatch({
@@ -30,14 +30,14 @@ export default props => {
                 <Button
                     onPress={() => props.navigation.navigate('FormEspec', espec)}
                     type="clear"
-                    icon={<Icon name="edit" size={25} color="orange" />}
+                    icon={<Icon name="edit" size={25} color="#188dbb" />}
                 />
 
                 {/* Botão para excluir */}
                 <Button
                     onPress={() => dispatch({type: 'deleteEspec', payload: espec})}
                     type="clear"
-                    icon={<Icon name="delete" size={25} color="red" />}
+                    icon={<Icon name="delete" size={25} color="#188dbb" />}
                 />
             </>
         )
@@ -46,7 +46,7 @@ export default props => {
     function getEspecItem({ item: espec }) {
         return (
             <ListItem key={espec.id} bottomDivider rightElement={getActions(espec)}
-                onPress={() => props.navigation.navigate('FormEspec', espec)}>
+                onPress={() => props.navigation.navigate('InfoEspec', espec)}>
                     <Avatar tittle={espec.name} rounded source={espec.avatarUrl && { uri: espec.avatarUrl }}/>
                     <ListItem.Content>
                         <ListItem.Title>{espec.name}</ListItem.Title>

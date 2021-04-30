@@ -9,6 +9,7 @@ export default ({route, navigation}) => {
     const { dispatch } = useContext(Context)
 
     return (
+        //Tela de cadastro do medico
         <View style={Styles.form}>
             <Text>Nome</Text>
             <TextInput                 
@@ -72,7 +73,7 @@ export default ({route, navigation}) => {
                 title="Salvar"
                 onPress={() => {
                     dispatch({
-                        type: medico.id ? 'updateMedico' : 'createMedico',
+                        type: medico.id ? 'updateMedico' : 'createMedico', //função do appContext
                         payload: medico,
                     })
                     navigation.goBack()

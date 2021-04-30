@@ -17,7 +17,41 @@ export default ({route, navigation}) => {
                 placeholder="Informe o Nome"
                 value={paciente.name}
             />
-
+            <Text>CPF</Text>
+            <TextInput
+                style={Styles.input}
+                onChangeText={CPF => setPaciente({...paciente, CPF})}
+                placeholder="Informe seu CPF"
+                value={paciente.CPF}
+            />
+            <Text>CNS</Text>
+            <TextInput
+                style={Styles.input}
+                onChangeText={CNS => setPaciente({...paciente, CNS})}
+                placeholder="Informe o Núemro do SUS"
+                value={paciente.CNS}
+            />
+            <Text>Sexo</Text>
+            <TextInput
+                style={Styles.input}
+                onChangeText={Sexo => setPaciente({...paciente, Sexo})}
+                placeholder="Informe o Sexo"
+                value={paciente.Sexo}
+            />
+            <Text>Data de Nascimento</Text>
+            <TextInput
+                style={Styles.input}
+                onChangeText={DN => setPaciente({...paciente, DN})}
+                placeholder="Informe a Data de Nascimento"
+                value={paciente.DN}
+            />
+            <Text>Nome da Mãe</Text>
+            <TextInput
+                style={Styles.input}
+                onChangeText={Mae => setPaciente({...paciente, Mae})}
+                placeholder="Informe o nome da Mãe"
+                value={paciente.Mae}
+            />
             <Text>Email</Text>
             <TextInput
                 style={Styles.input}
