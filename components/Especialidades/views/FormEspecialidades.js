@@ -1,5 +1,5 @@
 import React, { useState, useContext } from 'react'
-import { Text, View, TextInput, StyleSheet, Alert } from 'react-native'
+import { Text, View, TextInput, StyleSheet, Alert, Switch} from 'react-native'
 import {Button} from 'react-native-elements'
 import AppContext from '../../context/AppContext'
 import Styles from '../../styles'
@@ -63,10 +63,10 @@ export default ({route, navigation}) => {
                 value={espec.descricao}
                 style={Styles.input}
             />
-            <Text>Url do Avatar</Text>
+            <Text>Url da Especialidade</Text>
             <TextInput 
                 onChangeText={avatarUrl => setEspec({...espec, avatarUrl})}
-                placeholder="Informe a Url do avatar"
+                placeholder="Informe a Url da especialidade"
                 value={espec.avatarUrl}
                 style={Styles.input}
             />
@@ -84,6 +84,16 @@ export default ({route, navigation}) => {
                 value={espec.medico}
                 style={Styles.input}
             />
+            <Text style={{marginBottom: 15}}>Esta especialidade tem uma demanda alta?
+            <Switch
+                style={{marginHorizontal: 5}}
+                trackColor={{ false: "#767577", true: "#81b0ff" }}
+                thumbColor={espec.isEnabled ? "#f5dd4b" : "#f4f3f4"}
+                ios_backgroundColor="#3e3e3e"
+                onValueChange={isEnabled => setEspec({...espec, isEnabled})}
+                value={espec.isEnabled}
+             />
+            </Text>
             <Button
                 style={Styles.button}  
                 type='outline'
