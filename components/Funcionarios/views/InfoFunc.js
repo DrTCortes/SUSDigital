@@ -26,7 +26,6 @@ export default ({route, navigation}) => {
             </TouchableOpacity>
         )}
 
-        debugger
     return (
         <View style={[Styles.container, Styles.infoScreen, Styles.horizontalCenter]}>
             <View style={{width: '100%', backgroundColor: '#E9E9E9'}}>

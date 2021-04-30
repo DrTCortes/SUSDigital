@@ -40,6 +40,9 @@ export default StyleSheet.create({
       padding: 10,
       marginTop: 10,
     },
+    textInput: {
+      textTransform: 'uppercase'
+    },
     name: {
         fontWeight: 'bold',
         fontSize: 16,

@@ -1,7 +1,7 @@
 export default [
     {
         id: 1,
-        type: 'posto',
+        type: 'Posto',
         name: 'Hospital Municipal de Salvador HMS',
         especialidadeposto:'Hospitalização',
         endereco: 'R. Ver. Zezéu Ribeiro, s/n - Cajazeiras',
@@ -14,7 +14,7 @@ export default [
      
     {
         id: 2,
-        type: 'posto',
+        type: 'Posto',
         name: 'CS Nelson Piauhy Dourado',
         especialidadeposto: 'Unidade basica de saude',
         endereco: 'Rua Endeo Nascimento, Qd. C, s/n, Caj. III, Água Claras',
@@ -26,7 +26,7 @@ export default [
      {
          id: 3,
     
-         type: 'posto',
+         type: 'Posto',
          name: 'CS Engenho velho da Federação',
          especialidadeposto:'Unidade basica de saude',
          endereco: 'Rua: Apolinario Santana - Engenho velho da Federação',
@@ -37,7 +37,7 @@ export default [
      },
      {
          id: 4,
-         type: 'posto',
+         type: 'Posto',
          name: 'CS Sete de Abril',
          especialidadeposto:'Unidade basica de saude', 
          endereco: 'Rua Feliciano, s/n - Sete de Abril ( ponto de referencia 50ª CPM)',

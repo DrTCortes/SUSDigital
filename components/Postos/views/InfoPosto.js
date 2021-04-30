@@ -22,16 +22,17 @@ export default ({route, navigation}) => {
             <TouchableOpacity style={[Styles.contentBox, {backgroundColor: '#e1e1e1'}]}
                 onPress={() => getSelection(select)}>
                     <Image style={Styles.imageIcon} source={select.avatarUrl && { uri: select.avatarUrl }}/>
-                    <Text > {select.name} </Text>
+                    <Text> {select.name} </Text>
             </TouchableOpacity>
-        )}
+        )
+    }
 
     return (
         <View style={[Styles.container, Styles.infoScreen, Styles.horizontalCenter]}>
             <View style={{width: '100%', backgroundColor: '#E9E9E9'}}>
                     
                 <View style={Styles.infoHeader}>
-                    <Button type='clear'  onPress={() => navigation.navigate("postos")}
+                    <Button type='clear'  onPress={() => navigation.navigate("Postos")}
                                 icon={  <Icon name="chevron-left" size={25} color="#188dbb"/> } />
                     <Image style={Styles.ImageInfo} source={posto.avatarUrl && { uri: posto.avatarUrl }}/>
                     
@@ -60,18 +61,18 @@ export default ({route, navigation}) => {
             </View>
             
             <View>
-                <Text style={[Styles.text, {color: "#e1e1e1", fontSize: 18}]}>Selecione o posto: </Text>
+                <Text style={[Styles.text, {color: "#e1e1e1", fontSize: 18}]}>Profissional de saude: </Text>
                 <FlatList
                     keyExtractor={select => select.id.toString()}
-                    data={state.postos}
+                    data={state.medicos}
                     renderItem={ getSelectItem } />
 
-                <Text style={[Styles.text, {color: "#e1e1e1", fontSize: 18}]}>Selecione o Paciente: </Text>
+                <Text style={[Styles.text, {color: "#e1e1e1", fontSize: 18}]}>Selecione o paciente: </Text>
                 <FlatList
                     keyExtractor={select => select.id.toString()}
                     data={state.pacientes}
                     renderItem={ getSelectItem } />
-                    
+
                      
                 <Button
                     style={Styles.button}  
