@@ -6,6 +6,7 @@ export default [
           email: 'josil@email.com',
           isEnabled: 'true',
           posto: " ",
+          paciente: " ",
           avatarUrl:
             'https://image.freepik.com/free-photo/waist-up-portrait-handsome-serious-unshaven-male-keeps-hands-together-dressed-dark-blue-shirt-has-talk-with-interlocutor-stands-against-white-wall-self-confident-man-freelancer_273609-16320.jpg',
         },
@@ -27,6 +28,7 @@ export default [
           email: 'marcos@contato.br',
           isEnabled: 'false',
           posto: " ",
+          paciente: " ",
           avatarUrl:
             'https://image.freepik.com/free-photo/elegant-black-man-office_1157-34040.jpg',
         },
@@ -37,6 +39,7 @@ export default [
           email: 'fre.samp@email.com',
           isEnabled: true,
           posto: " ",
+          paciente: " ",
           avatarUrl:
             'https://image.freepik.com/free-photo/portrait-smiling-young-man-eyewear_171337-4842.jpg',
         },
