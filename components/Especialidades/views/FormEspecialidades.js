@@ -1,5 +1,5 @@
 import React, { useState, useContext } from 'react'
-import { Text, View, TextInput, StyleSheet, Alert, Switch} from 'react-native'
+import { Text, View, TextInput, StyleSheet, Alert, Switch, CheckBox} from 'react-native'
 import {Button, Slider} from 'react-native-elements'
 import AppContext from '../../context/AppContext'
 import Styles from '../../styles'
@@ -84,7 +84,7 @@ export default ({route, navigation}) => {
                 value={espec.medico}
                 style={Styles.input}
             />
-            <Text style={{marginBottom: 10}}>Esta especialidade tem uma demanda alta?
+            <Text style={{marginBottom: 30}}>Esta especialidade tem uma demanda alta?
             <Switch
                 style={{marginHorizontal: 20}}
                 trackColor={{ false: "#767577", true: "#81b0ff" }}
@@ -94,7 +94,7 @@ export default ({route, navigation}) => {
                 value={espec.isEnabled}
              />
             </Text>
-            <Text>De 0 a 10 qual nota especialidade tem?</Text>
+            <Text>De 0% a 100% qual a importancia dessa especialidade?</Text>
             <Slider
                 thumbStyle={{ height: 12, width: 12, backgroundColor: '#188dbb'}}
                 value={espec.Slider}
@@ -105,13 +105,6 @@ export default ({route, navigation}) => {
                 type='outline'
                 title="Salvar"
                 onPress={() => {confirmData(espec)}}
-                // onPress={() => {
-                //     dispatch({
-                //         type: espec.id ? 'updateEspec' : 'createEspec',
-                //         payload: espec,
-                //     })
-                //     navigation.goBack()
-                // }}
             />
         </View>
     )
