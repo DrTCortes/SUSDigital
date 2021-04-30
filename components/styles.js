@@ -27,23 +27,11 @@ export default StyleSheet.create({
         backgroundColor: '#fff',
     },
       button:{
-        width: '100%',
         margin: 4,
         backgroundColor: '#FFF',
         fontWeight: "bold",
     
       },
-      field: {
-        width: 150,
-        height: 150,
-        borderTopWidth: 4,
-        borderRadius: 20,
-        marginTop: 20,
-        backgroundColor: '#188dbb',
-        borderTopColor: '#415A80',
-        padding: 10,
-        alignContent: 'space-between'
-    },
     text:{
       fontFamily: 'serif',
       fontWeight: 'bold',
