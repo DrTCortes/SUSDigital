@@ -1,8 +1,10 @@
 import React, { useState, useContext } from 'react'
-import { View, Image, Text, FlatList, TouchableOpacity } from 'react-native'
+import { View, SafeAreaView, Image, Text, FlatList, TouchableOpacity, Platform, ScrollView } from 'react-native'
 import { Button, Icon } from 'react-native-elements'
-import Styles from '../../styles'
 import AppContext from '../../context/AppContext'
+
+console.log(typeof(Platform))
+import Styles from '../../styles'
 
 export default ({route, navigation}) => {
     const [func, setFunc] = useState(route.params ? route.params : {})
@@ -27,7 +29,8 @@ export default ({route, navigation}) => {
         )}
 
     return (
-        <View style={[Styles.container, Styles.infoScreen, Styles.horizontalCenter]}>
+    <ScrollView>
+        <SafeAreaView style={[Styles.container, Styles.infoScreen, Styles.horizontalCenter]}>
             <View style={{width: '100%', backgroundColor: '#E9E9E9'}}>
                     
                 <View style={Styles.infoHeader}>
@@ -60,7 +63,7 @@ export default ({route, navigation}) => {
                 <View style={Styles.formImageInfo2}/>
             </View>
             
-            <View>
+            <View style={[Styles.container, Styles.horizontalCenter]}>
                 <Text style={[Styles.text, {color: "#e1e1e1", fontSize: 18}]}>Selecione o posto: </Text>
                 <FlatList
                     keyExtractor={select => select.id.toString()}
@@ -86,6 +89,7 @@ export default ({route, navigation}) => {
                     }}
                 />
             </View>
-        </View>
+        </SafeAreaView>
+    </ScrollView>
     )
 }
