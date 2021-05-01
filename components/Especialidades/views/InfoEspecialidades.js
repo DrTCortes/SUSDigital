@@ -1,5 +1,5 @@
 import React, { useState, useContext } from 'react'
-import { View, Image, Text, FlatList, TouchableOpacity, ScrollView, SafeAreaView} from 'react-native'
+import { View, SafeAreaView, Image, Text, FlatList, TouchableOpacity, ScrollView } from 'react-native'
 import { Button, Icon } from 'react-native-elements'
 import Styles from '../../styles'
 import AppContext from '../../context/AppContext'
@@ -55,12 +55,12 @@ export default ({route, navigation}) => {
                     </View>
                 </View>
 
-                <View style={[Styles.horizontalCenter, ]}>
+                <View style={[Styles.horizontalCenter]}>
                     <View style={Styles.formImageInfo1}/>
                     <View style={Styles.formImageInfo2}/>
                 </View>
                 
-                <View>
+                <View style={[Styles.container, Styles.horizontalCenter]}>
                     <Text style={[Styles.text, {color: "#e1e1e1", fontSize: 18}]}>Selecione o posto: </Text>
                     <FlatList
                         keyExtractor={select => select.id.toString()}
@@ -73,18 +73,14 @@ export default ({route, navigation}) => {
                         data={state.medicos}
                         renderItem={ getSelectItem } />
                         
-                    <Button
-                        style={Styles.button}  
-                        type='outline'
-                        title="Salvar"
-                        onPress={() => {
-                            dispatch({
-                                type: espec.id ? 'updateEspec' : 'createEspec',
-                                payload: espec,
-                            })
-                            // navigation.goBack()
-                        }}
-                    />
+                        <TouchableOpacity  onPress={() => {
+                        dispatch({
+                            type: espec.id ? 'updateEspec' : 'createEspec',
+                            payload: espec,
+                        })
+                    }}>
+                    <Text style={[Styles.button, Styles.horizontalCenter, {padding: 10}]}>Salvar</Text>
+                </TouchableOpacity>
                 </View>
             </SafeAreaView>
         </ScrollView>

@@ -1,10 +1,8 @@
 import React, { useState, useContext } from 'react'
-import { View, SafeAreaView, Image, Text, FlatList, TouchableOpacity, Platform, ScrollView } from 'react-native'
+import { View, SafeAreaView, Image, Text, FlatList, TouchableOpacity, ScrollView } from 'react-native'
+import Styles from '../../styles'
 import { Button, Icon } from 'react-native-elements'
 import AppContext from '../../context/AppContext'
-
-console.log(typeof(Platform))
-import Styles from '../../styles'
 
 export default ({route, navigation}) => {
     const [func, setFunc] = useState(route.params ? route.params : {})
@@ -44,7 +42,6 @@ export default ({route, navigation}) => {
                     </View>
                 </View>
                 
-
                 <View style={[Styles.horizontalCenter, Styles.infoHeader, {marginBottom: 50}]}>
                     <View style={Styles.contentBox2}>
 
@@ -75,7 +72,6 @@ export default ({route, navigation}) => {
                     keyExtractor={select => select.id.toString()}
                     data={state.pacientes}
                     renderItem={ getSelectItem } />
-                <View style={{width: '90%', margin: 20}}>
                 
                 <TouchableOpacity  onPress={() => {
                         dispatch({
@@ -85,7 +81,6 @@ export default ({route, navigation}) => {
                     }}>
                     <Text style={[Styles.button, Styles.horizontalCenter, {padding: 10}]}>Salvar</Text>
                 </TouchableOpacity>
-                </View>
             </View>
         </SafeAreaView>
     </ScrollView>
