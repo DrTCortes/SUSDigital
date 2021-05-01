@@ -34,10 +34,12 @@ export default StyleSheet.create({
       backgroundColor: '#fff',
     },
       button:{
+        minHeight: 40,
         margin: 4,
         backgroundColor: '#FFF',
         fontWeight: "bold",
-        borderColor: "#FFF"
+        borderColor: "#FFF",
+        
     
       },
     text:{
@@ -131,6 +133,7 @@ export default StyleSheet.create({
     horizontalCenter: {
       width: "100%",
       alignItems: 'center',
+      textAlign: 'center',
       justifyContent: 'space-around',
     },
     infoBox: {

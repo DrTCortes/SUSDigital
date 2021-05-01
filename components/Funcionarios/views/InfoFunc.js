@@ -58,7 +58,7 @@ export default ({route, navigation}) => {
                 </View>
             </View>
 
-            <View style={[Styles.horizontalCenter, ]}>
+            <View style={[Styles.horizontalCenter]}>
                 <View style={Styles.formImageInfo1}/>
                 <View style={Styles.formImageInfo2}/>
             </View>
@@ -75,19 +75,17 @@ export default ({route, navigation}) => {
                     keyExtractor={select => select.id.toString()}
                     data={state.pacientes}
                     renderItem={ getSelectItem } />
-                    
-                <Button
-                    style={Styles.button}  
-                    type='outline'
-                    title="Salvar"
-                    onPress={() => {
+                <View style={{width: '90%', margin: 20}}>
+                
+                <TouchableOpacity  onPress={() => {
                         dispatch({
                             type: func.id ? 'updateFunc' : 'createFunc',
                             payload: func,
                         })
-                        // navigation.goBack()
-                    }}
-                />
+                    }}>
+                    <Text style={[Styles.button, Styles.horizontalCenter, {padding: 10}]}>Salvar</Text>
+                </TouchableOpacity>
+                </View>
             </View>
         </SafeAreaView>
     </ScrollView>
