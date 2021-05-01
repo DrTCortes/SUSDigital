@@ -73,6 +73,7 @@ export default ({route, navigation}) => {
                         data={state.medicos}
                         renderItem={ getSelectItem } />
                         
+                        <View style={{width: '90%', margin: 20}}>
                         <TouchableOpacity  onPress={() => {
                         dispatch({
                             type: espec.id ? 'updateEspec' : 'createEspec',
@@ -81,6 +82,7 @@ export default ({route, navigation}) => {
                     }}>
                     <Text style={[Styles.button, Styles.horizontalCenter, {padding: 10}]}>Salvar</Text>
                 </TouchableOpacity>
+                </View>
                 </View>
             </SafeAreaView>
         </ScrollView>
