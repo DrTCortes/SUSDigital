@@ -1,5 +1,5 @@
 import React, { useState, useContext } from 'react'
-import { Text, View, FlatList, Image, TouchableOpacity } from 'react-native'
+import { Text, View, FlatList, Image, TouchableOpacity, ScrollView } from 'react-native'
 import { ListItem, Button } from 'react-native-elements'
 import AppContext from '../../context/AppContext'
 import Styles from '../../styles'
@@ -41,6 +41,7 @@ export default ({route, navigation}) => {
         )}
 
     return (
+        <ScrollView>
         <View style={[Styles.container, Styles.horizontalCenter]}>
 
             <Text style={Styles.text}>Selecione o funcionário: </Text>   
@@ -87,5 +88,6 @@ export default ({route, navigation}) => {
                 />
             </View>
         </View>
+        </ScrollView>
     )
 }
