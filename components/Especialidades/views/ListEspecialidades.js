@@ -5,7 +5,6 @@ import AppContext from '../../context/AppContext'
 import Styles from '../../styles'
 
 export default props => {
-
     const { state, dispatch } = useContext(AppContext)
 
     function getActions(espec) {

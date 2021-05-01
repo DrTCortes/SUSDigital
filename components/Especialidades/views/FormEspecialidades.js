@@ -4,7 +4,6 @@ import {Button, Slider, CheckBox} from 'react-native-elements'
 import AppContext from '../../context/AppContext'
 import Styles from '../../styles'
 
-
 export default ({route, navigation}) => {
     const [espec, setEspec] = useState(route.params ? route.params : {})
     const { dispatch } = useContext(AppContext)
