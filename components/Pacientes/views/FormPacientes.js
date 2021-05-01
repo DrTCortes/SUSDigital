@@ -1,8 +1,9 @@
 import React, { useState, useContext } from 'react'
 import { Text, View, TextInput, Alert } from 'react-native'
 import Context from '../../context/AppContext'
-import {Button} from 'react-native-elements'
+import {Button, CheckBox, Slider} from 'react-native-elements'
 import Styles from '../../styles'
+
 
 export default ({route, navigation}) => {
     const [paciente, setPaciente] = useState(route.params ? route.params : {})
@@ -30,6 +31,14 @@ export default ({route, navigation}) => {
                 })
                 navigation.goBack()}
     }
+    function handleToggle(checkboes) {
+        if(checkboes === checkboes) {
+          checkboes = !checkboes
+          return checkboes
+        }
+        return !checkboes
+
+    }   
 
     return (
         <View style={Styles.form}>
@@ -55,12 +64,12 @@ export default ({route, navigation}) => {
                 value={paciente.CNS}
             />
             <Text>Sexo</Text>
-            <TextInput
-                style={Styles.input}
-                onChangeText={Sexo => setPaciente({...paciente, Sexo})}
-                placeholder="Informe o Sexo"
-                value={paciente.Sexo}
-            />
+            <CheckBox                    
+                    label="Masculino"
+                    checked = {paciente.ativo}
+                    onPress= {ativo => setPaciente({...paciente,ativo : handleToggle(paciente.ativo)  })}
+                    tintColors={{ true: '#FC8F00' }} 
+                />  
             <Text>Data de Nascimento</Text>
             <TextInput
                 style={Styles.input}
@@ -68,19 +77,19 @@ export default ({route, navigation}) => {
                 placeholder="Informe a Data de Nascimento"
                 value={paciente.DN}
             />
-            <Text>Nome da Mãe</Text>
-            <TextInput
-                style={Styles.input}
-                onChangeText={Mae => setPaciente({...paciente, Mae})}
-                placeholder="Informe o nome da Mãe"
-                value={paciente.Mae}
-            />
+            
             <Text>Email</Text>
             <TextInput
                 style={Styles.input}
                 onChangeText={email => setPaciente({...paciente, email})}
                 placeholder="Informe o E-mail"
                 value={paciente.email}
+            />
+            <Text>Qual o nivel do seu bem estar?</Text>
+            <Slider
+                thumbStyle={{ height: 10, width: 10, backgroundColor: '#188dbb'}}
+                value={paciente.Slider}
+                onValueChange={Slider => setPaciente({...paciente, Slider})}
             />
             <Text>URL do Avatar</Text>
             <TextInput
@@ -89,7 +98,6 @@ export default ({route, navigation}) => {
                 placeholder="Informe a URL do Avatar"
                 value={paciente.avatarUrl}
             />
-            
             <Button
                 style={Styles.button}  
                 type='outline'
