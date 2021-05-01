@@ -63,7 +63,7 @@ export default ({route, navigation}) => {
                 placeholder="Informe o Núemro do SUS"
                 value={paciente.CNS}
             />
-            <Text>Sexo</Text>
+            <Text>Alérgico?</Text>
             <CheckBox                    
                     label="Masculino"
                     checked = {paciente.ativo}
