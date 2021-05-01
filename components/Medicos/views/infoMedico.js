@@ -9,8 +9,8 @@ export default ({route, navigation}) => {
     const { state, dispatch } = useContext(AppContext)
     
     function getSelection(select) {
-        if (select.type === "paciente"){
-            medico.paciente = select.name            
+        if (select.type === "especialidade"){
+            medico.espec = select.name     
         }else if(select.type === "posto"){
             medico.posto = select.name            
         }    
@@ -47,8 +47,8 @@ export default ({route, navigation}) => {
                         <Text style={Styles.infoBox}>Posto em que trabalha:</Text>
                         <Text style={[Styles.infoBox, Styles.infoText]}> {medico.posto} </Text>
 
-                        <Text style={Styles.infoBox}>Paciente ao qual presta atendimento:</Text>
-                        <Text style={[Styles.infoBox, Styles.infoText]}> {medico.paciente} </Text>
+                        <Text style={Styles.infoBox}>Especialidade ao qual presta atendimento:</Text>
+                        <Text style={[Styles.infoBox, Styles.infoText]}> {medico.espec} </Text>
                         
                     </View>
                 </View>
@@ -66,10 +66,10 @@ export default ({route, navigation}) => {
                     data={state.postos}
                     renderItem={ getSelectItem } />
 
-                <Text style={[Styles.text, {color: "#e1e1e1", fontSize: 18}]}>Selecione o Paciente: </Text>
+                <Text style={[Styles.text, {color: "#e1e1e1", fontSize: 18}]}>Selecione a Especialidade: </Text>
                 <FlatList
                     keyExtractor={select => select.id.toString()}
-                    data={state.pacientes}
+                    data={state.especs}
                     renderItem={ getSelectItem } />
                     
                 <Button
