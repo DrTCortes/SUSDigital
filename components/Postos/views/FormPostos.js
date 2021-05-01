@@ -1,9 +1,9 @@
 import React, { useState, useContext } from 'react'
-import { Text, View, TextInput, CheckBox, Alert } from 'react-native'
+import { Text, View, TextInput, CheckBox, Switch, Alert } from 'react-native'
 import axios from 'axios'
 import Styles from '../../styles'
 import Context from '../../context/AppContext'
-import {Button} from 'react-native-elements'
+import {Button, Slider} from 'react-native-elements'
 
 export default ({route, navigation}) => {
     const [posto, setPosto] = useState(route.params ? route.params : {})
@@ -111,12 +111,23 @@ export default ({route, navigation}) => {
                 placeholder="Informe a Especialidade"
                 value={posto.especialidadeposto}
             />
+              
+              <Text style={{marginBottom: 15}}>Especialidade de alta demanda?
+            <Switch
+                style={{marginHorizontal: 5}}
+                trackColor={{ false: "#767577", true: "#81b0ff" }}
+                thumbColor={posto.isEnabled ? "#f5dd4b" : "#f4f3f4"}
+                ios_backgroundColor="#3e3e3e"
+                onValueChange={isEnabled => setPosto({...posto, isEnabled})}
+                value={posto.isEnabled}
+             />
+            </Text>
              <Text>CEP:</Text>
             <TextInput
                 style={!inputIsErrCep ? Styles.input: Styles.inputErr}
                 onBlur={e => getEndereco(e.target.value)}
                 onChangeText={cep => setPosto({...posto, cep})}
-                placeholder="Informe o CEP"
+                placeholder="Informe o Cep corretamente"
                 value={posto.cep}
                 
             />
@@ -143,8 +154,13 @@ export default ({route, navigation}) => {
                 placeholder="Informe a Cidade"
                 value={cidade}
                 editable={disabledCidade}
-            />
-             
+            /> 
+            <Text>Nível de capacidade atual </Text>
+            <Slider
+                thumbStyle={{ height: 10, width: 10, backgroundColor: '#188dbb'}}
+                value={posto.Slider}
+                onValueChange={Slider => setPosto({...posto, Slider})}
+            />  
               <Text>URL do Avatar</Text>
             <TextInput
                 onChangeText={avatarUrl => setPosto({...posto, avatarUrl})}

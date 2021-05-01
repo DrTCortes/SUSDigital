@@ -3,7 +3,10 @@ import { Text, View, TextInput, StyleSheet, Switch, Alert } from 'react-native';
 import Styles from '../../styles';
 import Context from '../../context/AppContext';
 import {Button, CheckBox } from 'react-native-elements';
+<<<<<<< HEAD
 
+=======
+>>>>>>> 8b739b3d28c5013c3c2dc8c9000ea2f463e7dcb9
 import DatePicker from 'react-native-datepicker';
 
 export default ({route, navigation}) => {
