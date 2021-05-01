@@ -1,10 +1,8 @@
 import React, { useState, useContext } from 'react'
 import { View, SafeAreaView, Image, Text, FlatList, TouchableOpacity, Platform, ScrollView } from 'react-native'
+import Styles from '../../styles'
 import { Button, Icon } from 'react-native-elements'
 import AppContext from '../../context/AppContext'
-
-console.log(typeof(Platform))
-import Styles from '../../styles'
 
 export default ({route, navigation}) => {
     const [func, setFunc] = useState(route.params ? route.params : {})
