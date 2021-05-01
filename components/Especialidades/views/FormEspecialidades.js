@@ -4,7 +4,6 @@ import {Button, Slider, CheckBox} from 'react-native-elements'
 import AppContext from '../../context/AppContext'
 import Styles from '../../styles'
 
-
 export default ({route, navigation}) => {
     const [espec, setEspec] = useState(route.params ? route.params : {})
     const { dispatch } = useContext(AppContext)
@@ -68,28 +67,32 @@ export default ({route, navigation}) => {
                 value={espec.avatarUrl}
                 style={Styles.input}
             />
-            <Text style={{marginBottom: 30}}>Esta especialidade tem uma demanda alta?
-            <Switch
-                style={{marginHorizontal: 20}}
-                trackColor={{ false: "#767577", true: "#81b0ff" }}
-                thumbColor={espec.isEnabled ? "#f5dd4b" : "#f4f3f4"}
-                ios_backgroundColor="#3e3e3e"
-                onValueChange={isEnabled => setEspec({...espec, isEnabled})}
-                value={espec.isEnabled}
-             />
+            <Text style={{marginBottom: 20}}>Esta especialidade tem uma demanda alta?
+                <Switch
+                    style={{marginHorizontal: 20}}
+                    trackColor={{ false: "#767577", true: "#81b0ff" }}
+                    thumbColor={espec.isEnabled ? "#f5dd4b" : "#f4f3f4"}
+                    ios_backgroundColor="#3e3e3e"
+                    onValueChange={isEnabled => setEspec({...espec, isEnabled})}
+                    value={espec.isEnabled}
+                />
             </Text>
+           
+            <Text style={{marginBottom: 20}}> Qualquer usuário pode marcar?
+                <CheckBox                    
+                        checked = {espec.ativo}
+                        onPress= {ativo => setEspec({...espec,ativo : handleToggle(espec.ativo) })}
+                        tintColors={{ true: '#FC8F00' }}
+                ></CheckBox>
+            </Text> 
+                     
             <Text>De 0% a 100% qual a importancia dessa especialidade?</Text>
             <Slider
                 thumbStyle={{ height: 13, width: 13, backgroundColor: '#188dbb'}}
                 value={espec.Slider}
                 onValueChange={Slider => setEspec({...espec, Slider})}
             />
-            <Text>teste</Text>
-            <CheckBox                    
-                    checked = {espec.ativo}
-                    onPress= {ativo => setEspec({...espec,ativo : handleToggle(espec.ativo) })}
-                    tintColors={{ true: '#FC8F00' }}
-                /> 
+            
                 
             <Button
                 style={Styles.button}  
