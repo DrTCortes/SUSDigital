@@ -3,12 +3,10 @@ import {StyleSheet} from 'react-native'
 export default StyleSheet.create({
     container: {
       flex: 1,
-        backgroundColor: '#F2F4F8',
-        alignItems: 'center',
-        justifyContent: 'center',
+      width: '100%',
       },
       header: {
-      backgroundColor: '#415A80',
+      backgroundColor: '#188dbb',
       justifyContent: 'flex-start',
       },
       body: {
@@ -16,42 +14,138 @@ export default StyleSheet.create({
         flexWrap: 'wrap',
       },
       form :{
-        padding: 10,
+        marginVertical: 10,
+        marginHorizontal: 20,
       },
-      input:{
-        backgroundColor: '#fff',
+      input: {
         height: 40,
-        marginBottom: 10,
-        borderRadius: 5,
-        paddingHorizontal: 10,
-      },
+        padding: 10,
+        borderColor: '#208bdc',
+        borderWidth: 1,
+        marginBottom: 15,
+        backgroundColor: '#fff',
+    },
+    inputErr: {
+      height: 40,
+      padding: 10,
+      borderColor: 'red',
+      borderWidth: 1,
+      marginBottom: 15,
+      backgroundColor: '#fff',
+    },
       button:{
+        minHeight: 40,
         margin: 4,
         backgroundColor: '#FFF',
         fontWeight: "bold",
+        borderColor: "#FFF",
+        
     
       },
-      field: {
-        width: 150,
-        height: 150,
-        borderTopWidth: 4,
-        borderRadius: 20,
-        marginTop: 20,
-        backgroundColor: '#F2F4F8',
-        borderTopColor: '#415A80',
-        padding: 10,
-        alignContent: 'space-between'
+    text:{
+      fontFamily: 'serif',
+      fontWeight: 'bold',
+      fontSize: 16,
+      color:'#415A80',
+      padding: 10,
+      marginTop: 10,
+    },
+    textInput: {
+      textTransform: 'uppercase'
     },
     name: {
         fontWeight: 'bold',
-        fontSize: 15,
+        fontSize: 16,
 
     },
     desc: {
         fontSize: 13,
         marginTop: 5,
-
+ 
     },
+    infoScreen:{
+      backgroundColor: '#188dbb',
+    },
+    infoHeader:{
+      width: '100%',
+      backgroundColor: '#E9E9E9',
+      flexDirection: 'row',
+    },
+    ImageInfo: {
+      width: 130,
+      height: 130,
+      marginVertical: 20,
+      borderRadius: 200,
+      backgroundColor: "#fff",
+      shadowRadius: 5,
+      shadowColor: "red"
+    },
+    infoText: {
+      fontFamily: 'serif',
+      fontWeight: 'bold',
+      fontSize: 24,
+      textAlign: 'center',
+      color:'#188dbb',
+    },
+    infoText2: {
+      fontFamily: 'serif',
+      fontWeight: 'bold',
+      fontSize: 16,
+      color:'#02cdd0',
+    },
+    formImageInfo1: {
+      width: "100%",
+      height: 50,
+      backgroundColor: '#02cdd0',
+      transform: [{skewY: "-6deg"}, {translateY: -25}],
+    }, 
+    formImageInfo2: {
+      width: "100%",
+      height: 50,
+      backgroundColor: '#188dbb',
+      transform: [{skewY: "-10deg"}, {translateY: -45}],
+    },
+    imageIcon: {
+      width: 40,
+      height: 40,
+      marginHorizontal: 20,
+      borderRadius: 20,
+      backgroundColor: "#fff",    
+    },
+    contentBox: {
+      width: 320,
+      height: 60,
+      borderRadius: 2,
+      borderTopLeftRadius: 30,
+      borderBottomRightRadius: 30,
+      marginVertical: 10,
+      alignItems: 'center',
+      flexDirection: 'row',
+      alignContent: 'center',
+    },
+    contentBox2: {
+      width: 300,
+      borderRadius: 2,
+      borderRadius: 10,
+      borderColor: '#188dbb',
+      borderWidth: 5,
+    },
+    horizontalCenter: {
+      width: "100%",
+      alignItems: 'center',
+      textAlign: 'center',
+      justifyContent: 'space-around',
+    },
+    infoBox: {
+      width: '100%',
+      paddingHorizontal: 10,
+      paddingTop: 5,
+    },
+    infoBoxContent: {
+      backgroundColor: '#188dbb',
+      textAlign: 'center',
+      paddingVertical: 10,
+    }
     });
 
 // Paleta de Cores:
