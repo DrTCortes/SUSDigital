@@ -7,6 +7,9 @@
         Thiago Freire Lima
         Wallace Soares Santana
 
+    O link do video é o: https://youtu.be/x8UCr7YJVTM    
+      
+
 
     A ideia do projeto é agilizar a marcação de consultas pela rede de saúde pública brasileira, com um simples toque no aplicativo, é possível cadastrar novas consultas
     
