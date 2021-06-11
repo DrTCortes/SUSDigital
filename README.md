@@ -1,11 +1,14 @@
 <h1>SUS DIGITAL</h1>
 
     Os integrantes do grupo são:
-        Daiane Santana Sampaio
-        Tarik Kerjean Cedraz Lopes
-        Thiago Côrtes dos Santos
-        Thiago Freire Lima
-        Wallace Soares Santana
+        Daiane Santana Sampaio (Médicos)
+        Tarik Kerjean Cedraz Lopes (Especialidades)
+        Thiago Côrtes dos Santos (Funcionários)
+        Thiago Freire Lima (Pacientes)
+        Wallace Soares Santana (Postos)
+
+    O link do video é o: https://youtu.be/x8UCr7YJVTM    
+      
 
 
     A ideia do projeto é agilizar a marcação de consultas pela rede de saúde pública brasileira, com um simples toque no aplicativo, é possível cadastrar novas consultas
