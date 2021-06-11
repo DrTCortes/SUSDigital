@@ -6,13 +6,12 @@ import axios from 'axios'
 const getData = async () => {
     try {         
         const med = await axios.get('http://localhost:3004/medicos')               
-        console.log(JSON.stringify(med.data))
+        const funcs = await axios.get('http://localhost:3004/funcionarios')                            
         return JSON.stringify(med.data) 
     } catch(e) {           
     }
 } 
 
-//const medicos = getData()
 const medicos = db.medicos
 const funcs = db.funcionarios
 const especs = db.especialidades
@@ -77,17 +76,21 @@ const DeleteMed = async (medico) => {
     }
 }
 
+type: func.type,
+            name: func.name,
+            email: func.email,
+            isEnabled: isEnabled,
+            avatarUrl: func.avatarUrl
+
+
 const actions = {
     // Actions para Crição, Update e Delete de Funcionarios    
 
     createFunc(state, action) {
         const func = action.payload
-        func.id = Math.random()
         func.type = 'funcionario'
-        return {
-            ...state,
-            funcs: [...state.funcs, func],
-        }
+        setFunc(func)
+        return 0
     },
     updateFunc(state, action) {
         const updated = action.payload

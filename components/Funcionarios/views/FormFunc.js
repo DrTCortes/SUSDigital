@@ -9,7 +9,7 @@ export default ({route, navigation}) => {
     const [func, setFunc] = useState(route.params ? route.params : {})
     const { dispatch } = useContext(AppContext)
 
-    function confirmData(func, borderRed){
+    function confirmData(func){
         if (func.name === '' || func.name === null || func.name === undefined ){
             Alert.alert( "Dado Incorreto", "O campo 'Nome' não pode estar em branco",
                 [{ text: "OK"}] )
