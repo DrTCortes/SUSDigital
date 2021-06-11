@@ -1,0 +1,71 @@
+{
+  "especialidades": [{
+      "id": 1,
+      "type": "especialidade",
+      "name": "Cardiologia",
+      "descricao": "Profissionais especializados em cuidar do coração.",
+      "avatarUrl": "https://image.flaticon.com/icons/png/512/1863/1863349.png",
+      "posto": "",
+      "medico": "",
+      "isEnabled": "true"
+  }], 
+  "funcionarios": [{
+      "id": 1,
+      "type": "funcionario",
+      "name": "João Silva",
+      "email": "josil@email.com",
+      "isEnabled": "true",
+      "posto": " ",
+      "paciente": " ",
+      "avatarUrl": "https://image.freepik.com/free-photo/waist-up-portrait-handsome-serious-unshaven-male-keeps-hands-together-dressed-dark-blue-shirt-has-talk-with-interlocutor-stands-against-white-wall-self-confident-man-freelancer_273609-16320.jpg"
+    }],
+    "medicos":[
+      {
+          "id":1,
+          "type": "medico",
+          "name": "Sophia Mello",
+          "email": "sophiabush@gmail.com",
+          "crm": "876767",
+          "rg": "1198789789",
+          "cpf": "98675646769",
+          "sexo": "F",
+          "telefone": "759877888",
+          "nascimento" : "15-04-1990",
+          "ativo" : "true",
+          "posto": " ",
+          "espec": " ",
+          "avatarUrl": 
+            "https://www.diabetes.org.br/wp-content/uploads/2020/03/imagem_m%C3%A9dica_ipad.png"
+      }
+    ],
+    "pacientes":[
+      {
+          "id": 1,
+          "type": "paciente",
+          "name": "João Paulo Carvalho",
+          "CPF": "036.567.225-34",
+          "CNS": "708604740070000",
+          "Sexo": "Masculino",
+          "DN": "07/05/1987",
+          "email": "joaopaulo2019@gmail.com",
+          "avatarUrl": "https://i.pinimg.com/736x/93/7d/f2/937df27e5b279abcd5272fc36f93e5c4.jpg",
+          "posto": "",
+          "especialidade": ""
+      }
+    ],
+    "postos": [
+      {
+          "id": 1,
+          "type": "posto",
+          "name": "Hospital Municipal de Salvador HMS",
+          "especialidadeposto": "Hospitalização",
+          "isEnabled": "true",
+          "endereco": "R. Ver. Zezéu Ribeiro, s/n - Cajazeiras",
+          "estado": "Bahia",
+          "cidade": "Salvador",
+          "cep": "40000000",
+          "avatarUrl": "https://fw.atarde.uol.com.br/2018/03/750_hospital-municipal_201832823152830.jpg"
+          
+      }
+    ]
+}
