@@ -158,31 +158,95 @@ const actions = {
 
     // Postos
 
-    createPosto(state, action) {
-        const posto = action.payload
-        posto.id = Math.random()
-        posto.type = 'posto'
-        return {
-            ...state,
-            postos: [...state.postos, posto],
+    async createPosto(state, action) {
+        const {
+            avatarUrl,
+            cep,
+            cidade,
+            endereco,
+            especialidadeposto,
+            estado,
+            name,
+        } = action.payload;
+        const postoPreviusIndex = state.postos.length - 1;
+        try {
+            const data = {
+                type: "posto",
+                isEnabled: "true",
+                avatarUrl,
+                cep,
+                cidade,
+                endereco,
+                especialidadeposto,
+                estado,
+                name,
+            }
+            await fetch('http://localhost:3004/postos', {
+                method: 'POST',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data),
+            })
+
+            return 0;
+        } catch (error) {
+            console.error(error);
         }
     },
-    updatePosto(state, action) {
-        const updated = action.payload
-        return {
-            ...state,
-            postos: state.postos.map(u => u.id === updated.id ? updated : u)
-        }
-    },
-    deletePosto(state, action) {
+    // updatePosto(state, action) {
+    //     const updated = action.payload
+    //     return {
+    //         ...state,
+    //         postos: state.postos.map(u => u.id === updated.id ? updated : u)
+    //     }
+    // },
+
+    async updatePosto(state, action) {  
         const posto = action.payload
-        return {
-            ...state,
-            postos: state.postos.filter(u => u.id !== posto.id)
+        try {
+            // console.warn(user)
+            await axios.put(`http://localhost:3004/postos/${posto.id}`,{
+                type: posto.type,
+                name: posto.name,
+                email: posto.email,
+                crm: posto.crm,
+                rg: posto.rg,
+                cpf: posto.cpf,
+                sexo: posto.sexo,
+                telefone: posto.telefone,
+                nascimento : posto.nascimento,
+                ativo : posto.ativo,
+                posto:  posto.posto,
+                espec:  posto.espec,
+                avatarUrl: posto.avatarUrl
+           })
+            
+          } catch(e){
+            //   showError(e)
+          } 
+        },
+
+    // deletePosto(state, action) {
+    //     const posto = action.payload
+    //     return {
+    //         ...state,
+    //         postos: state.postos.filter(u => u.id !== posto.id)
+    //     }
+    // },
+
+    async deletePosto(state, action) {
+        const posto = action.payload
+        try {
+            await axios.delete(`http://localhost:3004/postos/${posto.id}`)
+        } catch(e) {
+            // showError(e)
         }
     },
 
-  
+
+    //Medicos
 
     createMedico(state, action) {
         const medico = action.payload
@@ -204,6 +268,7 @@ const actions = {
         //     medicos: state.medicos.map(u => u.id === updated.id ? updated : u)
         // }
     },
+    
     deleteMedico(state, action) {
         const medico = action.payload
         DeleteMed(medico)
