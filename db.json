@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "especialidades": [{
       "id": 1,
       "type": "especialidade",
@@ -68,4 +69,23 @@
           
       }
     ]
+=======
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+>>>>>>> 55ddb5df3eb27f1ca01d14fc4e79593320a59df5
 }
