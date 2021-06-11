@@ -210,17 +210,13 @@ const actions = {
             await axios.put(`http://localhost:3004/postos/${posto.id}`,{
                 type: posto.type,
                 name: posto.name,
-                email: posto.email,
-                crm: posto.crm,
-                rg: posto.rg,
-                cpf: posto.cpf,
-                sexo: posto.sexo,
-                telefone: posto.telefone,
-                nascimento : posto.nascimento,
-                ativo : posto.ativo,
-                posto:  posto.posto,
-                espec:  posto.espec,
-                avatarUrl: posto.avatarUrl
+                especialidadeposto: posto.especialidadeposto,
+                isEnabled: "true",
+                cep: posto.cep,
+                cidade: posto.cidade,
+                endereco: posto.endereco,
+                estado: posto.estado,
+                avatarUrl: posto.avatarUrl,
            })
             
           } catch(e){
