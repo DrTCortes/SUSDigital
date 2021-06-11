@@ -9,8 +9,10 @@ export default [
         cpf: '98675646769',
         sexo: 'F',
         telefone: '759877888',
-        especialidade : 'Clinico Geral',
         nascimento : '15-04-1990',
+        ativo : true,
+        posto: " ",
+        espec: " ",
         avatarUrl: 
           'https://www.diabetes.org.br/wp-content/uploads/2020/03/imagem_m%C3%A9dica_ipad.png',
     },
@@ -24,8 +26,10 @@ export default [
         cpf: '23674654655',
         sexo: 'M',
         telefone: '758777888',
-        especialidade : 'Cardiologia',
         nascimento : '01-10-1980',
+        ativo : true,
+        posto: " ",
+        espec: " ",
         avatarUrl:
            'https://posfg.com.br/wp-content/uploads/2020/10/POSFG-Dia-do-m%C3%A9dico-site.png',
     },
@@ -33,13 +37,16 @@ export default [
         id:4,
         type: 'medico',
         name:'Adriano Santana',
-        email:'adriano.sampaio@outlook.com',
+        email:'adriano.s@outlook.com',
         crm: '234343',
         rg: '778976763',
         cpf: '88876876897',
         sexo: 'M',
         telefone: '719711888',
-        especialidade : 'Pedriatria',
+        nascimento : '13-12-1985',
+        ativo : false,
+        posto: " ",
+        espec: " ",
         avatarUrl:
            'https://www.hospitalmarcelino.com.br/wp-content/uploads/2018/12/areamedica-credenciamento-medico.png',
     },
@@ -53,7 +60,10 @@ export default [
         cpf: '1118765397',
         sexo: 'F',
         telefone: '718777666',
-        especialidade : 'Nutricionista',
+        nascimento : '30-04-1991',
+        ativo : true,
+        posto: " ",
+        espec: " ",
         avatarUrl:
            'https://i.pinimg.com/474x/99/89/0d/99890d31e3aacae587d91d42ea497f49.jpg',
     },
@@ -113,8 +123,4 @@ export default [
     //     avatarUrl:
     //        'https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_1280.png',
     // },
- 
-
-
-
 ]

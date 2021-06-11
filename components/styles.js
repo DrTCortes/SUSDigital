@@ -4,7 +4,6 @@ export default StyleSheet.create({
     container: {
       flex: 1,
       width: '100%',
-      backgroundColor: '#F2F4F8',
       },
       header: {
       backgroundColor: '#188dbb',
@@ -26,24 +25,21 @@ export default StyleSheet.create({
         marginBottom: 15,
         backgroundColor: '#fff',
     },
+    inputErr: {
+      height: 40,
+      padding: 10,
+      borderColor: 'red',
+      borderWidth: 1,
+      marginBottom: 15,
+      backgroundColor: '#fff',
+    },
       button:{
-        width: '100%',
         margin: 4,
         backgroundColor: '#FFF',
         fontWeight: "bold",
+        borderColor: "#FFF"
     
       },
-      field: {
-        width: 150,
-        height: 150,
-        borderTopWidth: 4,
-        borderRadius: 20,
-        marginTop: 20,
-        backgroundColor: '#188dbb',
-        borderTopColor: '#415A80',
-        padding: 10,
-        alignContent: 'space-between'
-    },
     text:{
       fontFamily: 'serif',
       fontWeight: 'bold',
@@ -51,6 +47,9 @@ export default StyleSheet.create({
       color:'#415A80',
       padding: 10,
       marginTop: 10,
+    },
+    textInput: {
+      textTransform: 'uppercase'
     },
     name: {
         fontWeight: 'bold',
@@ -60,7 +59,7 @@ export default StyleSheet.create({
     desc: {
         fontSize: 13,
         marginTop: 5,
-
+ 
     },
     infoScreen:{
       backgroundColor: '#188dbb',
@@ -109,10 +108,7 @@ export default StyleSheet.create({
       height: 40,
       marginHorizontal: 20,
       borderRadius: 20,
-      backgroundColor: "#fff",
-      shadowRadius: 5,
-      shadowColor: "red"
-      
+      backgroundColor: "#fff",    
     },
     contentBox: {
       width: 320,

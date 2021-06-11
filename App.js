@@ -22,9 +22,11 @@ import InfoEspec from './components/Especialidades/views/InfoEspecialidades';
 
 import ListPostos from './components/Postos/views/ListPostos'
 import FormPostos from './components/Postos/views/FormPostos'
+import InfoPosto from './components/Postos/views/InfoPosto';
 
 import ListPacientes from './components/Pacientes/views/ListPacientes'
 import FormPacientes from './components/Pacientes/views/FormPacientes'
+import InfoPacientes from './components/Pacientes/views/InfoPacientes'
 
 import DevArea from './components/Dev/DevArea'
 
@@ -80,12 +82,14 @@ export default props => {
                         <Button type='clear' onPress={() => navigation.navigate("FormPostos")}
                         icon={ <Icon name="add" size={25} color="#F2F4F8"/> } />)}}}/>
             <Stack.Screen name="FormPostos" options={()=> {return{ title:"Cadastros de postos"}}} component={FormPostos}/>
-
+            <Stack.Screen name="InfoPosto" options={()=> {return{headerShown: false}}} component={InfoPosto}/>
+            
             <Stack.Screen name="Pacientes" component={ListPacientes}
                 options={({navigation}) => { return{ title: "Pacientes", headerRight: () => (
                         <Button type='clear' onPress={() => navigation.navigate("FormPacientes")}
                         icon={ <Icon name="add" size={25} color="#F2F4F8"/> } />)}}}/> 
             <Stack.Screen name="FormPacientes" options={()=> {return{ title:"Formulário de Pacientes"}}} component={FormPacientes}/>
+            <Stack.Screen name="InfoPacientes" options={()=> {return{headerShown: false}}} component={InfoPacientes}/>
 
           </Stack.Navigator>
         </NavigationContainer>

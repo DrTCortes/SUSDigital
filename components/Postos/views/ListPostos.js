@@ -1,25 +1,12 @@
 import React, { useContext } from 'react'
-import { View, FlatList, Alert } from 'react-native'
+import { View, FlatList, Alert, Image, TouchableOpacity } from 'react-native'
 import { ListItem, Button, Icon, Avatar } from 'react-native-elements'
 import Context from '../../context/AppContext'
+import Styles from '../../styles'
 
 export default props => {
 
     const { state, dispatch } = useContext(Context)
-
-    function confirmPostoDeletion(posto) {
-        Alert.alert('Excluir Usuário', 'Deseja excluir o usuário?', [
-            { text: 'Sim',
-                onPress() {
-                    dispatch({
-                        type: 'deletePosto',
-                        payload: posto,
-                    })}
-            },
-            {
-                text: 'Não'
-            }
-        ])}
 
     function getActions(posto) {
         return (
@@ -27,12 +14,12 @@ export default props => {
                 <Button
                     onPress={() => props.navigation.navigate('FormPostos', posto)}
                     type="clear"
-                    icon={<Icon name="edit" size={25} color="orange" />}
+                    icon={<Icon name="edit" size={25} color="white" />}
                 />
                 <Button
                     onPress={() => dispatch({type: 'deletePosto', payload: posto})}
                     type="clear"
-                    icon={<Icon name="delete" size={25} color="red" />}
+                    icon={<Icon name="delete" size={25} color="white" />}
                 />
             </>
         )
@@ -51,9 +38,37 @@ export default props => {
                         <View style={{flexDirection:'row'}}>{getActions(posto)}</View>
             </ListItem>
         )}
+        
+        function getPostoItem({ item: posto }) {
+            return (
+                <TouchableOpacity 
+                    style={[Styles.contentBox, {backgroundColor: '#188dbb'}]} 
+                    key={posto.id} 
+                    bottomDivider
+                    rightElement={getActions(posto)}
+                    onPress={() => props.navigation.navigate('InfoPosto', posto)}
+                >
+                    <Image style={Styles.imageIcon} rounded source={posto.avatarUrl && { uri: posto.avatarUrl }}/>
+                    <ListItem.Content>
+                        <ListItem.Title style={{color: '#FFF'}}>{posto.name}</ListItem.Title>
+                        <ListItem.Subtitle 
+                            style={{
+                                color: '#c9c9c9',
+                                maxWidth: '85%',
+                                whiteSpace: 'nowrap',
+                                overflow: 'hidden',
+                                textOverflow: 'ellipsis'
+                            }}>
+                            {posto.endereco}
+                        </ListItem.Subtitle>
+                    </ListItem.Content>
+                            <View style={{flexDirection:'row'}}>{getActions(posto)}</View>
+                </TouchableOpacity>
+            )}
 
     return (
-        <View>
+        <View style={[Styles.container, {alignItems: 'center'}]}>
+            
             <FlatList
                 keyExtractor={posto => posto.id.toString()}
                 data={state.postos}
