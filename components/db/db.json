@@ -78,6 +78,18 @@
       "cidade": "Salvador",
       "cep": "40000000",
       "avatarUrl": "https://fw.atarde.uol.com.br/2018/03/750_hospital-municipal_201832823152830.jpg"
+    },
+    {
+      "type": "posto",
+      "name": "wtf",
+      "especialidadeposto": "dsasda",
+      "isEnabled": "true",
+      "cep": "41342352",
+      "cidade": "Salvador",
+      "endereco": "1ª Travessa Unidos Somos Fortes",
+      "estado": "BA",
+      "avatarUrl": "sdaads",
+      "id": 2
     }
   ],
   "consultas": [
