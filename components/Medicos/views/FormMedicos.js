@@ -3,7 +3,7 @@ import { Text, View, TextInput, StyleSheet, Switch, Alert } from 'react-native';
 import Styles from '../../styles';
 import Context from '../../context/AppContext';
 import {Button, CheckBox } from 'react-native-elements';
-import DatePicker from 'react-native-datepicker';
+// import DatePicker from 'react-native-datepicker';
 
 export default ({route, navigation}) => {
     const [medico, setMedico] = useState(route.params ? route.params : {})
@@ -68,18 +68,18 @@ export default ({route, navigation}) => {
                 placeholder="Informe o Nome"
                 value={medico.name}
                 style={Styles.input} 
-            />
+                />
             <View  style={{flexDirection:'row'}}>  
                 <Text>Data de Nascimento    </Text>
                 <Text>Médico Ativo?</Text>  
             </View>
             <View  style={{flexDirection:'row'}}>              
-                <DatePicker
+                {/* <DatePicker
                     format="DD-MM-YYYY"        
                     date = {medico.nascimento}
                     onDateChange={value => setMedico({...medico, nascimento})}
                     value = {medico.nascimento}
-                />                            
+                />                             */}
                 <CheckBox                    
                     checked = {medico.ativo}
                     onPress= {ativo => setMedico({...medico,ativo : handleToggle(medico.ativo) })}
