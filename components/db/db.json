@@ -49,16 +49,6 @@
       "telefone": "6756756757",
       "avatarUrl": "sdhbasdjvbadjbh",
       "id": 2
-    },
-    {
-      "type": "medico",
-      "name": "Denise Almeida 2",
-      "email": "denise@gmail.com",
-      "crm": "2343243",
-      "cpf": "23432435",
-      "telefone": "435435435",
-      "avatarUrl": "https://www.google.com/imgres?imgurl=https%3A%2F%2Ftelemedicinamorsch.com.br%2Fwp-content%2Fuploads%2F2018%2F05%2Fcarreira-medica.jpg&imgrefurl=https%3A%2F%2Ftelemedicinamorsch.com.br%2Fblog%2Fcarreira-medica&tbnid=DKa5K5xFYN1IFM&vet=12ahUKEwio0vK0w47xAhXSrZUCHUK0BPMQMygCegUIARDTAQ..i&docid=akSQ0WxsQQ3W9M&w=790&h=510&q=medica&ved=2ahUKEwio0vK0w47xAhXSrZUCHUK0BPMQMygCegUIARDTAQ",
-      "id": 3
     }
   ],
   "pacientes": [
