@@ -90,13 +90,41 @@ const actions = {
 
     // Postos
 
-    createPosto(state, action) {
-        const posto = action.payload
-        posto.id = Math.random()
-        posto.type = 'posto'
-        return {
-            ...state,
-            postos: [...state.postos, posto],
+    async createPosto(state, action) {
+        const {
+            avatarUrl,
+            cep,
+            cidade,
+            endereco,
+            especialidadeposto,
+            estado,
+            name,
+        } = action.payload;
+        const postoPreviusIndex = state.postos.length - 1;
+        try {
+            const data = {
+                type: "posto",
+                isEnabled: "true",
+                avatarUrl,
+                cep,
+                cidade,
+                endereco,
+                especialidadeposto,
+                estado,
+                name,
+            }
+            await fetch('http://localhost:3004/postos', {
+                method: 'POST',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data),
+            })
+
+            return 0;
+        } catch (error) {
+            console.error(error);
         }
     },
     updatePosto(state, action) {
@@ -113,6 +141,7 @@ const actions = {
             postos: state.postos.filter(u => u.id !== posto.id)
         }
     },
+
 
     //Medicos
 
