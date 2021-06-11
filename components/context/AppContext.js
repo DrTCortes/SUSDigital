@@ -1,7 +1,7 @@
 import React, { createContext, useReducer } from 'react'
 import db from '../db/db'
 import axios from 'axios' 
-
+ 
 
 const getData = async () => {
     try {         
@@ -71,7 +71,6 @@ try {
 
 const DeleteMed = async (medico) => {
     try {
-        console.log("Aqui")
         await axios.delete(`http://localhost:3004/medicos/${medico.id}`)
     } catch(e) {
         // showError(e)
