@@ -6,13 +6,13 @@ import axios from 'axios'
 const getData = async () => {
     try {         
         const med = await axios.get('http://localhost:3004/medicos')               
-        console.log(JSON.parse(med.data))
-        return med.data
+        console.log(JSON.stringify(med.data))
+        return JSON.stringify(med.data) 
     } catch(e) {           
     }
 } 
 
-getData()
+//const medicos = getData()
 const medicos = db.medicos
 const funcs = db.funcionarios
 const especs = db.especialidades
@@ -23,7 +23,7 @@ const consultas = db.consultas
 const initialState = { funcs, especs, pacientes, postos, medicos, consultas }
 const UsersContext = createContext({})
 
-const setEnvio = async (medico) => {        
+const setEnvioMed = async (medico) => {        
     try {
     await axios.post('http://localhost:3004/medicos',{
         type: medico.type,
@@ -45,9 +45,37 @@ const setEnvio = async (medico) => {
     } catch(e){
     } 
 }
+const setAlteracaoMed = async (medico) => {  
+try {
+    // console.warn(user)
+    await axios.put(`http://localhost:3004/medicos/${medico.id}`,{
+        type: medico.type,
+        name: medico.name,
+        email: medico.email,
+        crm: medico.crm,
+        rg: medico.rg,
+        cpf: medico.cpf,
+        sexo: medico.sexo,
+        telefone: medico.telefone,
+        nascimento : medico.nascimento,
+        ativo : medico.ativo,
+        posto:  medico.posto,
+        espec:  medico.espec,
+        avatarUrl: medico.avatarUrl
+   })
     
+  } catch(e){
+    //   showError(e)
+  } 
+}
 
-
+const DeleteMed = async (medico) => {
+    try {
+        await axios.delete(`http://localhost:3004/medicos/${medico.id}`)
+    } catch(e) {
+        // showError(e)
+    }
+}
 
 const actions = {
     // Actions para Crição, Update e Delete de Funcionarios    
@@ -157,11 +185,11 @@ const actions = {
   
 
     createMedico(state, action) {
-        // const medico = action.payload
+        const medico = action.payload
         // medico.id = Math.random() //gera o id do medico
         
         medico.type = 'medico'
-        setEnvio(medico)
+        setEnvioMed(medico)
         return 0 //{ //retorna estado e informações do medico cadasttrado
             
             // ...state,
@@ -170,17 +198,19 @@ const actions = {
     },
     updateMedico(state, action) {
         const updated = action.payload
-        return {
-            ...state,
-            medicos: state.medicos.map(u => u.id === updated.id ? updated : u)
-        }
+        setAlteracaoMed(updated)
+        return 0 //{
+        //     ...state,
+        //     medicos: state.medicos.map(u => u.id === updated.id ? updated : u)
+        // }
     },
     deleteMedico(state, action) {
         const medico = action.payload
-        return {
-            ...state,
-            medicos: state.medicos.filter(u => u.id !== medico.id)
-        }
+        DeleteMed(medico)
+        return 0 //{
+        //     ...state,
+        //     medicos: state.medicos.filter(u => u.id !== medico.id)
+        // }
     },
     createConsulta(state, action) {
         const consulta = action.payload
