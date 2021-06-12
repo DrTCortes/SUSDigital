@@ -165,27 +165,27 @@
     },
     {
       "type": "posto",
-      "isEnabled": "true",
-      "avatarUrl": "https://bahiapravoce.com.br/wp-content/uploads/2021/01/Gripa%CC%81rios.jpg",
-      "cep": "41310380",
-      "cidade": "Salvador",
-      "endereco": "1ª Travessa Januário",
-      "especialidadeposto": "Cardiologia",
-      "estado": "BA",
       "name": "CS Nelson Piauhy Dourado",
-      "id": 4
+      "especialidadeposto": "Unidade Basica",
+      "isEnabled": "true",
+      "cep": "4000000",
+      "cidade": "Salvador",
+      "endereco": "Rua Endeo Nascimento, Qd. C, s/n, Caj. III, Água Claras",
+      "estado": "BA",
+      "avatarUrl": "https://bahiapravoce.com.br/wp-content/uploads/2021/01/Gripa%CC%81rios.jpg",
+      "id": 2
     },
     {
       "type": "posto",
       "isEnabled": "true",
-      "avatarUrl": "https://bahiapravoce.com.br/wp-content/uploads/2021/01/Gripa%CC%81rios.jpg",
-      "cep": "41741510",
+      "avatarUrl": "http://www.bocaonews.com.br/fotos/noticias/116251/mg/001.jpg",
+      "cep": "40121510",
       "cidade": "Salvador",
-      "endereco": "Rua do Cascalho",
-      "especialidadeposto": "Cardiologia",
+      "endereco": "Rua: Apolinario Santana - Engenho velho da Federação",
+      "especialidadeposto": "Unidade Basica",
       "estado": "BA",
-      "name": "Centro de Saúde",
-      "id": 5
+      "name": "CS Engenho velho da Federação",
+      "id": 3
     }
   ],
   "consultas": [
