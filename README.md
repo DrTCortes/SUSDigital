@@ -7,7 +7,7 @@
         Thiago Freire Lima (Pacientes)
         Wallace Soares Santana (Postos)
 
-    O link do video é o: https://youtu.be/x8UCr7YJVTM    
+    O link do video é o: https://youtu.be/Gu90XY4-KQ8    
       
 
 
