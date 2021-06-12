@@ -3,11 +3,16 @@ import db from '../db/db'
 import axios from 'axios' 
  
 
-const getData = async () => {
+ const getData = async() => {
     try {         
-        const med = await axios.get('http://localhost:3004/medicos')               
-        const funcs = await axios.get('http://localhost:3004/funcionarios')                            
-        return JSON.stringify(med.data) 
+        const medicos = await axios.get('http://localhost:3004/medicos')               
+        const funcs = await axios.get('http://localhost:3004/funcionarios') 
+        const especs = await axios.get('http://localhost:3004/especialidades') 
+        const pacientes = await axios.get('http://localhost:3004/pacientes') 
+        const postos = await axios.get('http://localhost:3004/postos') 
+        const consultas = await axios.get('http://localhost:3004/consultas') 
+        
+        return JSON.stringify(data) 
     } catch(e) {           
     }
 } 

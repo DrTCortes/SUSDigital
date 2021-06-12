@@ -71,6 +71,28 @@
       "telefone": "fgh",
       "avatarUrl": "fghgfh",
       "id": 3
+    },
+    {
+      "type": "medico",
+      "name": "rdter",
+      "email": "fdgdfg",
+      "crm": "dfgdf",
+      "cpf": "dfgdfg",
+      "telefone": "dfgdf",
+      "ativo": true,
+      "avatarUrl": "dfgdfg",
+      "id": 4
+    },
+    {
+      "type": "medico",
+      "name": "rdter",
+      "email": "fdgdfg",
+      "crm": "dfgdf",
+      "cpf": "dfgdfg",
+      "telefone": "dfgdf",
+      "ativo": true,
+      "avatarUrl": "dfgdfg",
+      "id": 5
     }
   ],
   "pacientes": [
