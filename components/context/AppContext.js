@@ -130,6 +130,64 @@ const actions = {
         }
     },
 
+
+    async createEspec(state, action) {
+        const espec = action.payload;
+        // const EspecialidadePreviusIndex = state.postos.length - 1;
+        try {
+            const data = {
+                type: espec.type,
+                name: espec.name,
+                descricao: espec.descricao,
+                avatarUrl: espec.avatarUrl,
+                posto: espec.posto,
+                medico: espec.medico,
+                isEnabled: espec.isEnabled
+            }
+            await fetch('http://localhost:3004/especialidades', {
+                method: 'POST',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data),
+            })
+            return 0;
+        } catch (error) {
+            console.error(error);
+        }
+    },
+
+    async updateEspec(state, action) {  
+        const espec = action.payload
+        try {
+            // console.warn(user)
+            await axios.put(`http://localhost:3004/especialidades/${espec.id}`,{
+                type: espec.type,
+                name: espec.name,
+                descricao: espec.descricao,
+                avatarUrl: espec.avatarUrl,
+                posto: espec.posto,
+                medico: espec.medico,
+                isEnabled: espec.isEnabled
+           })
+            
+          } catch(e){
+            //   showError(e)
+          } 
+        },
+
+    async deleteEspec(state, action) {
+        const espec = action.payload
+        try {
+            await axios.delete(`http://localhost:3004/especialidades/${espec.id}`)
+        } catch(e) {
+            // showError(e)
+        }
+    },
+
+
+
     // Pacientes
 
     createPaciente(state, action) {
