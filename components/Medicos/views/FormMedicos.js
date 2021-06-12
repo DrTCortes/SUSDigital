@@ -5,7 +5,6 @@ import Context from '../../context/AppContext';
 import {Button, CheckBox } from 'react-native-elements';
 import DatePicker from 'react-native-datepicker';
 
-
 export default ({route, navigation}) => {
     const [medico, setMedico] = useState(route.params ? route.params : {})
     const { dispatch } = useContext(Context)
