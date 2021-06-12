@@ -197,6 +197,57 @@ const actions = {
         }
     },
 
+    async createPaciente(state, action) {
+        const paciente = action.payload;
+        try {
+            await axios.post('http://localhost:3004/pacientes',{
+                type: paciente.type,
+                name: paciente.name,
+                cpf: paciente.cpf,
+                cns: paciente.cns,
+                sexo: paciente.sexo,
+                email: paciente.email,
+                dn: paciente.dn,
+                posto: paciente.posto,
+                especialidade: paciente.paciente,
+                avatarUrl: paciente.avatarUrl
+            })
+            } catch(e){
+            } 
+    },
+
+    async updatePaciente(state, action) {  
+        const paciente = action.payload
+        try {
+            // console.warn(user)
+            await axios.put(`http://localhost:3004/pacientes/${paciente.id}`,{
+                type: paciente.type,
+                name: paciente.name,
+                cpf: paciente.cpf,
+                cns: paciente.cns,
+                sexo: paciente.sexo,
+                email: paciente.email,
+                dn: paciente.dn,
+                posto: paciente.posto,
+                especialidade: paciente.paciente,
+                avatarUrl: paciente.avatarUrl
+
+           })
+            
+          } catch(e){
+            //   showError(e)
+          } 
+        },
+
+    async deletePaciente(state, action) {
+        const paciente = action.payload
+        try {
+            await axios.delete(`http://localhost:3004/pacientes/${paciente.id}`)
+        } catch(e) {
+            // showError(e)
+        }
+    },
+
     // Postos
 
     async createPosto(state, action) {
