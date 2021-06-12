@@ -76,34 +76,72 @@ const DeleteMed = async (medico) => {
     }
 }
 
-type: func.type,
-            name: func.name,
-            email: func.email,
-            isEnabled: isEnabled,
-            avatarUrl: func.avatarUrl
-
 
 const actions = {
     // Actions para Crição, Update e Delete de Funcionarios    
 
-    createFunc(state, action) {
-        const func = action.payload
-        func.type = 'funcionario'
-        setFunc(func)
-        return 0
+    // createFunc(state, action) {
+    //     const func = action.payload
+    //     func.type = 'funcionario'
+    //     setFunc(func)
+    //     return 0
+    // },
+    // updateFunc(state, action) {
+    //     const updated = action.payload
+    //     return {
+    //         ...state,
+    //         funcs: state.funcs.map(u => u.id === updated.id ? updated : u)
+    //     }
+    // },
+    // deleteFunc(state, action) {
+    //     const func = action.payload
+    //     return {
+    //         ...state,
+    //         funcs: state.funcs.filter(u => u.id !== func.id)
+    //     }
+    // },
+    async createFunc(state, action) {
+        const func = action.payload;
+        try {
+            await axios.post('http://localhost:3004/funcionarios',{
+                type: func.type,
+                name: func.name,
+                email: func.email,
+                isEnabled: func.isEnabled,
+                posto: func.posto,
+                paciente: func.paciente,
+                avatarUrl: func.avatarUrl
+            })
+            } catch(e){
+            } 
     },
-    updateFunc(state, action) {
-        const updated = action.payload
-        return {
-            ...state,
-            funcs: state.funcs.map(u => u.id === updated.id ? updated : u)
-        }
-    },
-    deleteFunc(state, action) {
+
+    async updateFunc(state, action) {  
         const func = action.payload
-        return {
-            ...state,
-            funcs: state.funcs.filter(u => u.id !== func.id)
+        try {
+            // console.warn(user)
+            await axios.put(`http://localhost:3004/funcionarios/${func.id}`,{
+                type: func.type,
+                name: func.name,
+                email: func.email,
+                isEnabled: func.isEnabled,
+                posto: func.posto,
+                paciente: func.paciente,
+                avatarUrl: func.avatarUrl
+
+           })
+            
+          } catch(e){
+            //   showError(e)
+          } 
+        },
+
+    async deleteFunc(state, action) {
+        const func = action.payload
+        try {
+            await axios.delete(`http://localhost:3004/funcionarios/${func.id}`)
+        } catch(e) {
+            // showError(e)
         }
     },
 
@@ -161,31 +199,91 @@ const actions = {
 
     // Postos
 
-    createPosto(state, action) {
-        const posto = action.payload
-        posto.id = Math.random()
-        posto.type = 'posto'
-        return {
-            ...state,
-            postos: [...state.postos, posto],
+    async createPosto(state, action) {
+        const {
+            avatarUrl,
+            cep,
+            cidade,
+            endereco,
+            especialidadeposto,
+            estado,
+            name,
+        } = action.payload;
+        const postoPreviusIndex = state.postos.length - 1;
+        try {
+            const data = {
+                type: "posto",
+                isEnabled: "true",
+                avatarUrl,
+                cep,
+                cidade,
+                endereco,
+                especialidadeposto,
+                estado,
+                name,
+            }
+            await fetch('http://localhost:3004/postos', {
+                method: 'POST',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data),
+            })
+
+            return 0;
+        } catch (error) {
+            console.error(error);
         }
     },
-    updatePosto(state, action) {
-        const updated = action.payload
-        return {
-            ...state,
-            postos: state.postos.map(u => u.id === updated.id ? updated : u)
-        }
-    },
-    deletePosto(state, action) {
+    // updatePosto(state, action) {
+    //     const updated = action.payload
+    //     return {
+    //         ...state,
+    //         postos: state.postos.map(u => u.id === updated.id ? updated : u)
+    //     }
+    // },
+
+    async updatePosto(state, action) {  
         const posto = action.payload
-        return {
-            ...state,
-            postos: state.postos.filter(u => u.id !== posto.id)
+        try {
+            // console.warn(user)
+            await axios.put(`http://localhost:3004/postos/${posto.id}`,{
+                type: posto.type,
+                name: posto.name,
+                especialidadeposto: posto.especialidadeposto,
+                isEnabled: "true",
+                cep: posto.cep,
+                cidade: posto.cidade,
+                endereco: posto.endereco,
+                estado: posto.estado,
+                avatarUrl: posto.avatarUrl,
+           })
+            
+          } catch(e){
+            //   showError(e)
+          } 
+        },
+
+    // deletePosto(state, action) {
+    //     const posto = action.payload
+    //     return {
+    //         ...state,
+    //         postos: state.postos.filter(u => u.id !== posto.id)
+    //     }
+    // },
+
+    async deletePosto(state, action) {
+        const posto = action.payload
+        try {
+            await axios.delete(`http://localhost:3004/postos/${posto.id}`)
+        } catch(e) {
+            // showError(e)
         }
     },
 
-  
+
+    //Medicos
 
     createMedico(state, action) {
         const medico = action.payload
@@ -207,6 +305,7 @@ const actions = {
         //     medicos: state.medicos.map(u => u.id === updated.id ? updated : u)
         // }
     },
+    
     deleteMedico(state, action) {
         const medico = action.payload
         DeleteMed(medico)
